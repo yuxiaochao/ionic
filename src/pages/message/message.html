@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>国家行政学院</ion-title>
+    <ion-buttons end style="width: 100%;">
+      <button ion-button small *ngIf="isShow" style="float: left" (click)="goToBack()">
+        <ion-icon name="ios-backspace-outline"></ion-icon>
+      </button>
+      <button ion-button small *ngIf="!isShow" style="float: right" (click)="goQrdcan()">
+        <ion-icon name="md-expand"></ion-icon>
+      </button>
+      <button ion-button small *ngIf="!isShow"style="float: right" (click)="addFriends()">
+        <ion-icon name="md-person-add"></ion-icon>
+      </button>
+      <!--<button ion-button small *ngIf="!isShow"style="float: right" (click)="togaode()">-->
+        <!--<ion-icon name="ios-pin"></ion-icon>-->
+      <!--</button>-->
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding [class.qrscanner]="isShow">
+  <!--<ion-searchbar
+    (click)="clickSearch()"
+    placeholder='搜索'>
+  </ion-searchbar>-->
+
+  <div style="background-color: #fff;" *ngIf="!isShow">
+    <div class="jiadesousuokuang">
+      <div class="jiadesousuokuangDiv01" (click)="clickSearch()">
+        <p class="jiadesousuokuangP01"><i class="jiadesousuokuangI01"></i><span class="jiadesousuokuangSpan01">搜索</span>
+        </p>
+      </div>
+    </div>
+    <ion-list>
+      <div *ngFor="let item of data">
+        <ion-item-sliding>
+          <ion-item class="item ng-binding peopleItem">
+            <div class="headDiv" (click)="clickContacts(item)"><!--  -->
+              <img #img src="{{item.portrait | coverHeadImpPath:item.sex:img}}" class="headDivImg"/>
+              <span class="headDivSpan01"><span>{{item.fromName}}</span>
+          </span>
+              <span class="headDivSpan02">
+            <span style="" [innerHTML]="item.msg.changingThisBreaksApplicationSecurity"></span>
+          </span>
+              <span class="headDivSpan03">
+            <span style="">{{item.sendingDate}}</span>
+          </span>
+              <span class="headDivSpan04" *ngIf="item.unreadNum > 0">
+            <div>{{item.unreadNum}}</div>
+          </span>
+            </div>
+          </ion-item>
+          <ion-item-options side="right" (ionSwipe)="swipeItem01(item)">
+            <button ion-button primary class="button01" (click)="clickItem01(item)">
+              <ion-icon name="">&nbsp;&nbsp;置&nbsp;顶&nbsp;&nbsp;</ion-icon>
+            </button>
+            <button ion-button danger class="button02" (click)="clickItem02(item)">
+              <ion-icon name="">&nbsp;&nbsp;删&nbsp;除&nbsp;&nbsp;</ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </div>
+    </ion-list>
+  </div>
+
+  <div *ngIf="isShow">
+    <div class="qrscanner-area">
+    </div>
+    <div class="through-line"></div>
+    <div class="button-bottom">
+      <button (click)="toggleLight()" ion-fab class="icon-camera" margin-right>
+        <ion-icon name="flash"></ion-icon>
+      </button>
+      <button (click)="toggleCamera()" ion-fab class="icon-camera">
+        <ion-icon name="reverse-camera"></ion-icon>
+      </button>
+    </div>
+  </div>
+</ion-content>

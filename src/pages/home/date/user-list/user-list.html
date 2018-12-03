@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>群组成员</ion-title>
+    <span style="float:right; color:#fff;" *ngIf="optionType==1" (click)="isFinish()">完成</span>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: RGB(241,241,241);">
+  <ion-list>
+    <ion-item *ngFor="let item of userInfoMultiple" (click)="clickContacts(item)">
+      <ion-label>{{item.USER005}}</ion-label>
+      <ion-avatar item-start>
+        <img [src]="item.ATTA007|coverHeadImpPath:item.USER006">
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>

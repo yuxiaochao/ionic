@@ -1,0 +1,68 @@
+<!--
+  Generated template for the MyinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item class="photoitem">
+      <ion-label  color="primary"  fixed>
+        <p>头像</p>
+      </ion-label>
+
+      <ion-avatar item-right >
+        <div (click)="Changeimage()">
+          <img width="103" height="77" src="{{items.ATTA007 | coverHeadImpPath}}" />
+        </div>
+      </ion-avatar>
+      <ion-icon class="tubiao" name="arrow-forward" item-right ></ion-icon>
+
+    </ion-item>
+
+    <div class="div02">
+    <ion-item>
+       <ion-label color="primary" fixed>
+         <p>账户</p>
+       </ion-label>
+       <span item-right>{{items.USER004}}</span>
+    </ion-item>
+
+    <ion-item>
+       <ion-label color="primary" fixed>
+         <p>姓名</p>
+       </ion-label>
+       <span item-right>{{items.USER005}}</span>
+    </ion-item>
+
+    <ion-item>
+       <ion-label color="primary" fixed>
+         <p>性别</p>
+       </ion-label>
+       <span item-right>{{items.USER006}}</span>
+    </ion-item>
+
+    <ion-item>
+       <ion-label color="primary" fixed>
+         <p>单位</p>
+       </ion-label>
+       <span item-right>{{items.ORGA006}}</span>
+    </ion-item>
+    </div>
+  </ion-list>
+
+  <div class="div">
+
+    <button ion-button full (click)="LoginOut()">退出</button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,84 @@
+<ion-content>
+
+  <div class="top">
+
+    <div class="topright">
+      <div class="topriimg">
+        <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/erwei01.png" (click)="cardClick()" alt="">
+      </div>
+    </div>
+
+    <div class="topxia">
+      <div class="touxiangleft">
+        <div class="touxiang">
+          <img #imghead style="width:100%;height:100%;" [src]="userInfo.ATTA007 | coverHeadImpPath:userInfo.USER006:imghead" alt="">
+        </div>
+      </div>
+      <div class="touxiangright">
+        <p class="usename">{{userInfo.USER005}}</p>
+        <div class="lastbox">
+            <span class="dingwei">
+            <img *ngIf="userInfo.USER006=='女'" style="width:100%;height:100%;" src="././assets/imgs/work/din102.png" alt="">
+            <img *ngIf="userInfo.USER006=='男'" style="width:100%;height:100%;" src="././assets/imgs/work/din100.png" alt="">
+            </span> <span class="jobpost">{{userInfo.TRUS007}}</span></div>
+        <div class="tuwbar" (click)="infoClick()">
+          <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/right01.png" alt=""></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding:0 15px;">
+    <!--<div class="addjob" (click)="changeClick()">-->
+      <!--<span class="xiaotubiao">-->
+        <!--<img style="width:100%;height:100%;" src="././assets/imgs/xzxy/xiaoren.png" alt="">-->
+      <!--</span>-->
+      <!--<span class="font ">更改电话号码</span>-->
+      <!--<ion-icon class="right" name="arrow-forward"></ion-icon>-->
+    <!--</div>-->
+    <div class="addjob" (click)="recordClick()">
+      <span class="xiaotubiao">
+        <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/xiezi01.png" alt="">
+      </span>
+      <span class="font ">培训履历</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob" (click)="updatePwd()">
+      <span class="xiaotubiao">
+        <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/shezhi01.png" alt="">
+      </span>
+      <span class="font">修改密码</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob" (click)="setClick()">
+      <span class="xiaotubiao">
+        <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/shezhi01.png" alt="">
+      </span>
+      <span class="font">软件设置</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob" (click)="gengxinClick()">
+      <span class="xiaotubiao">
+        <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/xiangshnag01.png" alt="">
+      </span>
+      <span class="font ">检查更新</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob" (click)="aboutClick()">
+       <span class="xiaotubiao">
+        <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/itubiao01.png" alt="">
+      </span>
+      <span class="font">关于我们</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+  </div>
+  <div id="gengxin">
+    <div id="tankuang">
+      <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/QQ图片20181122164107.png" alt="">
+      <div class="btn" (click)="stopClick()">确定</div>
+    </div>
+  </div>
+
+  <div (click)="electiveCourse()" class="btn">退出登录</div>
+
+</ion-content>

@@ -1,0 +1,56 @@
+page-task-list {
+
+
+  .scroll-content{
+    padding:0px !important;
+  }
+
+
+
+  ul li>ul li img{
+    width: 50px;
+    height: 50px;
+    border-radius:5px 5px;
+  }
+
+
+  .fir_ul>li{
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #cfcfcf;
+
+  }
+  ul>.imgw{
+    float: left;
+    width: 17%;
+    margin: 10px 0px;
+    margin-left: 5%;
+
+  }
+  ul>.conw{
+    margin: 10px 0px;
+    float: left;
+    width: 75%;
+    margin-left: 3%;
+  }
+  .conw span{
+    float: left;
+    width: 100%;
+    margin-top: 3px;
+    font-size: 1rem;
+    color: #6d6d6d;
+  }
+  .conw span img{
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+  }
+  .conw_1{
+    font-size: 1.4rem !important;
+    color: black !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}

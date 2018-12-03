@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>二维码</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div>
+    <ion-card>
+      <ion-card-content>
+        <div style="width: 100%;height: 200px;">
+          <!--此处就是二维码展示部分-->
+          <!--如果有变量就这样写： [value]="'用户名:'+storeUserName"-->
+          <qr-code class="rqstyle"
+                   [value]="qrValue"></qr-code>
+        </div>
+        <p class="text-c font-n font-light">扫一扫上面的二维码图案，办理业务</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+
+

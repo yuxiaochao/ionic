@@ -1,0 +1,48 @@
+<!--
+  Generated template for the MycardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的名片</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color:#f2f6f9;">
+  <div  id="card" class="">
+     <div id="tittle">
+        <p class="line" style="float:left"></p>
+        <div style="float:left">
+          <div class="dian" style="float:left"></div>
+          <p style="float:left">我的名片</p>
+          <div class="dian" style="float:left"></div>
+        </div>
+        <p class="line" style="float:right"></p>
+     </div>
+    <div id="ziliao">
+       <div class="touxiang">
+         <img #imghead style="width:100%;height:100%;" [src]="userInfo.ATTA007 | coverHeadImpPath:userInfo.USER006:imghead" alt="">
+       </div>
+       <div id="rig">
+         <p class="name">{{userInfo.USER005}}</p>
+         <div class="lastbox">
+            <span class="dingwei">
+            <img *ngIf="userInfo.USER006=='女'" style="width:100%;height:100%;" src="././assets/imgs/work/din102.png" alt="">
+            <img *ngIf="userInfo.USER006=='男'" style="width:100%;height:100%;" src="././assets/imgs/work/din100.png" alt="">
+            </span> <span class="jobpost">{{userInfo.TRUS007}}</span>
+         </div>
+       </div>
+    </div>
+    <div id="erweima">
+      <qr-code size="245" [value]="qrValue"></qr-code>
+      <div class="linez"></div>
+      <a href="">长按保存到手机</a>
+    </div>
+  </div>
+
+</ion-content>

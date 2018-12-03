@@ -1,0 +1,144 @@
+page-problemdoc {
+
+  .scroll-content{
+    padding:0px !important;
+  }
+
+  .title_1{
+    line-height: 45px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.7rem;
+    color: #0c0b0b;
+  }
+  .updoc{
+    margin: auto;
+    width: 90%;
+    padding: 5px 8px;
+    height: 100px;
+    left: 20px;
+    z-index: 36;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: left;
+    line-height: 20px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    transition: none 0s ease 0s;
+    color: #888;
+    border-color: #bbb;
+    background: white;
+  }
+
+  .updoc textarea{
+    padding: 5px 5px;
+    display: block;
+    position: absolute;
+    width: 85%;
+    height: 90px;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+    border: none;
+    border-radius: inherit;
+    outline: none;
+    background: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    resize: none;
+  }
+
+  .title_2{
+    color: #0c0b0b;
+    margin-left: 20px;
+    line-height: 40px;
+  }
+
+
+  ul>.adddw{
+    width: 335px;
+    height: 47px;
+    z-index: 78;
+    opacity: 1;
+    transition: none 0s ease 0s;
+    margin-top:20px;
+    margin: auto
+  ;
+  }
+
+  .button_adddw{
+    width: 332px;
+    height: 33px;
+    top: 270px;
+    margin: auto;
+    z-index: 47;
+    color: rgb(255, 255, 255);
+    background-color: rgb(97, 223, 214);
+    border-color: transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    line-height: 30px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    transition: none 0s ease 0s;
+  }
+
+  .uplist{
+    margin: auto;
+    width: 90%;
+    padding: 5px 8px;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: left;
+    line-height: 20px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 0.5;
+    transition: none 0s ease 0s;
+  }
+
+  .uplist ul{
+    margin-bottom: 5px;
+  }
+
+  .uplist ul li img{
+    width: 20px;
+    height: 20px;
+    margin-left: 7%;
+  }
+
+  .button_adddw02{
+    width: 332px;
+    height: 33px;
+    top: 270px;
+    margin: auto;
+    z-index: 47;
+    color: rgb(255, 255, 255);
+    background-color: #BDBDBD;
+    border-color: transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    line-height: 30px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    transition: none 0s ease 0s;
+  }
+
+}

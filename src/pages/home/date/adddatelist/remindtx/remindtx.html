@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>提醒</ion-title>
+    <!--<span style="float:right; color:#fff;">完成</span>-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list radio-group [(ngModel)]="relationship">
+    <ion-item>
+      <ion-label>不提醒</ion-label>
+      <ion-radio [checked]="this.remind==0" value="0" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>日程开始时</ion-label>
+      <ion-radio [checked]="this.remind==1" value="1" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>提前5分钟</ion-label>
+      <ion-radio [checked]="this.remind==2" value="2" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>提前30分钟</ion-label>
+      <ion-radio [checked]="this.remind==3" value="3" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>提前1小时</ion-label>
+      <ion-radio [checked]="this.remind==4" value="4" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>提前1天</ion-label>
+      <ion-radio [checked]="this.remind==5" value="5" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

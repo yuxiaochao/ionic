@@ -1,0 +1,158 @@
+<ion-header #headerEle>
+  <ion-navbar>
+    <ion-title>
+      通讯录
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div class="jiadesousuokuang">
+      <div class="jiadesousuokuangDiv01" (click)="clickJiadesousuokuang()">
+        <p class="jiadesousuokuangP01"><i class="jiadesousuokuangI01"></i><span class="jiadesousuokuangSpan01">搜索</span>
+        </p>
+      </div>
+    </div>
+    <div class="wodehaoyou" (click)="myFriends()">
+      <img class="wodehaoyouImg01" src="assets/imgs/common/wodehaoyou.png"/>
+      <span class="wodehaoyouSpan01">我的好友</span>
+    </div>
+    <div class="wodegongzuozu" (click)="myGroupChat()">
+      <img class="wodegongzuozuImg01" src="assets/imgs/common/wodegongzuozu.png"/>
+      <span class="wodegongzuozuSpan01">我的工作组</span>
+    </div>
+  </div>
+  <ion-item-divider class="item item-divider ng-binding fengexian"></ion-item-divider><!-- 分割线 -->
+  <div class="jigou">
+    <ion-item class="item ng-binding peopleItem">
+      <div class="quanyuanqun" (click)="quanyuanqun()"><i>&nbsp;</i><span class="biaoti">金海湖镇人民政府</span><span
+        class="quanyuanqunSpan02">全员群</span></div>
+    </ion-item>
+    <ion-item class="item ng-binding peopleItem peopleItemLast">
+      <div class="quanyuanqun" (click)="bumenqun()"><i>&nbsp;</i><span class="biaoti">党建办人大办妇联</span><span
+        class="quanyuanqunSpan02">科室群</span></div>
+    </ion-item>
+  </div>
+  <ion-item-divider class="item item-divider ng-binding fengexian"></ion-item-divider><!-- 分割线 -->
+  <div class="tianjiagongzuozu">
+    <ion-item class="item ng-binding peopleItem peopleItemLast">
+      <div class="quanyuanqun" (click)="createGroup()"><i>&nbsp;</i>
+        <span class="biaoti">创建工作组</span>
+        <ion-icon style=" margin-top: 6px;float: right;color: #888;" name="arrow-forward"></ion-icon>
+      </div>
+    </ion-item>
+  </div>
+  <ion-item-divider class="item item-divider ng-binding fengexian"></ion-item-divider><!-- 分割线 -->
+  <div [hidden]="contactItems.length == 0">
+    <ion-item class="peopleItemLast">常用联系人</ion-item>
+    <div #divList>
+      <div *ngFor="let item of contactItems">
+        <!--<ion-item-divider class="item item-divider ng-binding shouzimu" id="index_{{item.USER023}}" *ngIf="item.isFirstData">
+          <span>{{item.USER023}}</span><div class="fengexianDiv"></div>
+        </ion-item-divider>-->
+        <ion-item class="item ng-binding peopleItem" [class.peopleItemLast]="item.isLastData">
+          <div class="headDiv" (click)="clickContacts(item)">
+            <img #img src="{{item.ATTA007 | coverHeadImpPath:item.USER006:img}}" class="headDivImg"/>
+            <span class="headDivSpan01">
+              <span>{{item.USER005}}</span>
+              <span style="font-size: small;">({{item.USER004}})</span>
+            </span>
+
+            <span class="headDivSpan02">
+              <p class="man" *ngIf="item.USER006 == '男'"></p>
+              <p class="woman" *ngIf="item.USER006 == '女'"></p>
+              <span style="">{{item.USER006}}</span>
+              <div class="addjob">
+                <ion-icon class="icon"
+                          [style.color]="item.USST003|userStatusPipe:true"
+                          [name]="item.USST003|userStatusPipe"></ion-icon>
+                <span class="font">{{item.USST003 | userStatusPipe:false:'未设置'}}</span>
+            </div>
+            </span>
+          </div>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<!--<ul class="alpha_sidebar" #alpha_sidebar [style.top.px]="alphaSidebar_top">
+  <li (tap)="gotoList('index_A')" class="ng-binding">
+    A
+  </li>
+  <li (tap)="gotoList('index_B')" class="ng-binding">
+    B
+  </li>
+  <li (tap)="gotoList('index_C')"  class="ng-binding">
+    C
+  </li>
+  <li (tap)="gotoList('index_D')"  class="ng-binding">
+    D
+  </li>
+  <li (tap)="gotoList('index_E')"  class="ng-binding">
+    E
+  </li>
+  <li (tap)="gotoList('index_F')"  class="ng-binding">
+    F
+  </li>
+  <li (tap)="gotoList('index_G')"  class="ng-binding">
+    G
+  </li>
+  <li (tap)="gotoList('index_H')"  class="ng-binding">
+    H
+  </li>
+  <li (tap)="gotoList('index_I')"  class="ng-binding">
+    I
+  </li>
+  <li (tap)="gotoList('index_J')"  class="ng-binding">
+    J
+  </li>
+  <li (tap)="gotoList('index_K')"  class="ng-binding">
+    K
+  </li>
+  <li (tap)="gotoList('index_L')"  class="ng-binding">
+    L
+  </li>
+  <li (tap)="gotoList('index_M')"  class="ng-binding">
+    M
+  </li>
+  <li (tap)="gotoList('index_N')"  class="ng-binding">
+    N
+  </li>
+  <li (tap)="gotoList('index_O')"  class="ng-binding">
+    O
+  </li>
+  <li (tap)="gotoList('index_P')"  class="ng-binding">
+    P
+  </li>
+  <li (tap)="gotoList('index_Q')"  class="ng-binding">
+    Q
+  </li>
+  <li (tap)="gotoList('index_R')"  class="ng-binding">
+    R
+  </li>
+  <li (tap)="gotoList('index_S')"  class="ng-binding">
+    S
+  </li>
+  <li (tap)="gotoList('index_T')"  class="ng-binding">
+    T
+  </li>
+  <li (tap)="gotoList('index_U')"  class="ng-binding">
+    U
+  </li>
+  <li (tap)="gotoList('index_V')"  class="ng-binding">
+    V
+  </li>
+  <li (tap)="gotoList('index_W')"  class="ng-binding">
+    W
+  </li>
+  <li (tap)="gotoList('index_X')"  class="ng-binding">
+    X
+  </li>
+  <li (tap)="gotoList('index_Y')"  class="ng-binding">
+    Y
+  </li>
+  <li (tap)="gotoList('index_Z')"  class="ng-binding">
+    Z
+  </li>
+</ul>-->

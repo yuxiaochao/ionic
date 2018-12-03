@@ -1,0 +1,120 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>出勤签到</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #F1F1F1;">
+
+  <div class="top-date">
+    <ul class="top-day">
+      <li>日</li>
+      <li>一</li>
+      <li>二</li>
+      <li>三</li>
+      <li>四</li>
+      <li>五</li>
+      <li>六</li>
+    </ul>
+    <div class="yuebox">
+      <ion-slides #slides1 loop="true"
+                  (ionSlideNextEnd)="slideNext()"
+                  (ionSlidePrevEnd)="slidePrev()"
+                  initialSlide="1">
+        <ion-slide>
+          <ul class="top-date-bar">
+            <li [class.cur1]="item.isday && (item.current)"
+                [class.cur]="!item.current"
+                *ngFor=" let item of items1"
+                (click)="selectedDate(item)">
+              <span *ngIf="item.isShowPoint==2&&item.isunusual==0&&item.isnormal==0"></span><!--有签到-->
+              <span style="background: #0001ff;" *ngIf="item.isShowPoint==1&&item.isunusual==0&&item.isnormal==0"></span><!--有一个签到-->
+              <span style="background: #ff0f22;" *ngIf="item.isShowPoint>0 && item.isunusual>0 && item.isnormal==0"></span><!--有迟到早退-->
+              <span style="background: #FFA500;" *ngIf="item.isShowPoint>0 && item.isunusual==0 && item.isnormal>0"></span><!--有加班-->
+              {{item.day}}
+              <i>{{item.subd}}</i>
+            </li>
+          </ul>
+        </ion-slide>
+        <ion-slide>
+          <ul class="top-date-bar">
+            <li [class.cur1]="item.isday && (item.current)"
+                [class.cur]="!item.current"
+                *ngFor=" let item of items2"
+                (click)="selectedDate(item)">
+              <span *ngIf="item.isShowPoint==2&&item.isunusual==0&&item.isnormal==0"></span><!--有签到-->
+              <span style="background: #0001ff;" *ngIf="item.isShowPoint==1&&item.isunusual==0&&item.isnormal==0"></span><!--有一个签到-->
+              <span style="background: #ff0f22;" *ngIf="item.isShowPoint>0 && item.isunusual>0 && item.isnormal==0"></span><!--有迟到早退-->
+              <span style="background: #FFA500;"*ngIf="item.isShowPoint>0 && item.isunusual==0 && item.isnormal>0"></span><!--有加班-->
+              {{item.day}}
+              <i>{{item.subd}}</i>
+            </li>
+          </ul>
+        </ion-slide>
+        <ion-slide>
+          <ul class="top-date-bar">
+            <li [class.cur1]="item.isday && (item.current)"
+                [class.cur]="!item.current"
+                *ngFor=" let item of items3"
+                (click)="selectedDate(item)">
+              <span *ngIf="item.isShowPoint==2&&item.isunusual==0&&item.isnormal==0"></span><!--有签到-->
+              <span style="background: #0001ff;" *ngIf="item.isShowPoint==1&&item.isunusual==0&&item.isnormal==0"></span><!--有一个签到-->
+              <span style="background: #ff0f22;" *ngIf="item.isShowPoint>0 && item.isunusual>0 && item.isnormal==0"></span><!--有迟到早退-->
+              <span style="background: #FFA500;" *ngIf="item.isShowPoint>0 && item.isunusual==0 && item.isnormal>0"></span><!--有加班-->
+              {{item.day}}
+              <i>{{item.subd}}</i>
+            </li>
+          </ul>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+  <div (click)="getnl()" class="top-bar">
+    <span>{{i}}年{{j}}月{{k}}日</span>
+    <span>{{nowTime|date:'HH:mm:ss'}}</span></div>
+  <div class="div001_01">
+    <div class="div002_01">
+      <!--flage 控制底色 0 灰色  1彩色-->
+      <img style="margin-top: 12px" *ngIf="this.flage==0" src="./assets/imgs/work/attendance/raw_1538028028.png">
+      <img style="margin-top: 12px" *ngIf="this.flage==1" src="./assets/imgs/work/attendance/raw_1538027929.png">
+      <!--signInTime 当前日期是否有上班签到-->
+      <img class="duigou" *ngIf="signInTime" src="./././assets/imgs/work/attendance/raw_1538028827.png"
+           (click)="workSignIn(3,0)">
+      <span *ngIf="!signInTime && this.flage==1" class="span001"
+           (click)="workSignIn(3,1)">上班签到</span>
+    </div>
+    <div class="div002_02">
+      <ul style="margin-top: 10px">
+        <li>上班时间: {{attendancePlan.ATPL013}}</li>
+        <li *ngIf="signInTime">签到时间:
+          {{signInTime|date:'HH:mm'}}（{{onWork.MTSI008|signinTypePipe}}:{{onWork.MTSI009}}分钟）
+        </li>
+        <!--<li *ngIf="onWork">{{onWork.MTSI008|signinTypePipe}}:{{onWork.MTSI009}}分钟</li>-->
+      </ul>
+    </div>
+  </div>
+
+  <div class="div001_02">
+    <div class="div002_01">
+      <img style="margin-top: 12px" *ngIf="this.flage==0" src="./assets/imgs/work/attendance/raw_1538028028.png">
+      <img style="margin-top: 12px" *ngIf="this.flage==1" src="./assets/imgs/work/attendance/raw_1538027929.png">
+      <img class="duigou" *ngIf="signOutTime" src="./././assets/imgs/work/attendance/raw_1538028827.png"
+           (click)="workSignIn(4,0)">
+      <span *ngIf="!signOutTime && this.flage==1" class="span001"
+           (click)="workSignIn(4,1)">下班签到</span>
+    </div>
+    <div class="div002_02">
+      <ul style="margin-top: 10px">
+        <li>下班时间: {{attendancePlan.ATPL014}}</li>
+        <li *ngIf="signOutTime">签到时间:
+          {{signOutTime|date:'HH:mm'}}（{{offWork.MTSI008|signinTypePipe}}:{{offWork.MTSI009}}分钟）
+        </li>
+        <!--<li *ngIf="offWork">{{offWork.MTSI008|signinTypePipe}}:{{offWork.MTSI009}}分钟</li>-->
+      </ul>
+    </div>
+  </div>
+</ion-content>

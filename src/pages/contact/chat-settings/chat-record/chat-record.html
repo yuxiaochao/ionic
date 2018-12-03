@@ -1,0 +1,56 @@
+<!--
+  Generated template for the DetailsFriendsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start style="width: 70%">
+      <button  ion-button  small (click)="back()" *ngIf="unread_number > 0">
+        <ion-icon name="" >{{unread_number}}</ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{otherUser.USER005}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--{{msg}}-->
+  <div class="main">
+    <div class="main_inner clearfix">
+      <div class="panel"></div>
+      <div id="chatArea" class="box chat">
+        <div class="box_bd" #messageList>
+          <div *ngFor="let item of items;let i =index">
+            <div class="box_hd" *ngIf="i==0||(item.CHME005|dateDifferencePipe:(items[i-1]).CHME005)"> {{item.CHME005 | date:'yyyy-MM-dd'}} </div>
+            <div class="message" [class.me]="item.TYPE == 'me'">
+              <img class="avatar" src="{{item.portrait | coverHeadImpPath:item.SEX}}"/>
+              <div class="content">
+                <div class="nickname"><span class="time">{{item.CHME005 | date:'HH:mm:ss'}}</span></div>
+                <div class="bubble" [class.bubble_primary]="item.TYPE == 'me'"
+                     [class.bubble_default]="item.TYPE != 'me'" [class.right]="item.TYPE == 'me'"
+                     [class.left]="item.TYPE != 'me'">
+                  <div class="bubble_cont">
+                    <div class="plain">
+                      <pre><span [innerHTML]="item.CHME008"></span></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="box_hd" [hidden]="box_hd_isShow">没有更多消息了</div>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="crescent"
+          loadingText="加载更多数据...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+</ion-content>
+

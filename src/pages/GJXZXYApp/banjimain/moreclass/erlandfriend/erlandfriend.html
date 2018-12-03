@@ -1,0 +1,124 @@
+<!--
+  Generated template for the ErlandfriendPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--
+  Generated template for the BanjijiaoliuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>陌生朋友</ion-title>
+    <ion-buttons end style="width: 50%;">
+      <button ion-button small>
+        <ion-icon style="float:right;font-size: 28px; margin-right: 10px;" name="more" md="more"></ion-icon>
+      </button>
+      <ion-select interface="popover"
+                  style=" position: absolute;width: 20px;height: 2px;top: 6px;right: 10px;"
+                  [(ngModel)]="toppings"
+                  (ionChange)="tianjiafrd()">
+        <ion-option>添加好友</ion-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content style="background:rgba(242,246,249,1);">
+  <div class="chatTimeBox">
+    <div class="leftLine"></div>
+    <div class="chatTime">19:59:25</div>
+    <div class="rightLine"></div>
+  </div>
+
+  <div class="friendChat">
+    <div class="frdpoto"><img style="width:100%;height:100%;" src="././assets/imgs/work/copy27.png" alt=""></div>
+    <div class="chat">
+      <div class="sanjiao"></div>
+      胜多负少的号放假胜多负少的号放假胜多负少的号放假胜多负少胜多负少的号放假的号放假
+    </div>
+  </div>
+
+  <div class="myChat">
+    <div class="mypoto"><img style="width:100%;height:100%;" src="././assets/imgs/work/copy27.png" alt=""></div>
+    <div class="mychat">
+      <div class="mysanjiao01"></div>
+      <div class="mysanjiao02"></div>
+      胜多负少的号放假胜多负少的
+    </div>
+  </div>
+
+  <div class="chatTimeBox">
+    <div class="leftLine"></div>
+    <div class="chatTime">19:59:25</div>
+    <div class="rightLine"></div>
+  </div>
+
+  <div class="bottombox">
+    <div class="iptbox">
+      <ul class="iptleft">
+        <li><img style="width:100%;height:100%;" src="././assets/imgs/work/2cop3.png" alt=""></li>
+        <li class="ipttext"><input style="width:90%;height:98%;" type="text"></li>
+      </ul>
+      <ul class="iptright">
+        <li (click)="addwenjian()" style="margin-left:10px;"><img style="width:100%;height:100%;" src="././assets/imgs/work/2copy2.png" alt=""></li>
+        <li><img style="width:100%;height:100%;" src="././assets/imgs/work/xiao.png" alt=""></li>
+      </ul>
+    </div>
+    <nav *ngIf="wenjian">
+      <ul class="clearfix tubiao">
+        <li>
+          <a href="javacript:;" [navPush]="OnlineElectivecourseListPage">
+            <p><img src="./assets/imgs/home/gong1.png" alt="" /></p>
+            <span>照片</span>
+          </a>
+        </li>
+        <li>
+          <a href="javacript:;" [navPush]="OnlineStudyListPage">
+            <p><img src="./assets/imgs/home/gong2.png" alt="" /></p>
+            <span>相机</span>
+          </a>
+        </li>
+        <li>
+          <a href="javacript:;" [navPush]="OnlineExamListPage" [navParams]="examParams">
+            <p><img src="./assets/imgs/home/gong3.png" alt="" /></p>
+            <span>视频</span>
+          </a>
+        </li>
+        <li>
+          <a href="javacript:;" [navPush]="OnlineExamListPage" [navParams]="exerciseParams">
+            <p><img src="./assets/imgs/home/gong4.png" alt="" /></p>
+            <span>文件</span>
+          </a>
+        </li>
+        <li>
+          <a href="javacript:;" [navPush]="ExamExercisesListPage">
+            <p><img src="./assets/imgs/home/gong8.png" alt="" /></p>
+            <span>语音输入</span>
+          </a>
+        </li>
+        <li>
+          <a href="javacript:;" [navPush]="StandardsTrainListPage">
+            <p><img src="./assets/imgs/home/gong6.png" alt="" /></p>
+            <span>名片</span>
+          </a>
+        </li>
+        <li>
+          <a href="javacript:;" [navPush]="QuestionnaireListPage">
+            <p><img src="./assets/imgs/home/gong5.png" alt="" /></p>
+            <span>位置</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+</ion-content>

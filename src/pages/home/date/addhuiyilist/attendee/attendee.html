@@ -1,0 +1,52 @@
+<!--
+  Generated template for the AttendeePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>会议参加人</ion-title>
+    <span style="float:right; color:#fff;">确定</span>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: RGB(241,241,241);">
+
+  <div style="margin:0px 0;">
+    <div class="addjob" (click)="remindtxClick()">
+      <span class="font">添加会议组织人</span>
+      <div class="right">
+        <!--<span>不提醒</span>-->
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px;right:10px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+    <div class="addjob" (click)="repetitcfClick()">
+      <span class="font">选择工作组成员</span>
+      <div class="right">
+        <!--<span>不重复</span>-->
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px; right:10px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <div class="huizi">已选择的参会人</div>
+
+  <div class="addjob" style="margin:1px 0">
+    <ion-icon style="color:RGB(24,180,237)"  name="checkbox"></ion-icon>
+    <div class="imgbox"><img style="width:100%;height:100%;" src="./assets/imgs/home/touxiang.png"></div>
+    <span style="color:#000;">陈振瑞</span>
+  </div>
+  <div class="addjob" style="margin:1px 0">
+    <ion-icon style="color:RGB(24,180,237)"  name="checkbox"></ion-icon>
+    <div class="imgbox"><img style="width:100%;height:100%;" src="./assets/imgs/home/touxiang.png"></div>
+    <span style="color:#000;">安鹏</span>
+  </div>
+  <div class="addjob" style="margin:1px 0">
+    <ion-icon style="color:RGB(24,180,237)"  name="checkbox"></ion-icon>
+    <div class="imgbox"><img style="width:100%;height:100%;" src="./assets/imgs/home/touxiang.png"></div>
+    <span style="color:#000;">赵瑞</span>
+  </div>
+</ion-content>

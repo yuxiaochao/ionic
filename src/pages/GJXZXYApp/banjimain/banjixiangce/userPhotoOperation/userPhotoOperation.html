@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>个人相册</ion-title>
+    <span style="float:right;cursor:pointer;" (click)="clicktodelete()" *ngIf="isflag == false">删除</span>
+    <span style="float:right;cursor:pointer;" (click)="clicktoselect()" *ngIf="isflag == true ">选择</span>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+
+  <div style="width:100%;margin-bottom: 10%;float: left;">
+    <ul class="box" *ngFor="let fitem of items;let i = index">
+      <li class="box_li_01" style="color:#373737;margin:5% 0;" *ngIf=" i==0 || (fitem.TRPH007N | dateDifferencePipe:(items[i-1]).TRPH007N)">
+        {{fitem.TRPH007N|date:'yyyy-MM-dd'}}
+      </li>
+      <li class="imgbox">
+        <ul >
+          <li [class]="fitem.isPic == 1?'showBorder':'showBorder2'" (click)="choosePic(fitem)">
+            <img src="" alt="">{{fitem.TRPH003}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite3($event)" style="float: left">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="加载更多数据...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!--<div class="box_fo" *ngIf="box_fo_isShow == true">没有更多了</div>-->
+  <!--[hidden]="!"-->
+
+</ion-content>

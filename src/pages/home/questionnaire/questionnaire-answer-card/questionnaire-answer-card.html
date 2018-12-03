@@ -1,0 +1,40 @@
+<ion-header #answerHeader [class.moon_test]="moonClass">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="closeAnswerCard()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>答题卡</ion-title>
+    <ion-buttons end text-center>
+      <button  ion-button small (click)="haveRest()" style="margin-right: 30px;">
+        {{time}}
+      </button>
+ <!--     <div class="semi-circle-top"></div>
+      <i class="semi-circle-text">{{time}}</i>
+      <div class="semi-circle-bottom"></div>-->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content #answerCardContent [class.moon_test]="moonClass">
+  <ion-grid *ngFor="let item of tx">
+    <ion-row class="row_border">
+      <ion-col>{{item.knowledge}}</ion-col>
+    </ion-row>
+    <ion-row row-wrap>
+      <ng-container *ngFor="let itemtopic of topic;let itemIndex=index;">
+        <ion-col col-2 text-center class="answerCardDistance"  *ngIf="itemtopic.BTXTITLE"  >
+          <div class="top_index" [ngClass]="{'selectedAnswerCard': itemtopic.QTID==answerCard['answer_'+itemtopic.QTID]}" (click)="selectedTopic(itemIndex)">{{itemIndex+1}}</div>
+          <ion-icon name="wenhao" *ngIf="uncert['show_'+itemtopic.QTID]" color="bright"  style="font-size: 1.3em;position: absolute;margin-left: -4px;" ></ion-icon>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer  #ionFooterEl [class.moon_test]="moonClass">
+  <ion-toolbar >
+    <button ion-button full small (click)="submitExam()">交卷</button>
+  </ion-toolbar>
+</ion-footer>

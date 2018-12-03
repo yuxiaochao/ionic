@@ -1,0 +1,104 @@
+<ion-grid class="ion-grid">
+  <ion-row>
+    <ion-col col-3 push-9>
+      <sub ion-text color="royal" style="font-size: 15px;">{{pageination.currPage}}/{{pageination.allPage}}</sub>
+    </ion-col>
+    <ion-col col-9 pull-3 text-left class="ion-grid-paper">
+      {{paper.TACT004}}
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<div class="test_content" *ngIf="topic">
+  <dl class="con" [ngSwitch]="true">
+    <div *ngSwitchCase="topic.BASETYPE === 0">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic!.TOPIC | replace:'___':'<input readonly class=&quot;answer_input&quot;/>' | trustHtml"></span>
+      </dt>
+      <ion-grid class="ion-grid-basetype" margin-top>
+        <ion-row>
+          <ion-col text-left>
+            正确答案是
+            <p>
+              <i ion-text color="secondary" [innerHTML]="topic_answer"></i>
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-left>
+            你的答案是
+            <p>
+              <i ion-text color="danger" [innerHTML]="answer"></i>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div *ngSwitchCase="topic.BASETYPE === 1 || topic.BASETYPE === 3">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <dd *ngFor="let content of topic.TOPICOPTION | splitPipe;let option_index=index" >
+        <strong class="xuxiang"><em [class]="multi_answer['multi_'+option_index]">{{option_index+1|numberTransition}}</em></strong>
+        <span [innerHTML]="content"></span>
+      </dd>
+      <ion-grid class="ion-grid-basetype" margin-top>
+        <ion-row>
+          <ion-col text-left>
+            正确答案是 <i ion-text color="secondary">{{topic.TOPICKEY}}</i> ,你的答案是<i ion-text color="danger">{{answer}}</i>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="second" *ngSwitchCase="topic!.BASETYPE === 2 || topic!.BASETYPE === 7">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <dd [class.selected]="option_index== multi_index['multi_'+option_index]"
+          *ngFor="let content of topic.TOPICOPTION | splitPipe;let option_index=index" >
+        <strong class="xuxiang"><em [class.current]="option_index==multi_answer_index['multi_'+option_index]">{{option_index+1|numberTransition}}</em></strong>
+        <span [innerHTML]="content"></span>
+      </dd>
+      <ion-grid class="ion-grid-basetype" margin-top>
+        <ion-row>
+          <ion-col text-left>
+            正确答案是 <i ion-text color="secondary">{{topic.TOPICKEY}}</i> ,你的答案是<i ion-text color="danger">{{answer}}</i>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="essay" *ngSwitchCase="topic!.BASETYPE === 4">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <ion-grid class="ion-grid-basetype" margin-top>
+        <ion-row>
+          <ion-col text-left>
+            正确答案是
+            <p>
+              <i ion-text color="secondary">{{topic.TTOP021}}</i>
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-left>
+            你的答案是
+            <p>
+              <i ion-text color="danger">{{answer}}</i>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </dl>
+</div>
+
+<h6 ion-text text-left margin-top margin-left style="border-bottom: 1px solid #dedede;">试题详解</h6>
+<p text-left ion-text margin-left  margin-top color="tint">
+ {{topic.TOPREMARK}}
+</p>
+
+

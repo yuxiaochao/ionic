@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content style="background-color:RGB(241,241,241)">
+
+  <div class="ownbox">
+    <div class="ownbox-left"><img style="width:100%;height:100%;"
+                                  src="{{userInfo.ATTA007 | coverHeadImpPath:userInfo.USER006}}"></div>
+    <div class="ownbox-right">
+      <div (click)="PersonalClick()">
+        <p class="special">{{userInfo.USER005}}</p>
+        <p>{{userInfo.ORGA012}}</p>
+      </div>
+    </div>
+    <div class="erwei" (click)="ErweicodeClick(userInfo)">
+      <img style="width:100%;height:100%;" src="./assets/imgs/home/erweicode.png">
+    </div>
+  </div>
+
+  <div class="addjob" (click)="statusClick(usst003)">
+    <ion-icon class="icon"
+              [style.color]="usst003|userStatusPipe:true"
+              [name]="usst003|userStatusPipe"></ion-icon>
+    <span class="font">{{usst003 | userStatusPipe:false:"添加工作状态..."}}</span>
+  </div>
+
+  <div class="addjob" (click)="statusClick(userInfo.USST003)">添加工作状态...</div>
+  <div style="margin-top:18px">
+    <div class="addjob" (click)="recordClick()">
+      <ion-icon style="color:yellowgreen" name="paper"></ion-icon>
+      <span class="font ">纪实记录</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob" (click)="updatePwd()">
+      <ion-icon style="color:sandybrown" name="lock"></ion-icon>
+      <span class="font">修改密码</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob">
+      <ion-icon class="icon" style="color:green" name="cloud-circle"></ion-icon>
+      <span class="font">关于系统</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+
+    <div style="padding:0 20px">
+      <button class="but" ion-button (click)="electiveCourse()">退出登录</button>
+    </div>
+  </div>
+
+
+</ion-content>

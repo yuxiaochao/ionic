@@ -1,0 +1,91 @@
+page-mycard {
+  *{letter-spacing:1px;}
+  #card{
+    width:305px;
+    height:441px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin: 80px auto;
+  }
+  #tittle{
+    width:100%;
+    height: 40px;
+    line-height: 28px;
+    font-size:20px;
+    font-weight: 600;
+    color: #373737;
+
+  }
+  .line{
+    width: 44px;
+    border:1px solid #787878;
+    margin-top: 10px;
+  }
+  .dian{
+    width: 5px;
+    height: 5px;
+    border-radius:50%;
+    background-color: #787878;
+    margin: 10px 15px;
+  }
+  #ziliao{
+    height: 60px;
+    width: 100%;
+  }
+  .touxiang{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+  }
+  #rig{
+
+    line-height: 30px;
+  }
+  .name{
+
+  }
+  .dingwei{
+    width:15px;
+    height:15px;
+    display:inline-block;
+  }
+  .dingwei img{
+    margin-top:5px;
+  }
+  .lastbox {
+  }
+  .jobpost{
+    background:#18b4ed;
+    color:#fff;
+    font-family:PingFangSC-Regular;
+    margin-left: 10px;
+    padding: 0px 2px;
+    border-radius: 10px;
+  }
+  #erweima{
+    width: 245px;
+    height: 245px;
+
+  }
+  .linez{
+    border-bottom:1px dashed #e9e7e7;
+    width: 100%;
+    padding-top: 15px;
+  }
+  #erweima a{
+    color: #787878;
+    margin: 10px 65px;
+    line-height: 30px;
+  }
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,200 @@
+page-banjijiaoliu {
+
+  .chatTimeBox {
+    width:75%;
+    height:20px;
+    //background:red;
+    margin:10px auto;
+    position:relative;
+  }
+
+  .leftLine{
+    border-top:1px solid #d2cece;
+    width:30%;
+    height:1px;
+    position:absolute;
+    top:50%;
+    left:0;
+  }
+
+  .chatTime{
+    width:30%;
+    height:20px;
+    text-align: center;
+    color:#d2cece;
+    margin:0 auto;
+    line-height: 20px;
+    border-radius: 10px;
+    border:1px solid #d2cece;
+  }
+
+  .rightLine{
+    border-top:1px solid #d2cece;
+    width:30%;
+    height:1px;
+    position:absolute;
+    top:50%;
+    right:0;
+  }
+
+  .friendChat {
+    width: 100%;
+    height: auto;
+    margin:20px 0;
+    overflow: hidden;
+    //background: yellow;
+  }
+
+  .frdpoto{
+    width: 14%;
+    height: 45px;
+    border-radius: 100px;
+    margin: 0 15px 0 20px;
+    border:1px solid #ccc;
+    float:left;
+  }
+
+  .chat {
+    width: 62%;
+    background: #18b4ed;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    box-shadow: -1px 1px 1px #ccc;
+    float: left;
+    position:relative;
+  }
+  .sanjiao {
+    width: 0;
+    height: 0;
+    border-width: 7px 7px 7px 7px;
+    border-style: solid;
+    border-color: transparent #18b4ed transparent transparent;
+    position: absolute;
+    top: 7px;
+    left: -14px;
+  }
+
+
+  //wode
+  .myChat {
+    width: 100%;
+    height: auto;
+    margin:20px 0;
+    overflow: hidden;
+    //background: yellow;
+  }
+
+  .mypoto{
+    width: 14%;
+    height: 45px;
+    border-radius: 100px;
+    margin: 0 20px 0 15px;
+    border:1px solid #ccc;
+    float:right;
+  }
+
+  .mychat {
+    width: 62%;
+    background: #fff;
+    color: #373737;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    box-shadow: -1px 1px 1px #ccc;
+    float: right;
+    position:relative;
+  }
+
+  .mysanjiao01 {
+    width: 0;
+    height: 0;
+    border-width: 7px 7px 7px 7px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    top: 7px;
+    right: -14px;
+    z-index: 1;
+  }
+  .mysanjiao02 {
+    width: 0;
+    height: 0;
+    border-width: 8px 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #ccc;
+    position: absolute;
+    top: 7px;
+    right: -16px;
+    z-index: 0;
+  }
+
+  .iptbox{
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
+  }
+
+  .iptbox > ul.iptleft >li {
+    float:left;
+    height:30px;
+    width:30px;
+    //background:green;
+    border-radius: 15px;
+  }
+
+  .iptbox > ul.iptright >li {
+    float:right;
+    height:30px;
+    width:30px;
+    //background:#fff;
+    border-radius: 15px;
+  }
+  .iptbox > ul.iptleft >li.ipttext {
+    width: 63%;
+    height: 30px;
+    text-indent: 5px;
+    margin-left: 4px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .bottombox {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+  }
+
+  nav{
+    background-color: white;
+  }
+
+  nav ul{
+    padding-top: 20px;
+  }
+  nav ul li{
+    width: 25%;
+    text-align: center;
+    float: left;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+  nav ul li p {
+    width: 55%;
+    margin: 0 auto 5px;
+  }
+
+  .tubiao p img{
+    width:35px;
+    height:35px;
+  }
+}

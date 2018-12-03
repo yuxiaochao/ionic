@@ -1,0 +1,206 @@
+page-details-friends {
+  .scroll-content{
+    padding: 0px !important;
+  }
+  .label-ios{
+    overflow: initial !important;
+  }
+  .div01{
+    position: relative;
+  }
+  .div0101{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+  .div0101 span:first-child{
+    position: absolute;
+    font-size: 3.7rem;
+    color: #cac6c6;
+  }
+  .div0101 span:last-child{
+    position: absolute;
+    width: 50px;
+    left: 32px;
+    top: 17px;
+    font-weight: bold;
+    color: #cac6c6;
+    font-size: 1.5rem;
+  }
+  .div0102{
+    position: absolute;
+    top: 180px;
+    left: 126px;
+  }
+  .div0102 img{
+    width: 110px;
+    height: 110px;
+    border-radius: 200px;
+  }
+  .div0103{
+    position: absolute;
+    top: 175px;
+    right: 11px;
+    border-radius: 50px;
+    background-color: rgba(43, 43, 43, 0.5);
+    width: 46px;
+    height: 21px;
+    padding: 0px 5px 0 7px;
+  }
+  .div0103 .goodThumb{
+    font-size: 15px;
+    color: #cac6c6;
+    line-height: 22px;
+  }
+  .div0103 .goodThumb img{
+    width: 22px;
+  }
+  .div0104{
+     width: 100%;
+     height: 200px;
+     background: url("./../assets/imgs/contact/bg01.jpg");
+     background-size: cover;
+     margin-bottom: 65px;
+   }
+  .div0104man{
+    background: url("./../assets/imgs/contact/bg02.jpg");
+    background-size: cover;
+  }
+  .div0104woman{
+    background: url("./../assets/imgs/contact/bg03.jpg");
+    background-size: cover;
+  }
+  .div010501{
+    text-align: center;
+    font-size: 2.7rem;
+  }
+  .div010502{
+    text-align: center;
+    color: #545454;
+    margin-top: 7px;
+    font-size: 1.5rem;
+  }
+  .div02{
+    padding: 16px;
+  }
+  .div0201{
+    position: relative;
+  }
+  .div0201 p{
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    background: url(./../assets/imgs/contact/kapian01.jpg) no-repeat scroll 0px -83px transparent;
+    background-size: 147px;
+  }
+  .div0201 span{
+    margin-left: 35px;
+  }
+  .div0202{
+
+  }
+  .div0202 p.man{
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    background: url(./../assets/imgs/contact/katong_Head.jpg) no-repeat scroll -34px -1px transparent;
+    background-size: 164px;
+  }
+  .div0202 p.woman{
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    background: url(./../assets/imgs/contact/katong_Head.jpg) no-repeat scroll -69px -1px transparent;
+    background-size: 164px;
+  }
+  .div0202 span.span01{
+    margin-left: 35px;
+  }
+  .div0203{
+
+  }
+  .div0203 p{
+    position: absolute;
+    top: 11px;
+    width: 30px;
+    height: 30px;
+    background: url(./../assets/imgs/contact/phone.jpg) no-repeat scroll 0px -1px transparent;
+    background-size: 200px;
+  }
+  .div0203 span{
+    margin-left: 35px;
+  }
+  .div0204{
+
+  }
+  .div0204 p{
+    position: absolute;
+    top: 11px;
+    width: 30px;
+    height: 30px;
+    background: url(./../assets/imgs/contact/phone.jpg) no-repeat scroll 0px -95px transparent;
+    background-size: 200px;
+  }
+  .div0204 span{
+    margin-left: 35px;
+  }
+  .div0205{
+
+  }
+  .div0205 p{
+    position: absolute;
+    top: 11px;
+    width: 30px;
+    height: 30px;
+    background: url(./../assets/imgs/contact/phone.jpg) no-repeat scroll -85px -47px transparent;
+    background-size: 200px;
+  }
+  .div0205 span{
+    margin-left: 35px;
+  }
+  .div0206{
+
+  }
+  .div0206 p{
+    position: absolute;
+    top: 11px;
+    width: 30px;
+    height: 30px;
+    background: url(./../assets/imgs/contact/phone.jpg) no-repeat scroll -170px -48px transparent;
+    background-size: 200px;
+  }
+  .div0206 span{
+    margin-left: 35px;
+  }
+  .div0207{
+
+  }
+  .div0207 p{
+    position: absolute;
+    top: 11px;
+    width: 30px;
+    height: 30px;
+    background: url(./../assets/imgs/contact/phone.jpg) no-repeat scroll -125px -90px transparent;
+    background-size: 200px;
+  }
+  .div0207 span{
+    margin-left: 35px;
+  }
+  .myIonFooter .toolbar-background-ios{
+    border-color: #e0dfe4;
+    background: rgba(236, 236, 236, 0.86);
+  }
+
+  .myIonFooter .addButton{
+    width: 95%;
+    margin: auto;
+    height: 33px;
+    color: #ffffff;
+    font-size: 1.7rem;
+  }
+  .Verification{
+    background-color: #9fa5a7;
+    color: #dadada;
+    border: 1px solid #969393;
+  }
+}

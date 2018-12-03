@@ -1,0 +1,64 @@
+<!--
+  Generated template for the TasklistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>任务签到</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li *ngFor="let task of taskList">
+        <ul (click)="tasksign(task)">
+          <li class="imgw" >
+            <img src="././assets/imgs/work/home/sign.png ">
+          </li>
+          <li class="conw">
+            <span class="conw_1">{{task.CALT002}}</span>
+            <span>任务开始时间：{{task.MONONE}}月{{task.DAYONE}}日 {{task.WEEKSTYLE1}} {{task.STARTTIME02}}</span>
+            <span>任务结束时间：{{task.ENDMON}}月{{task.ENDDAY}}日 {{task.WEEKSTYLE}}  {{task.ENDTIME}}</span>
+            <span><p>签到次数：</p><p class="conw_p">{{task.SIGNNUMBER}}/{{task.CALT007}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <ion-card *ngIf="taskList.length==0">
+        <ion-card-content>
+          暂无数据!
+        </ion-card-content>
+      </ion-card>
+      <!--<li>-->
+        <!--<ul>-->
+          <!--<li class="imgw" (click)="tasksign()">-->
+            <!--<img src="././assets/imgs/work/home/sign.png ">-->
+          <!--</li>-->
+          <!--<li class="conw">-->
+            <!--<span class="conw_1">项目启动会</span>-->
+            <!--<span>会议时间：9月14日 周三 16:00 ~ 17:00</span>-->
+            <!--<span><p>签到次数：</p><p class="conw_p">1/3</p></span>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<ul>-->
+          <!--<li class="imgw" (click)="tasksign()">-->
+            <!--<img src="././assets/imgs/work/home/sign.png ">-->
+          <!--</li>-->
+          <!--<li class="conw">-->
+            <!--<span class="conw_1">项目启动会</span>-->
+            <!--<span>会议时间：9月14日 周三 16:00 ~ 17:00</span>-->
+            <!--<span><p>签到次数：</p><p class="conw_p">1/3</p></span>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</li>-->
+    </ul>
+  </nav>
+
+</ion-content>

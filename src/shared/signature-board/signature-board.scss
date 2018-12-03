@@ -1,0 +1,26 @@
+page-signature-board {
+  .content{
+    filter:alpha(Opacity=40);
+    -moz-opacity:0.4;
+    opacity: 0.4;
+    background-color: #d5d5d5;
+  }
+
+  .btn_d{
+    color: #ddd;
+  }
+  .moon_test{
+    .toolbar-background{
+      background-color: #253646;
+      border-color :#b0acac;
+    }
+
+    [ion-button]{
+      color: #b0acac;
+    }
+
+    .toolbar-title{
+      color:#b0acac;
+    }
+  }
+}

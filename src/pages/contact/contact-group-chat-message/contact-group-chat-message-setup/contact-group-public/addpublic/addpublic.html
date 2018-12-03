@@ -1,0 +1,40 @@
+<!--
+  Generated template for the AddpublicPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+    <ion-navbar  >
+      <ion-title *ngIf="flage == 0">发布公告</ion-title>
+      <ion-title *ngIf="flage == 1">修改公告</ion-title>
+    </ion-navbar>
+
+
+
+</ion-header>
+
+
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>标题</ion-label>
+    <ion-textarea placeholder="" [(ngModel)]="headerName"  value="{{headerName}}"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>正文</ion-label>
+    <ion-textarea placeholder="" [(ngModel)]="contentName" value="{{contentName}}"></ion-textarea>
+  </ion-item>
+
+ <!-- *ngIf="flage == 0"-->
+    <button  *ngIf="flage == 0" ion-button block class="addButton" (click)="createpublic()" >提交</button>
+
+
+    <button *ngIf="flage == 1" ion-button block class="changeButton" (click)="changePublic()" >修改</button>
+
+</ion-content>

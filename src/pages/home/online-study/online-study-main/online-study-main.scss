@@ -1,0 +1,474 @@
+page-online-study-main {
+  /* CSS Document */
+  /* 禁用iPhone中Safari的字号自动调整 */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
+  }
+  /* 去除iPhone中默认的input样式  清除苹果浏览器的圆角表单*/
+  input[type="submit"],
+
+  input[type="reset"],
+
+  input[type="button"],
+
+  input{-webkit-appearance:none; resize: none;}
+  /* 取消链接高亮  */
+  body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+  aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); }
+  /* 设置HTML5元素为块 */
+  article, aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section {
+    display: block;
+  }
+  /* 图片自适应 */
+  img {
+    max-width: 100%;
+    height: auto;
+    width:auto\9; /* ie8 */
+    -ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/
+  }
+  /* 初始化 */
+  body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+  aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{margin:0; padding:0; border:none;  box-sizing: border-box;}
+  body{font-family: Microsoft YaHei,Tahoma,Arial,sans-serif; color:#555;font-size: 12px;}
+  em,i{font-style:normal;}
+  b{font-weight: normal;}
+  .clearfix:after{content:""; display:block; visibility:hidden; height:0; clear:both;}
+  .clearfix{zoom:1;}
+  a{text-decoration:none; color:#666; font-family: Microsoft YaHei,Tahoma,Arial,sans-serif;}
+  a:hover{ text-decoration:none;}
+  ul,ol{list-style:none;}
+  h1, h2, h3, h4, h5, h6{ font-size:100%; font-family: Microsoft YaHei;font-weight: normal;}
+  img{border: none;
+    width: 100%;}
+  .scope{min-width:320px; max-width:540px;}
+  .dp{display: block !important;}
+  .mr0{margin-right: 0!important;}
+  .br0{border-right: 0!important;}
+  .mb0{margin-bottom: 0!important;}
+  html,body{
+    /*height:100%;*/
+    width:100%;
+    color: #666;
+    background-color: #ecf0f1;
+  }
+  body{
+
+  }
+  ion-label {
+    margin: 0;
+    display: block;
+    overflow: visible;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  header{
+    width:100%;
+    margin:0 auto;
+    position: fixed;
+    left: 0;
+    //top:0;
+    z-index: 10;
+  }
+  .back{
+    background-color: #222;
+    width: 32px;
+    height: 32px;
+    background: rgba(0,0,0,.5);
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+  }
+  .back em{
+    background: url(./../assets/imgs/home/online-study/back_03.png) no-repeat 9px center;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    display: inline-block;
+    background-size: 12px;
+  }
+  .video{
+    width:100%;
+    //height:200px;
+    //background:url(./../assets/imgs/home/online-study/video_02.png) no-repeat;
+    background-size: cover;
+  }
+
+
+  .video-tips{
+    padding: 0 10px;
+    border-bottom: 1px solid #f5f6f6;
+
+  }
+
+  .play-icon{
+    background: url(./../assets/imgs/home/online-study/play_icon.png) no-repeat 0 18px;
+    float: left;
+    font-size: 14px;
+    background-size: 20px;
+    padding: 18px 0 3px 28px;
+  }
+  .tips{
+    position: fixed;
+    /*top: 258px;*/
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+  }
+  .video-tips ul{
+    float: right;
+  }
+  .video-tips ul li{
+    float: left;
+    margin-right: 28px;
+    padding: 23px 0 0 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .note-icon{
+    background: url(./../assets/imgs/home/online-study/note_icon.png) no-repeat center top;
+    background-size: 20px;
+  }
+  .share-icon{
+    background: url(./../assets/imgs/home/online-study/fx_icon.png) no-repeat center top;
+    background-size: 21px;
+  }
+  .load-icon{
+    background: url(./../assets/imgs/home/online-study/load_icon.png) no-repeat center top;
+    background-size: 21px;
+  }
+
+  .wind-tips{
+    padding: 15px;
+    position: relative;
+  }
+  .wind-tips p{
+    font-size: 13px;
+    color: #666;
+    /*margin-bottom: 15px;*/
+
+  }
+  .wind-tips p.dqzt{
+    /*display: none;*/
+    margin-top: 15px;
+  }
+  .wind-tips p em{
+    font-size: 12px;
+    color: #ff5600;
+    border: 1px solid #ff5600;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin-right: 5px;
+  }
+  .wind-tips .arrows{
+    background: url(./../assets/imgs/home/online-study/arr.png) no-repeat;
+    background-size: 18px;
+    width: 18px;
+    height: 10px;
+    position: absolute;
+    right: 10px;
+    top: 18px;
+  }
+  .details-tab{
+    padding:0 10px;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  .details-tab{
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    margin-top: -44px;
+    background-color: #fff;
+    z-index: 10;
+  }
+
+  .details-tab li{
+    padding: 12px 0;
+    float: left;
+    width: 15%;
+    margin-right:13.3%;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    border-bottom: 2px solid #fff;
+
+  }
+  .details-tab li.cur{
+    color: #18b4ed;
+    border-bottom: 2px solid #18b4ed;
+  }
+  .details-body{
+    /*margin-top: 359px;*/
+  }
+
+  /*目录*/
+  .catalogue ul{
+    padding:15px 10px 0 60px;
+    background-color: #fff;
+  }
+  .catalogue ul li{
+    position: relative;
+    height: 46px;
+    font-size: 14px;
+    border-left: 1px solid #ecf0f1;
+    color: #727a8e;
+    padding-left: 20px;
+  }
+  .catalogue ul li.cur p,.catalogue ul li.cur span{
+    color: #18b4ed;
+  }
+  .catalogue ul li em{
+    position: absolute;
+    left: -50px;
+    color: #ff5600;
+    border: 1px solid #ff5600;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 1px 3px;
+    top: -1px;
+  }
+  .catalogue ul li p{
+    float: left;
+    margin-top: -1px;
+  }
+  .catalogue ul li span{
+    float: right;
+  }
+  .catalogue ul li .progress{
+    position: absolute;
+    left: -9px;
+    top: 0px;
+    border-radius: 50px;
+    width: 17px;
+    height: 17px;
+    background-color: #ecf0f1;
+  }
+  /*目录*/
+  /*详情*/
+  .course-title {
+    padding: 25px 10px;
+    background: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  .course-title p{
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .course-title span {
+    font-size: 14px;
+    border-right: 2px solid #ccc;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+  .overview {
+    font-size: 14px;
+    padding: 0 10px 20px;
+    background-color: #fff;
+  }
+  .overview h3 {
+    color: #333;
+    padding: 10px 0;
+  }
+  .overview p {
+    line-height: 22px;
+    margin-bottom: 7px;
+  }
+  .overview span {
+    font-size: 13px;
+    color: #999;
+    margin-right: 8%;
+  }
+  /*详情*/
+
+
+  /*资料*/
+  .material ul li{
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  .material ul li p{
+    font-size: 17px;
+    color: #333;
+    padding: 20px 0 10px;
+
+
+  }
+  .material ul li span{
+    color: #999;
+    font-size: 14px;
+    display: block;
+  }
+  .material ul li a{
+    color: #18b4ed;
+    font-size: 12px;
+    float: right;
+    padding: 10px 0;
+  }
+  /*资料*/
+  /*评价*/
+  .filter {
+    background-color: #fff;
+    padding: 10px 10px;
+    border-bottom: 1px solid #ecf0f1;
+    overflow: hidden;
+  }
+  .filter span {
+    font-size: 12px;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    float: left;
+  }
+  .filter span.cur{
+    color: #18b4ed;
+  }
+  ul.estimate {
+    padding: 0 10px 45px;
+    background-color: #fff;
+  }
+  ul.estimate li{
+    padding: 15px 0 0 0;
+    border-bottom: 1px solid #ececec;
+  }
+  ul.estimate .estimate-top {
+    /* margin-top: 15px; */
+    font-size: 12px;
+  }
+  .estimate .person-pic{
+    width: 10%;
+    margin-top: 5px;
+    float: left;
+    margin-right: 4%;
+
+  }
+  .estimate .person-name {
+    float: left;
+    color: #333;
+    margin-right: 4%;
+    margin-top: 15px;
+  }
+  .estimate .person-estimate {
+    color: #666;
+    margin-right: 4%;
+    margin-top: 15px;
+    float: left;
+    padding-left: 20px;
+    background: url(./../assets/imgs/home/online-study/hp.png) no-repeat left center;
+    background-size: 13px;;
+  }
+  ul.estimate li p{
+    display: block;
+    line-height: 28px;
+    font-size: 14px;
+    color: #333;
+    margin-left: 12%;}
+  .estimate .estimate-time{
+    padding: 10px 0;
+    margin-left: 12%;
+    float: left;
+  }
+  .estimate .good{
+    float: right;
+    padding: 10px 0 10px 17px;
+    background: url(./../assets/imgs/home/online-study/good_07.png) no-repeat left center;
+    background-size: 14px;
+  }
+  .review{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-left: 10px;
+    border-top: 1px solid #E4E4E4;
+    height: 45px;
+    width: 100%;
+    background-color: #fff;
+  }
+  .review .select{
+
+    float: left;
+    font-size: 13px;
+    color: #333;
+    padding-left: 26px;
+    line-height: 45px;
+    background: url(./../assets/imgs/home/online-study/selected_11.png) no-repeat left center;
+    background-size: 20px;
+  }
+  .review a{
+    color: #FFFFFF;
+    line-height: 45px;
+    font-size: 15px;
+    width: 30%;
+    text-align: center;
+    float: right;
+    background: #18b4ed;
+  }
+  /*评价*/
+
+  .add{
+    position: fixed;
+    right: 30px;
+    bottom:30px;
+    background: url(./../assets/imgs/home/online-study/add.png) no-repeat;
+    width: 41px;
+    height: 42px;
+    background-size: 41px;
+  }
+  .add_content{
+    position: fixed;
+    left: 0;
+    top: 312px;
+    width: 100%;
+    background:rgba(0,0,0,.8);
+    z-index: 99;
+  }
+  .add_content{
+    padding: 20px 0;
+  }
+  .add_content li{
+    text-align: center;
+    float: left;
+    width: 33.3%;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .add_content a{
+    color: #fff;
+  }
+  .add_content li img{
+    width:60%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+  }
+  .closeadd{
+    width: 18px;
+    height: 18px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
+    background: url(./../assets/imgs/home/online-study/close_13.png) no-repeat;
+    background-size: 18px;
+  }
+
+  .scroll-content{
+    padding: 1px !important;
+  }
+
+
+
+
+}

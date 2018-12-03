@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ContactgroupcreatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="flage == 0">创建工作组/群</ion-title>
+    <ion-title *ngIf="flage == 1">修改工作组/群</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+  <ion-item>
+        <ion-label>群组类型</ion-label>
+        <ion-select [(ngModel)]="myindex" okText="确定" cancelText="取消" interface="popover">
+          <ion-option value="0" [selected]="true">工作组</ion-option>
+          <ion-option  value="1" >群</ion-option>
+        </ion-select>
+  </ion-item>
+  </ion-list>
+
+  <ion-item>
+        <ion-label>昵称</ion-label>
+        <ion-textarea placeholder="" [(ngModel)]="groupName" ></ion-textarea>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label>详情</ion-label>
+          <ion-textarea placeholder="" [(ngModel)]="groupInfo" ></ion-textarea>
+  </ion-item>
+
+  <button *ngIf="flage == 0" ion-button block class="addButton" (click)="createGroup()" >提交</button>
+  <button *ngIf="flage == 1" ion-button block class="addButton" (click)="updateGroup()" >修改</button>
+</ion-content>

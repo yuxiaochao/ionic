@@ -1,0 +1,55 @@
+<!--
+  Generated template for the RecordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>纪实记录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+   <!--<div class="listbar">-->
+     <!--<div class="listleft">-->
+       <!--<img style="width:100%;height:100%;" src="./assets/imgs/home/weiqueren.png" >-->
+     <!--</div>-->
+     <!--<div class="listright">-->
+       <!--<p class="special">2018年上半年干部纪实表</p>-->
+       <!--<p>安鹏上报的<span> 丨 </span>2018-9-27 16:13 </p>-->
+     <!--</div>-->
+   <!--</div>-->
+
+  <div class="listbar height" *ngFor="let facts of factsResportHistory">
+    <div class="listleft">
+      <img *ngIf="facts.DOFR007==1" style="width:100%;height:100%;" src="./assets/imgs/home/yiqueren.png" >
+      <img *ngIf="facts.DOFR007==0" style="width:100%;height:100%;" src="./assets/imgs/home/weiqueren.png" (click)="lookDatil(facts)" >
+    </div>
+    <div class="listright" >
+      <p class="special">{{facts.DOFA002}}</p>
+      <p >{{facts.TJNAME}}上报的<span> 丨 </span>{{facts.DATETIME}} </p>
+      <p *ngIf="facts.DOFR007==1">{{facts.QDNAME}}确认的<span> 丨 </span>{{facts.ENDTIME}} </p>
+    </div>
+  </div>
+
+  <ion-card *ngIf="factsResportHistory.length==0">
+    <ion-card-content>
+      暂无数据!
+    </ion-card-content>
+  </ion-card>
+
+  <!--&lt;!&ndash;<div class="listbar height">-->
+    <!--<div class="listleft">-->
+      <!--<img style="width:100%;height:100%;" src="./assets/imgs/home/yiqueren.png" >-->
+    <!--</div>-->
+    <!--<div class="listright">-->
+      <!--<p class="special">2018年上半年干部纪实表</p>-->
+      <!--<p>安鹏上报的<span> 丨 </span>2018-9-27 16:13 </p>-->
+      <!--<p>刘颖确认的<span> 丨 </span>2018-9-27 17:28 </p>-->
+    <!--</div>-->
+  <!--</div>&ndash;&gt;-->
+</ion-content>

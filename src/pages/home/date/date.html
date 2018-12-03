@@ -1,0 +1,378 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>日常</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="top-bar" (click)="getnl()">{{chuannian}}年{{chuanyue}}月{{chuanri}}日</div>
+  <div class="bom">
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button class="bg wh" value="kittens" (ionSelect)="startInit()">
+        日程
+      </ion-segment-button>
+      <ion-segment-button class="bg" value="puppies" (ionSelect)="startInit()">
+        会议
+      </ion-segment-button>
+      <ion-segment-button class="bg" value="picker" (ionSelect)="startInit()">
+        任务
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div>
+    <ion-list [hidden]="pet!='kittens'">
+      <!------------------------日历##开始--------------------------------->
+      <div class="top-date">
+
+        <ul class="top-day">
+          <li>日</li>
+          <li>一</li>
+          <li>二</li>
+          <li>三</li>
+          <li>四</li>
+          <li>五</li>
+          <li>六</li>
+        </ul>
+        <!--周日历开始-->
+        <div *ngIf="xianzhou" (swipedown)="xianyuetodo()">
+          <ion-slides #slides2 loop="true"
+                      (ionSlideNextEnd)="ZhouslideNext()"
+                      (ionSlidePrevEnd)="ZhouslidePrev()"
+                      initialSlide="1"
+                      style="margin-bottom: 12px;">
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li
+                  [class.cur1]="item.iscolor"
+                  *ngFor=" let item of itema1; let i=index"
+                  (click)="zhouSelectedClick(i,item)">
+                  <span *ngIf="item.Showzhoupoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.nong}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li [class.cur1]="item.iscolor"
+                    *ngFor=" let item of itema2; let i=index"
+                    (click)="zhouSelectedClick(i,item)">
+                  <span *ngIf="item.Showzhoupoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.nong}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li
+                  [class.cur1]="item.iscolor"
+                  *ngFor=" let item of itema3;let i=index"
+                  (click)="zhouSelectedClick(i,item)">
+                  <span *ngIf="item.Showzhoupoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.nong}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <!--周日历结束-->
+
+        <div *ngIf="xianyue" (swipeup)="xianzhoutodo()">
+          <ion-slides #slides1 loop="true"
+                      (ionSlideNextEnd)="slideNext()"
+                      (ionSlidePrevEnd)="slidePrev()"
+                      initialSlide="1">
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li *ngFor=" let item of items1"
+                    [class.cur1]="item.isday && (item.current)"
+                    [class.cur]="!item.current "
+                    (click)="selectedDate(item)">
+                  <span *ngIf="item.isShowPoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.subd}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li *ngFor=" let item of items2"
+                    [class.cur1]="item.isday && (item.current)"
+                    [class.cur]="!item.current"
+                    (click)="selectedDate(item)">
+                  <span *ngIf="item.isShowPoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.subd}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li *ngFor=" let item of items3"
+                    [class.cur1]="item.isday && (item.current)"
+                    [class.cur]="!item.current"
+                    (click)="selectedDate(item)">
+                  <span *ngIf="item.isShowPoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.subd}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+      <!------------------------日历##结束-----  打包：下载安卓sdk去打包---------------------------->
+      <div *ngIf="scheduleList.length==0">
+        <ion-card>
+          <ion-card-content>
+            暂无数据
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div *ngFor="let item of scheduleList;let i=index">
+        <!---------------------时间提示器--------------------->
+        <div class="today" *ngIf="showTimeFrame==i||i==scheduleList.length">
+          <span>当前时间</span>
+          <div class="xiaoqq">
+            <img style="width:100%; height:90%;" src="././assets/imgs/home/qq.png" alt="">
+          </div>
+          <span>{{nowTime | date:'HH:mm:ss'}}</span>
+          <span class="xian">
+        </span>
+        </div>
+        <!---------------------结束--------------------->
+        <!---------------------我的日程--------------------->
+        <div class="main" (click)="toTodayJobPlan(item)" *ngIf="item.ISTYPE==1">
+          <div class="main-time" *ngIf="item.NEWDATE=='1'">
+            <p>{{item.STARTDATEN | date:'HH:mm'}}</p>
+            <p class="color">{{item.ENDDATEN | date:'HH:mm'}}</p>
+          </div>
+          <div class="main-time" *ngIf="item.NEWDATE=='0'">
+            <p style="margin-top: 7px;">全天</p>
+          </div>
+          <div class="xiaoiontua">
+            <ion-icon style="color:#ccc;" name="ios-clipboard"></ion-icon>
+          </div>
+
+          <div class="main-font">
+            {{item.THISCONTENT | limitLength:10}}
+          </div>
+        </div>
+        <!---------------------我的会议--------------------->
+        <div class="main" *ngIf="item.ISTYPE==2" (click)="WkmtdetailClick(item,0)">
+          <!--<div class="main-time">-->
+          <!--<p>{{item.STARTDATEN | date:'HH:mm'}}</p>-->
+          <!--<p class="color" style="color:#18b4ed;">截止</p>-->
+          <!--</div>-->
+          <div class="main-time" *ngIf="item.NEWDATE=='1'">
+            <p>{{item.STARTDATEN | date:'HH:mm'}}</p>
+            <p class="color">{{item.ENDDATEN | date:'HH:mm'}}</p>
+          </div>
+          <div class="main-time" *ngIf="item.NEWDATE=='0'">
+            <p style="margin-top: 7px;">全天</p>
+          </div>
+          <div class="xiaoiontua">
+            <ion-icon style="color:#ccc;" name="people"></ion-icon>
+          </div>
+          <div class="main-font">
+            {{item.THISCONTENT | limitLength:10}}
+          </div>
+        </div>
+        <!---------------------我的任务--------------------->
+        <div class="main" *ngIf="item.ISTYPE==3" (click)="taskdetail(item,0)">
+          <div class="main-time" *ngIf="item.NEWDATE=='1'">
+            <p>{{item.STARTDATEN | date:'HH:mm'}}</p>
+            <p class="color">{{item.ENDDATEN | date:'HH:mm'}}</p>
+          </div>
+          <div class="main-time" *ngIf="item.NEWDATE=='0'">
+            <p style="margin-top: 7px;">全天</p>
+          </div>
+          <div class="xiaoiontua">
+            <ion-icon style="color:#ccc;" name="flag"></ion-icon>
+          </div>
+
+          <div class="main-font">
+            {{item.THISCONTENT | limitLength:10}}
+          </div>
+        </div>
+      </div>
+      <!--<ion-infinite-scroll (ionInfinite)="doInfinite1($event)">-->
+      <!--<ion-infinite-scroll-content-->
+      <!--loadingSpinner="crescent"-->
+      <!--loadingText="加载更多数据...">-->
+      <!--</ion-infinite-scroll-content>-->
+      <!--</ion-infinite-scroll>-->
+    </ion-list>
+    <!------------------------标签切换##会议------------------------------------>
+    <div *ngIf="pet!='kittens'">
+      <div (click)="showhide()" class="weijishu"><span>{{selectText}}</span>
+        <ion-icon [name]="nametigger"></ion-icon>
+      </div>
+      <div class="haoxuanbox" *ngIf="show">
+        <ion-list radio-group [(ngModel)]="selectType">
+          <ion-item>
+            <ion-label style="font-size:12px;">未结束的</ion-label>
+            <ion-radio [checked]="selectType==0" (ionSelect)="filterData('未结束的')" value="0"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="font-size:12px;">已结束的</ion-label>
+            <ion-radio [checked]="selectType==1" value="1" (ionSelect)="filterData('已结束的')"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="font-size:12px;">我发出的</ion-label>
+            <ion-radio [checked]="selectType==2" value="2" (ionSelect)="filterData('我发出的')"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <ion-list [hidden]="pet!='puppies'">
+
+      <div *ngIf="meetingList.length==0">
+        <ion-card>
+          <ion-card-content>
+            暂无数据
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <nav>
+        <ul class="fir_ul" style="background:#000;" *ngFor="let item of meetingList">
+          <li (click)="WkmtdetailClick(item)">
+            <ul>
+              <li class="imgw">
+                <img src="././assets/imgs/work/home/ren_3.png ">
+              </li>
+              <li class="conw">
+                <span class="conw_1">{{item.MEET002|limitLength:15}}</span>
+                <span>会议时间：<br>{{item.MEET003|date:'MM-dd HH:mm'}}--{{item.MEET004|date:'MM-dd HH:mm'}}</span>
+                <span>
+                  <p style="color:#ccc;">{{item.USER005}}</p>
+                  <p class="conw_p">{{item.MEET009|date:'yyyy-MM-dd'}}</p>
+                  <p style="color:#ccc;">{{item.MEET009|date:'HH:mm'}}</p>
+                </span>
+                <span style="margin-bottom: -4%;" class="flashwzend" *ngIf="item.ISTYPE==1">已结束</span>
+                <span style="margin-bottom: -4%;" class="flashwzstrat" *ngIf="item.ISTYPE==0">正在进行</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <ion-infinite-scroll (ionInfinite)="doInfinite2($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="crescent"
+          loadingText="加载更多数据...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+
+    <!------------------------标签切换##任务------------------------------------>
+    <ion-list [hidden]="pet!='picker'">
+      <nav>
+        <div *ngIf="taskList.length==0">
+          <ion-card>
+            <ion-card-content>
+              暂无数据
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <ul class="fir_ul">
+          <li *ngFor="let item of taskList">
+            <ul>
+              <li class="imgw" (click)="taskdetail(item)">
+                <img src="././assets/imgs/work/home/sign.png ">
+              </li>
+              <li class="conw">
+                <span class="conw_1">{{item.CALT002|limitLength:15}}</span>
+                <span class="lavyser">{{item.CALT006|date:'yyyy-MM-dd HH:mm'}}截止</span>
+                <span><p>签到次数：</p><p class="conw_p">{{item.SIGNINMYNUM}}/{{item.CALT007}}</p></span>
+                <span class="lavyser">{{item.USER005}} 丨 {{item.CALT005|date:'yyyy-MM-dd HH:mm'}}</span>
+                <span class="lavyser">{{item.SIGNINNUM}}/{{item.SIGNINTOTALNUM}}已完成</span>
+                <span class="flashwz" *ngIf="item.ISTYPE==0&&item.SIGNINMYNUM<item.CALT007"
+                      (click)="TasksignClick(item)">签到</span>
+                <span style="margin-bottom: -2%;" class="flashwzend" *ngIf="item.ISTYPE==1">已结束</span>
+                <span style="margin-bottom: -4%;background: #85b329;" class="flashwzstrat"
+                      *ngIf="item.SIGNINMYNUM>=item.CALT007&&item.ISTYPE!=1">已完成</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <ion-infinite-scroll (ionInfinite)="doInfinite3($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="crescent"
+          loadingText="加载更多数据...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+  </div>
+  <!------------------------添加日程圆形按钮------------------------------------>
+  <ion-fab absolute-drag startRight="30" startTop="400" class="">
+    <button class="slidbtn" ion-fab color="yellow">
+      <ion-icon style="font-size:35px;" name="add"></ion-icon>
+    </button>
+
+    <ion-fab-list (click)="addhuiyiClick()" side="left">
+      <button class="sbgo" ion-fab>
+        <ion-icon style="color:#fff;" name="people"></ion-icon>
+      </button>
+    </ion-fab-list>
+
+    <ion-fab-list (click)="adddateClick()" side="top">
+      <button class="sbgt" ion-fab>
+        <ion-icon style="color:#fff;" ios="ios-clipboard" md="md-clipboard"></ion-icon>
+      </button>
+    </ion-fab-list>
+
+    <ion-fab-list (click)="addrenwuClick()" side="bottom">
+      <button class="sbgs" ion-fab>
+        <ion-icon style="color:#fff;" name="flag"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+  <!------------------------结束------------------------------------>
+
+
+</ion-content>
+
+<!--<div id="huadong"class="swiper-container-refer">-->
+<!--<div class="swiper-wrapper">-->
+<!--<div class="swiper-slide" >-->
+<!--一-->
+<!--<ul class="top-date-bar">-->
+<!--<li [class.cur1]="item.isday" [class.cur]="!item.current" *ngFor=" let item of items1">-->
+<!--<span></span>-->
+<!--{{item.day}}-->
+<!--<i>{{item.subd}}</i>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div class="swiper-slide" #fig>-->
+<!--二-->
+<!--<ul class="top-date-bar">-->
+<!--<li [class.cur1]="item.isday" [class.cur]="!item.current" *ngFor=" let item of items2">-->
+<!--<span></span>-->
+<!--{{item.day}}-->
+<!--<i>{{item.subd}}</i>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div class=" swiper-slide">-->
+<!--三-->
+<!--<ul class="top-date-bar">-->
+<!--<li [class.cur1]="item.isday" [class.cur]="!item.current" *ngFor=" let item of items3">-->
+<!--<span></span>-->
+<!--{{item.day}}-->
+<!--<i>{{item.subd}}</i>-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

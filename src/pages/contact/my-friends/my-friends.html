@@ -1,0 +1,145 @@
+<ion-header #headerEle>
+  <ion-navbar>
+    <ion-title>
+      我的好友
+    </ion-title>
+    <ion-buttons end style="width: 50%;">
+      <button ion-button small (click)="addFriends()">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div class="jiadesousuokuang">
+      <div class="jiadesousuokuangDiv01" (click)="clickJiadesousuokuang()">
+        <p class="jiadesousuokuangP01"><i class="jiadesousuokuangI01"></i><span class="jiadesousuokuangSpan01">搜索</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div #divList>
+    <div *ngFor="let item of contactItems">
+      <ion-item-divider class="item item-divider ng-binding shouzimu" id="index_{{item.USER023}}"
+                        *ngIf="item.isFirstData">
+        <span>{{item.USER023}}</span>
+        <div class="fengexianDiv"></div>
+      </ion-item-divider>
+      <ion-item class="item ng-binding peopleItem" [class.peopleItemLast]="item.isLastData">
+        <div class="headDiv" (click)="clickContacts(item)">
+          <img #img src="{{item.ATTA007 | coverHeadImpPath:item.USER006:img}}" class="headDivImg"/>
+          <span class="headDivSpan01">
+            <span>{{item.USER005}}</span>
+            <span style="font-size: small;">({{item.USER004}})</span>
+          </span>
+
+          <span class="headDivSpan02">
+            <p class="man" *ngIf="item.USER006 == '男'"></p>
+            <p class="woman" *ngIf="item.USER006 == '女'"></p>
+            <span style="">{{item.USER006}}</span>
+              <ion-icon class="icon"
+                        [style.color]="item.USST003|userStatusPipe:true"
+                        [name]="item.USST003|userStatusPipe"></ion-icon>
+            <span style="">{{item.USST003 | userStatusPipe:false:'未设置'}}</span>
+          </span>
+        </div>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
+<div class="right-bar" [class.active]="treem==1" [style.top.px]="alphaSidebar_top">
+  <div class="right-bar-box">
+    <p
+      [class.cur]="item.cur==1"
+      (touchstart)="onoverdo(item)"
+      (touchmove)="onoverdo(item)"
+      (touchend)="onoutdo()"
+      (click)="gotoList('index_'+item.ss)"
+      *ngFor="let item of ruler">{{item.ss}}</p>
+  </div>
+</div>
+
+<div class="drawshow" *ngIf="treem==1">{{letter.ss}}</div>
+<!--<ul class="alpha_sidebar" #alpha_sidebar [style.top.px]="alphaSidebar_top">
+  &lt;!&ndash; ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_A')" class="ng-binding">
+    A
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_B')" class="ng-binding">
+    B
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_C')"  class="ng-binding">
+    C
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_D')"  class="ng-binding">
+    D
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_E')"  class="ng-binding">
+    E
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_F')"  class="ng-binding">
+    F
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_G')"  class="ng-binding">
+    G
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_H')"  class="ng-binding">
+    H
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_I')"  class="ng-binding">
+    I
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_J')"  class="ng-binding">
+    J
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_K')"  class="ng-binding">
+    K
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_L')"  class="ng-binding">
+    L
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_M')"  class="ng-binding">
+    M
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_N')"  class="ng-binding">
+    N
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_O')"  class="ng-binding">
+    O
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_P')"  class="ng-binding">
+    P
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_Q')"  class="ng-binding">
+    Q
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_R')"  class="ng-binding">
+    R
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_S')"  class="ng-binding">
+    S
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_T')"  class="ng-binding">
+    T
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_U')"  class="ng-binding">
+    U
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_V')"  class="ng-binding">
+    V
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_W')"  class="ng-binding">
+    W
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_X')"  class="ng-binding">
+    X
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_Y')"  class="ng-binding">
+    Y
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+  <li (tap)="gotoList('index_Z')"  class="ng-binding">
+    Z
+  </li>&lt;!&ndash; end ngRepeat: letter in alphabet &ndash;&gt;
+</ul>-->

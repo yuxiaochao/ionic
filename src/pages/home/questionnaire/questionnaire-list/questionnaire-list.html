@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>培训评估</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+       <ion-refresher-content
+         pullingIcon="arrow-round-up"
+         pullingText="下拉更新"
+         refreshingSpinner="crescent"
+         refreshingText="更新中...">
+       </ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngIf="unRecord">
+    <ion-card-header text-center>
+      暂无相关记录！
+    </ion-card-header>
+  </ion-card>
+  <div class="test_list">
+    <ul>
+      <li tappable *ngFor="let item of items" (click)="intoQuestionnaireDetail(item)" >
+        <div class="test_item1 clearfix" >
+          <div class="sign" *ngIf="item.SIGN=='0'"></div>
+          <div class="pic">
+            <img width="103" height="77" src="{{item.QUES020 | coverPath}}"/>
+          </div>
+          <div class="con">
+            <p class="name">{{item.QUES003}}</p>
+            <p>参加人数：{{item.DCRS}}</p>
+            <p>参加次数：{{item.JOINCOUNT}}/{{item.QUES007+'' | limitTimeLength :'':4}}</p>
+            <p>截止时间：{{item.QUES005}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="加载更多数据...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

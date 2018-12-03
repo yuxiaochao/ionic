@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>通讯录</ion-title>
+    <ion-buttons end style="width: 100%;">
+      <button style="float:left;" ion-button small (click)="goToBack()">
+        <ion-icon style="font-size: 28px; margin-right: 10px;"
+                  *ngIf="isShow" name="ios-backspace-outline"></ion-icon>
+      </button>
+      <button ion-button style="float:right;" small>
+        <ion-icon style="font-size: 28px; margin-right: 10px;" *ngIf="!isShow" ios="md-add" md="md-add"></ion-icon>
+      </button>
+      <ion-select interface="popover"
+                  style=" position: absolute;width: 20px;height: 2px;top: 6px;right: 10px;"
+                  [(ngModel)]="toppings"
+                  (ionChange)="toChange()">
+        <ion-option [value]="j">扫一扫</ion-option>
+        <ion-option [value]="k">添加好友</ion-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background: #f2f6f9;" [class.qrscanner]="isShow">
+  <div *ngIf="!isShow">
+    <div class="huntBox">
+      <div class="hunt">
+    <span class="SionicImg">
+      <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/sousuo.png" alt="">
+    </span>
+        <span>搜索</span>
+      </div>
+    </div>
+
+    <div (click)="addFriends()" style="padding:10px 15px;background: #fff; border-bottom:1px dashed #d2cece;">
+      <div class="addjob">
+        <span class="xiaotubiao">
+          <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/tianjia.png" alt="">
+        </span>
+        <span class="font ">新的朋友</span>
+        <ion-icon class="right" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+
+    <div (click)="myGroupChat()" style="padding:10px 15px;background: #fff;">
+      <div class="addjob">
+        <span class="xiaotubiao">
+          <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/qunliao.png" alt="">
+        </span>
+        <span class="font ">我的群组</span>
+        <ion-icon class="right" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+
+    <div class="topxia" style="margin-top:15px;">
+
+      <div *ngIf="contactItems.length==0">
+        <ion-card>
+          <ion-card-content>
+            暂无数据
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div *ngIf="contactItems.length>0">
+        <!--<div class="touxiangleft">-->
+        <!--<div class="touxiang">-->
+        <!--<img style="width:100%;height:100%;" [src]="item.ATTA007 | coverHeadImpPath:item.USER006:img" alt="">-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="topxia" style="margin-top: 5px;" *ngFor="let item of contactItems" (click)="clickContacts(item)">
+          <!--<ion-item-divider class="item item-divider ng-binding shouzimu" id="index_{{item.USER023}}"-->
+          <!--*ngIf="item.isFirstData">-->
+          <!--<span>{{item.USER023}}</span>-->
+          <!--<div class="fengexianDiv"></div>-->
+          <!--</ion-item-divider>-->
+          <div class="touxiangleft">
+            <div class="touxiang">
+              <img #img style="width:100%;height:100%;" [src]="item.ATTA007 | coverHeadImpPath:item.USER006:img" alt="">
+            </div>
+          </div>
+          <div class="touxiangright">
+            <p class="usename">{{item.USER005}}</p>
+            <div class="lastbox">
+          <span class="dingwei">
+            <img *ngIf="item.USER006=='女'" style="width:100%;height:100%;" src="././assets/imgs/work/din102.png" alt="">
+            <img *ngIf="item.USER006=='男'" style="width:100%;height:100%;" src="././assets/imgs/work/din100.png" alt="">
+          </span>
+              <span class="jobpost">{{item.USER023 ? item.USER023 : '暂无职务'}}</span>
+            </div>
+            <div class="tuwbar"><img style="width:100%;height:100%;" src="././assets/imgs/xzxy/dadianhua.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="numbermain">{{contactItems.length}}位联系人</div>
+    </div>
+  </div>
+  <div *ngIf="isShow">
+    <div class="qrscanner-area">
+    </div>
+    <div class="through-line"></div>
+    <div class="button-bottom">
+      <button (click)="toggleLight()" ion-fab class="icon-camera" margin-right>
+        <ion-icon name="flash"></ion-icon>
+      </button>
+      <button (click)="toggleCamera()" ion-fab class="icon-camera">
+        <ion-icon name="reverse-camera"></ion-icon>
+      </button>
+    </div>
+  </div>
+</ion-content>

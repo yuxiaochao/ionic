@@ -1,0 +1,52 @@
+page-jiangyiyulan {
+  .box {
+    width:100%;
+    border-top: 10px solid #f2f6f9;
+  }
+
+  .renwu{
+    width:100%;
+    padding:15px;
+    border-bottom: 1px dashed #d2cece;
+    overflow: hidden;
+    position:relative;
+  }
+
+
+  .renright{
+    width:100%;
+    //height:110px;
+    //border:1px solid #ccc;
+  }
+
+  .oneline >span.onename{
+    font-size:16px;
+    background:none;
+    color:#373737;
+  }
+  .yulan{
+    width:49px;
+    height:25px;
+    background:#18b4ed;
+    color:#fff;
+    position:absolute;
+    border-radius:7px;
+    bottom:12%;
+    right:5%;
+    text-align: center;
+    line-height: 25px;
+  }
+  .wenzi{
+    padding: 15px;
+    color: #373737;
+    line-height: 22px;
+    letter-spacing: 1px;
+  }
+
+  .tupian{
+    width:82%;
+    height:118px;
+    margin:0 auto 10px;
+    border:1px solid #ccc;
+  }
+}

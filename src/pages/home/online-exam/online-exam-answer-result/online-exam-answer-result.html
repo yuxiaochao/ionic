@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>查看答卷</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="tutorial-page">
+  <div class="swiper-container"  #containerContent>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of items;let itemIndex=index;" style="overflow-y: auto">
+        <page-online-exam-topic-answer-result class="slide-zoom"  *ngIf="showSilde(itemIndex)" [slides]="slides" [topic]="item"  [paper]="paper" [pageination]="pageination" [answerList]="answerList"></page-online-exam-topic-answer-result>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button class="button-prev" color="light" icon-start>
+        <ion-icon name='arrow-back'></ion-icon>
+        上一题
+      </button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button class="button-next" color="light" icon-end>
+        下一题
+        <ion-icon name='arrow-forward'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

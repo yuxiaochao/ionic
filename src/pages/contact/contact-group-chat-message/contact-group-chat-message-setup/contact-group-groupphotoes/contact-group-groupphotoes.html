@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ContactGroupGroupphotoesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+     群相册
+    </ion-title>
+  </ion-navbar>
+
+
+  <ion-toolbar clss="daohang">
+    <ion-segment [(ngModel)]="change" color="secondary">
+      <ion-segment-button value="newPhotoes">
+        最新照片
+      </ion-segment-button>
+      <ion-segment-button value="photoes">
+        相册
+      </ion-segment-button>
+      <ion-segment-button value="aboutme">
+        与我相关
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+
+<ion-content (swipe)="swipeEvent($event)">
+  <div [ngSwitch]="change">
+    <ion-list *ngSwitchCase="'newPhotoes'">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/icon/favicon.ico">
+        </ion-thumbnail>
+        <h2>最新照片</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'photoes'">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/icon/favicon.ico">
+        </ion-thumbnail>
+        <h2>相册</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'aboutme'">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/icon/favicon.ico">
+        </ion-thumbnail>
+        <h2>与我相关</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

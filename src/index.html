@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ionic App</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!--高德可视化地图--start-->
+  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+  <script src="./assets/lib/gaodeMap/es5.min.js"></script>
+  <!--地图调用基础js-->
+  <script src="./assets/lib/gaodeMap/gaodeMapBase.js"></script>
+  <!--调用地图热点js-->
+  <script src="./assets/lib/gaodeMap/mapHotSpot.js"></script>
+  <script type="text/javascript" src="./assets/lib/gaodeMap/liteToolbar.js"></script>
+  <!--高德可视化地图--end-->
+
+  <!-- jquery -->
+  <script src="./assets/lib/jquery-1.12.4.js"></script>
+
+  <!--字符串加密-->
+  <script src="./assets/lib/myjs.min.js"></script>
+
+  <script src="./assets/lib/swiper/swiper.min.js"></script>
+  <!--生成二维码 https://github.com/davidshimjs/qrcodejs -->
+  <script src="./assets/lib/qrcode.min.js"></script>
+
+  <!-- http://alloyteam.github.io/AlloyLever/ -->
+  <script src="./assets/lib/alloy-lever.js"></script>
+
+  <!-- 移动端手势js包 -->
+  <script src="./assets/lib/hammer.js"></script>
+
+  <!-- cordova.js required for cordova apps (remove if not needed) -->
+  <script src="cordova.js"></script>
+
+  <!-- 环信js start-->
+  <script type='text/javascript' src='./assets/lib/webim.config.js'></script>
+  <script type='text/javascript' src='./assets/lib/strophe-1.2.8.min.js'></script>
+  <script type='text/javascript' src='./assets/lib/websdk-1.4.13.js'></script>
+  <!-- 环信js end-->
+
+  <!-- 百度地图api -->
+  <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=YGfznjTxG5AdIaBORYXLcrN2kT1im314"></script>-->
+
+  <!-- des加密  -->
+  <script type='text/javascript' src='./assets/lib/des.js'></script>
+
+  <!-- 图片预览js和css  -->
+  <link rel="stylesheet" href="./assets/css/viewer.min.css">
+  <script src="./assets/lib/viewer.min.js"></script>
+
+  <!-- 初始化全局函数js -->
+  <script type='text/javascript' src='./assets/lib/initOverallSituationFunction.js'></script>
+
+
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Ionic's root component and where the app will load -->
+<ion-app></ion-app>
+
+<!-- The polyfills js is generated during the build process -->
+<script src="build/polyfills.js"></script>
+
+<!-- The vendor js is generated during the build process
+     It contains all of the dependencies in node_modules -->
+<script src="build/vendor.js"></script>
+
+<!-- The main bundle js is generated during the build process -->
+<script src="build/main.js"></script>
+
+</body>
+</html>

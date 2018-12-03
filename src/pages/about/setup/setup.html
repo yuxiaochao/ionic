@@ -1,0 +1,52 @@
+<!--
+  Generated template for the SetupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <div id="div01">
+    <ion-item>
+      <ion-label> 仅Wi-Fi观看</ion-label>
+      <ion-toggle [(ngModel)]="pepperoni" ></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>仅Wi-Fi下载</ion-label>
+      <ion-toggle [(ngModel)]="sausage"  ></ion-toggle>
+    </ion-item>
+      <ion-item>
+        <ion-label>下载清晰度</ion-label>
+        <ion-select  cancelText="取消"  okText="确定">
+          <ion-option value="g" [selected]="true">高清</ion-option>
+          <ion-option value="l">蓝光</ion-option>
+          <ion-option value="x">小视频</ion-option>
+        </ion-select>
+
+      </ion-item>
+
+
+    </div>
+
+    <div class="div02">
+    <ion-item>
+      <ion-label>
+       清除缓存 </ion-label>
+    </ion-item>
+    </div>
+
+  </ion-list>
+
+</ion-content>

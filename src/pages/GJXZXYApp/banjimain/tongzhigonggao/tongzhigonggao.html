@@ -1,0 +1,35 @@
+<!--
+  Generated template for the TongzhigonggaoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>通知公告</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  style="background:#f2f6f9;">
+  <ul class="hezi" *ngFor="let fitem of items">
+    <li class="box">
+      <ul class="renwu" (click)="shizixinxiClick()">
+        <li class="renleft">
+          <img style="width:100%; height:100%;" src="././assets/imgs/work/gonggao.png">
+        </li>
+        <li class="renright">
+          <div style="margin:0 0 5px;"><span style="font-size:15px;">{{fitem.TRBU002}}</span><span style="float:right;font-size:13px;color:#787878;display: inline-block;">{{fitem.TRBU004N}} </span></div>
+          <p style="word-break:break-all; overflow:hidden;white-space:normal;text-overflow: ellipsis;  color:#787878;font-size:13px;">{{fitem.TRBU003 | limitLength:15}}<!--{{fitem.TRBU003 |limitLength:15}}--></p>
+        </li>
+      </ul>
+    </li>
+    <li class="addjob" (click)="recordClick(fitem)">
+      <span style="font-size:13px;">查看详情</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </li>
+  </ul>
+
+</ion-content>

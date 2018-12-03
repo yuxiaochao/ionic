@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>拍照</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li>
+        <div style="position:relative;float: left;" *ngFor="let item of imageDataitem;let i=index">
+          <div class="deleteButton" (click)="deleteImg(i)">×</div>
+          <img [src]="item" class="img001">
+        </div>
+        <div style="float: left;" (click)="openCamera()">
+          <img src="./assets/imgs/home/selectimage.png" class="img002">
+        </div>
+      </li>
+      <li>
+        <ul>
+          <li class="conw">
+            <span><img src="././assets/imgs/work/home/dw2.png">{{address}}</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="anniu" (click)="toSubmit()">完成</div>
+</ion-content>

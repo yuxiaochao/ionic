@@ -1,0 +1,44 @@
+<div>
+  <ion-slides #slides1 loop="true"
+              (ionSlideNextEnd)="slideNext()"
+              (ionSlidePrevEnd)="slidePrev()"
+              initialSlide="1">
+    <ion-slide>
+      <ul class="top-date-bar">
+        <li [class.cur1]="item.isday"
+            [class.cur]="!item.current"
+            *ngFor=" let item of items1"
+            (click)="selectedDate(item,1)">
+          <span *ngIf="item.isShowPoint>0"></span>
+          {{item.day}}
+          <i>{{item.subd}}</i>
+        </li>
+      </ul>
+    </ion-slide>
+    <ion-slide>
+      <ul class="top-date-bar">
+        <li [class.cur1]="item.isday"
+            [class.cur]="!item.current"
+            *ngFor=" let item of items2"
+            (click)="selectedDate(item,2)">
+          <span *ngIf="item.isShowPoint>0"></span>
+          {{item.day}}
+          <i>{{item.subd}}</i>
+        </li>
+      </ul>
+    </ion-slide>
+    <ion-slide>
+      <ul class="top-date-bar">
+        <li [class.cur1]="item.isday"
+            [class.cur]="!item.current"
+            *ngFor=" let item of items3"
+            (click)="selectedDate(item,3)">
+          <span *ngIf="item.isShowPoint>0"></span>
+          {{item.day}}
+          <i>{{item.subd}}</i>
+        </li>
+      </ul>
+    </ion-slide>
+  </ion-slides>
+</div>
+</div>

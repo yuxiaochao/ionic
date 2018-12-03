@@ -1,0 +1,81 @@
+page-moreclass {
+
+
+  .huntBox{
+    width:100%;
+    padding:10px;
+
+  }
+
+  .hunt {
+    width:90%;
+    height:30px;
+    line-height: 30px;
+    color:#787878;
+    border-radius: 15px;
+    background:#d2cece;
+    margin:0 auto;
+  }
+
+  .SionicImg{
+    display: inline-block;
+    height: 15px;
+    margin: 0 10px 0 15px;
+    width: 15px;
+    position: relative;
+    top: 6px;
+  }
+
+  .topxia{
+    //height:45px;
+    padding:6px 0;
+    width:100%;
+    //border-top:10px solid #d2cece;
+    border-bottom:1px dashed #d2cece;
+  }
+
+  .touxiangleft{
+    width:24%;
+    display:inline-block;
+  }
+  .touxiang{
+    width:45px;
+    height:45px;
+    margin: 0 auto;
+    border-radius: 35px;
+  }
+
+  .touxiangright{
+    width: 76%;
+    height: 45px;
+    float: right;
+    position:relative;
+    display: inline-block;
+  }
+
+  .usename {
+    font-size: 16px;
+    color: #373737;
+  }
+
+  .dingwei{
+    width:15px;
+    height:15px;
+    display:inline-block;
+  }
+
+  .lastbox {
+    margin-top: 3%;
+  }
+
+  .jobpost{
+    background:#18b4ed;
+    color:#fff;
+    font-size:10px;
+    font-family:PingFangSC-Regular;
+    padding: 0px 2px;
+    letter-spacing:1px;
+    border-radius: 10px;
+  }
+
+}

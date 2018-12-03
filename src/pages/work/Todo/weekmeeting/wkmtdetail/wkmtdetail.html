@@ -1,0 +1,88 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>会议详情</ion-title>
+    <ion-buttons end style="width: 50%;">
+      <button ion-button small>
+        <ion-icon name="more"></ion-icon>
+      </button>
+      <ion-select interface="popover"
+                  style="position: absolute;width: 20px;height: 2px;top: 6px;right: 0px;"
+                  [(ngModel)]="toppings"
+                  (ionChange)="toChange()">
+        <ion-option *ngIf="istype==0" [value]="i">展示签到二维码</ion-option>
+        <div *ngIf="meetingInfo.MEET008==userid">
+          <ion-option [value]="j">修改会议</ion-option>
+          <ion-option [value]="k">取消会议</ion-option>
+        </div>
+      </ion-select>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li>
+        <ul>
+          <li class="imgw">
+            <img src="././assets/imgs/work/home/ren_3.png ">
+          </li>
+          <li class="conw">
+            <span class="conw_1">{{meetingInfo.MEET002}}</span>
+            <span>开始：{{meetingInfo.MEET003 |date:'yyyy-MM-dd HH:mm'}}</span>
+            <span>结束：{{meetingInfo.MEET004 |date:'yyyy-MM-dd HH:mm'}}</span>
+            <span>地点：{{meetingInfo.MEET006}}</span>
+            <span>提醒：{{meetingInfo.MEET007|optionText:0}}</span>
+            <span>{{meetingInfo.MEET008N}} | {{meetingInfo.MEET009 |date:'yyyy-MM-dd HH:mm'}} </span>
+          </li>
+        </ul>
+      </li>
+      <li (click)="showUser(1)">
+        <ul>
+          <li class="imgw" style="margin-top: 10px;">
+            <img src="././assets/imgs/work/home/ren.png ">
+          </li>
+          <li class="conw_2">
+            <span style="margin-bottom: 5px">参会人：{{meetingInfo.USERNUM}}人</span>
+            <span class="arr_03"></span>
+            <span style="float: right;"> {{meetingInfo.SIGNINNUM}}/{{meetingInfo.SIGNINTOTALNUM}}确认参加</span>
+          </li>
+        </ul>
+      </li>
+      <li (click)="showUser(0)">
+        <ul>
+          <li class="imgw" style="margin-top: 10px;">
+            <img src="././assets/imgs/work/home/zzr.png ">
+          </li>
+          <li class="conw_2">
+            <span style="margin-bottom: 5px">会议组织人：{{meetingInfo.METP005N}}</span>
+            <span class="arr_03"></span>
+          </li>
+        </ul>
+      </li>
+      <li (click)="showUser(2)">
+        <ul>
+          <li class="imgw" style="margin-top: 10px;">
+            <img src="././assets/imgs/work/home/dw.png ">
+          </li>
+          <li class="conw_2">
+            <span style="margin-bottom: 5px">签到：{{meetingInfo.SIGNINNUM}}人已签到</span>
+            <span class="arr_03"></span>
+          </li>
+        </ul>
+      </li>
+      <!--<li>-->
+      <!--<ul>-->
+      <!--<li class="addmeeting">-->
+      <!--<button class="button_2" (click)="addrenwuClick(1)">-->
+      <!--<img src="././assets/imgs/work/home/jia.png ">-->
+      <!--会议纪要-->
+      <!--</button>-->
+      <!--</li>-->
+      <!--</ul>-->
+      <!--</li>-->
+    </ul>
+  </nav>
+
+</ion-content>

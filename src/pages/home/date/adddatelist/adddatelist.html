@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>新建日程</ion-title>
+    <span style="float:right; color:#fff;" (click)="submitSchedule()">完成</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: RGB(241,241,241);">
+
+  <!--<textarea class="text" [(ngModel)]="comment"> </textarea>-->
+  <div class="box-text">
+    <textarea placeholder="请输入日程" class="text" [(ngModel)]="scheduleText"></textarea>
+  </div>
+
+  <div class="addjob">
+    <ion-item>
+      <ion-label style="font-size:14px !important;">开始时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm"
+                    cancelText="取消"
+                    doneText="完成"
+                    [(ngModel)]="startDate"
+                    max="2100-10-31">
+      </ion-datetime>
+      <ion-label style="position:absolute;right:0; top:5px; color:#ccc; font-size:22px !important;">
+        <ion-icon name="ios-calendar-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <div class="addjob">
+    <ion-item>
+      <ion-label style="font-size:14px !important;">结束时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm"
+                    cancelText="取消"
+                    doneText="完成"
+                    [min]="startDate"
+                    [(ngModel)]="endDate"
+                    max="2100-10-31">
+      </ion-datetime>
+      <ion-label style="position:absolute;right:0; top:5px; color:#ccc; font-size:22px !important;">
+        <ion-icon name="ios-calendar-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+  </div>
+  <div style="margin:20px 0;">
+    <div class="addjob" (click)="remindtxClick()">
+      <span class="font">提醒</span>
+      <div class="right">
+        <span>{{remind|optionText:0}}</span>
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+    <div class="addjob" (click)="repetitcfClick()">
+      <span class="font">重复</span>
+      <div class="right">
+        <span>{{repeat|optionText:1}}</span>
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-text">
+    <textarea placeholder="添加备注" class="text" [(ngModel)]="remarksText"></textarea>
+  </div>
+</ion-content>

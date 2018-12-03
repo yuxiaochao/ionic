@@ -1,0 +1,96 @@
+page-contact-group-searchers {
+  .peopleItem{
+    cursor: pointer;
+  }
+
+  .peopleItem{
+    padding-right: 20px;
+    line-height: 30px;
+  }
+
+  .peopleItem .item-inner{
+    cursor: pointer;
+  }
+
+  .searchbar-ios{
+    background: #45c4f3;
+  }
+
+  .scroll-content{
+    padding:0px !important;
+  }
+  .content-ios{
+    background: #f7f6f8;
+  }
+ .img{
+   float:left;
+   margin-right:10px;
+   width:45px;height:45px;
+ }
+  .text{
+    float:left;
+    margin-top: 12px;
+    width:50px;
+    width:50px;
+  }
+
+  .button02{
+    background-color: #fc301b;
+  }
+
+  .peopleItem{
+    padding-right: 0px !important;
+  }
+  .item-ios.item-block .item-inner{
+    padding-right: 0px;
+  }
+  .item-ios{
+    padding-left: 0px;
+  }
+  .label-ios{
+    margin: 11px 8px 11px 8px !important;
+  }
+  .searchbar-ios{
+    background: #45c4f3;
+  }
+
+  .scroll-content{
+    padding:0px !important;
+  }
+  .content-ios{
+    background: #f7f6f8;
+  }
+  .item-divider ion-label{
+    margin: 8px 8px 8px 0;
+  }
+  ion-label{
+    overflow: initial !important;
+  }
+  .alpha_sidebar {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 100000
+  }
+  .alpha_sidebar li {
+    color: #49afcd;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  .alpha_list {
+    padding-right: 0px;
+  }
+
+  .peopleItem{
+    padding-right: 20px;
+    line-height: 30px;
+  }
+
+  .peopleItem .item-inner{
+    cursor: pointer;
+  }
+
+  .peopleItemLast .item-inner{
+    border-bottom: 0px !important;
+  }
+}

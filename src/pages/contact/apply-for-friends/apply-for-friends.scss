@@ -1,0 +1,96 @@
+page-apply-for-friends {
+  .content-ios{
+    background: #f7f6f8;
+  }
+  .scroll-content{
+    padding:0px !important;
+  }
+
+  .item-input{
+    border-bottom: 1px solid #e0dfe4;
+    border-top: 1px solid #e0dfe4;
+  }
+  .item-inner{
+    border-bottom: none !important;
+  }
+  .myIonFooter .toolbar-background-ios{
+    border-color: #e0dfe4;
+    background: #edeeee;
+  }
+
+  .myIonFooter .addButton{
+    width: 95%;
+    margin: auto;
+    height: 33px;
+    border: 1px solid #afacb3;
+    background-color: #fafbfb;
+    color: #0c0b0b;
+    font-size: 15px;
+  }
+
+
+  .boundary{
+    padding: 5px 11px;
+  }
+  .title01{
+    font-family: cursive;
+    color: #545353;
+  }
+  .headDiv{
+    position: relative;
+    padding: 5px 15px 5px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .headDivImg{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .headDivSpan01{
+    margin-left: 10px;
+  }
+  .headDivSpan01 span:first-child{
+    font-size: 17px;
+    font-family: KaiTi;
+    font-weight: bold;
+  }
+  .headDivSpan02{
+    position: absolute;
+    left: 94px;
+    top: 28px;
+    font-size: 13px;
+    color: #545353;
+  }
+
+  .headDivSpan02 p.man{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../../assets/imgs/common/man&woman01.jpg") no-repeat scroll -4px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan02 p.woman{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../../assets/imgs/common/man&woman01.jpg") no-repeat scroll -27px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan03{
+    position: absolute;
+    right: 9px;
+    top: 12px;
+  }
+
+  .headDivSpan03 div{
+    font-size: small;
+    border: 1px #9fb5b0 solid;;
+    padding: 2px 5px 2px 6px;
+    border-radius: 5px;
+  }
+}

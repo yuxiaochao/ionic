@@ -1,0 +1,151 @@
+page-questionnaire-result {
+  .conresult{
+    width: 100%;
+    padding: 94px 0 50px 0;
+    background: color($colors, primary);
+    color: #fff;
+    font-size: 56px;
+    text-align: center;
+    position: relative;
+
+  }
+  .conresult .time{
+    position: absolute;
+    left: 20px;
+    top:20px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .conresult>span{
+    position: absolute;
+    right: 20px;
+    top:20px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .conresult .score{
+    //position: absolute;
+    right: 20px;
+    bottom:20px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .iconresult{
+    width:90%;
+    margin: 15px auto 0;
+
+  }
+  .iconresult ul{
+    width: 100%;
+
+  }
+  .iconresult ul li{
+    width:20%;
+    float: left;
+    margin:10px 8.3%;
+
+  }
+  .iconresult ul li img{
+    width:100%;
+
+
+  }
+  .iconresult ul li span{
+    width:100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .echart {
+    height: 130px;
+    display: block;
+    line-height: 130px;
+    background-color: white;
+    margin-bottom: 7px;
+    text-align: center;
+  }
+
+  .e_num {
+    width: 48px;
+    height: 40px;
+    position: absolute;
+    margin: 13px 80px;
+  }
+
+  .e_r {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    margin: 20px 0px 0px 200px;
+    float: left;
+  }
+
+  .e_r ul li {
+    position: absolute;
+  }
+
+  .er_1 {
+    margin-top: -30px;
+    color: #404040;
+    font-size: 1em;
+  }
+
+  .er_2 {
+    margin-top: -5px;
+    font-size: 0.8em;
+    color: #00CCFF;
+  }
+
+  .er_2 i {
+    width: 12px;
+    height: 12px;
+    border-radius:2px;
+    background-color: #00CCFF;
+    display: block;
+    float: left;
+    margin-top: 58px;
+    margin-right: 8px;
+  }
+
+  .er_2 span{
+    margin-left: 2px;
+  }
+  .er_3 {
+    font-size: 0.8em;
+    margin-top: 15px;
+    color: #cfcfcf;
+  }
+
+  .er_3 i {
+    width: 12px;
+    height: 12px;
+    border-radius:2px;
+    background-color: #cfcfcf;
+    display: block;
+    float: left;
+    margin-top: 58px;
+    margin-right: 8px;
+  }
+  .er_3 span{
+    margin-left: 2px;
+  }
+
+  .zhccjd{
+    width: 100%;
+    height: 10px;
+    background-color: #cfcfcf;
+    //border-radius: 5px;
+    //border-left-radius: 3px;
+    display: block;
+    margin-top: 0px;
+  }
+
+  .zfccjd02{
+    height: 10px;
+    background-color: #486bff;
+    //position: absolute;
+    //border-radius: 5px;
+
+  }
+}

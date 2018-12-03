@@ -1,0 +1,62 @@
+page-interflowdetail {
+
+  nav{
+    background-color: white;
+    margin-bottom:10px;
+    margin-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  nav ul{
+    padding-top: 20px;
+  }
+  nav ul li{
+    width: 20%;
+    text-align: center;
+    float: left;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+  nav ul li p {
+    width: 55%;
+    margin: 0 auto 5px;
+  }
+
+  .tubiao p img{
+    width:35px;
+    height:35px;
+  }
+
+  .allbody{
+    color:#787878;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom:10px;
+  }
+
+  .addjob{
+    width:100%;
+    height:45px;
+    //border-bottom: 1px solid #d2cece;
+    line-height: 50px;
+    padding:0 15px;
+    background:#fff;
+    color:RGB(109,191,212);
+  }
+
+  .font{
+    color:#373737;
+  }
+
+  .btn{
+    background: #18b4ed;
+    color: #fff;
+    height: 45px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+    font-size: 16px;
+    line-height: 45px;
+    border-radius: 20px;
+  }
+}

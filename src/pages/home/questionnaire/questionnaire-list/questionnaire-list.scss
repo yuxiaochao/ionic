@@ -1,0 +1,54 @@
+page-questionnaire-list {
+
+  img{
+    border: none;
+    width: 100%;
+  }
+  .test_list{
+  }
+  .test_list ul li{
+    padding: 15px;
+    background: #fff;
+    border-radius: 3px;
+    padding-bottom: 10px;
+    border-bottom:1px solid #ccc;
+  }
+  .test_list .pic {
+    width: 35%;
+    float: left;
+    margin-right: 10px;
+    margin-top: -4px;
+  }
+  .test_list .con{
+    float: left;
+    width: 60%;
+  }
+  .test_list p{
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #999;
+  }
+  .test_list .name {
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+    height: 24px;
+    overflow: hidden;
+  }
+  .test_list span{
+    margin-right: 10px;
+  }
+  .test_list p em{
+    color: #18b4ed;
+
+  }
+
+  .sign{
+    float: right;
+    width: 30%;
+    height: 126px;
+    position: absolute;
+    right: 14px;
+    background: url(././../assets/imgs/weixin/weixin-img-001.png) no-repeat left center;
+  }
+}

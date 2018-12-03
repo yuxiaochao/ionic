@@ -1,0 +1,40 @@
+<!--
+  Generated template for the OnlineExamResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>考试结果</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="conresult">
+    <div>{{result.EGRA013}}</div>
+    <div class="time">用时：<em>{{result.EGRA010}}秒</em></div>
+    <span>{{result.RESULT}}</span>
+    <div class="score">分/{{result.TACT021}}</div>
+  </div>
+
+  <div class="iconresult">
+    <ul class="clearfix">
+      <li>
+        <a (click)="findExamAnswer()" [ngStyle]="{'color': isQueryExamAnswer?'':'#9e9e9e'}">
+          <img src="./assets/imgs/home/online-exam/icon_01.png" alt="" />
+          <span>查看答卷</span>
+        </a>
+      </li>
+      <li>
+        <a (click)="again()">
+          <img src="./assets/imgs/home/online-exam/icon_03.png" alt="" />
+          <span>再做一次</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</ion-content>

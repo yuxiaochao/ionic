@@ -1,0 +1,99 @@
+<!--
+  Generated template for the InterflowdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>班级交流</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background:#f2f6f9;">
+
+  <nav>
+    <ul class="clearfix tubiao">
+      <li>
+        <a href="javacript:;" [navPush]="OnlineElectivecourseListPage">
+          <p><img src="././assets/imgs/work/copy21.png" alt="" /></p>
+          <span>谭西西</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="OnlineStudyListPage">
+          <p><img src="././assets/imgs/work/copy22.png" alt="" /></p>
+          <span>刘琴</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="OnlineExamListPage" [navParams]="examParams">
+          <p><img src="././assets/imgs/work/copy23.png" alt="" /></p>
+          <span>张翔</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="OnlineExamListPage" [navParams]="exerciseParams">
+          <p><img src="././assets/imgs/work/copy24.png" alt="" /></p>
+          <span>马致远</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="ExamExercisesListPage">
+          <p><img src="././assets/imgs/work/copy25.png" alt="" /></p>
+          <span>何晓鹏</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="StandardsTrainListPage">
+          <p><img src="././assets/imgs/work/copy26.png" alt="" /></p>
+          <span>张小龙</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="QuestionnaireListPage">
+          <p><img src="././assets/imgs/work/copy27.png" alt="" /></p>
+          <span>黄晶</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="ExamExercisesListPage">
+          <p><img src="././assets/imgs/work/copy25.png" alt="" /></p>
+          <span>何晓鹏</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="ExamExercisesListPage">
+          <p><img src="././assets/imgs/work/copy25.png" alt="" /></p>
+          <span>何晓鹏</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="allbody">查看全部成员</div>
+  </nav>
+
+  <div class="addjob" style="border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <span class="font">查找聊天记录</span>
+  </div>
+  <div class="addjob" style="height:auto;line-height: normal;"  (click)="updatePwd()">
+    <span class="font" style="    margin: 8px 0;display: inline-block;">群公告</span>
+    <div style="  word-break:break-all;  padding-bottom: 8px;color:#787878;">公告在哪里，上有天堂下有苏杭，还可以吧没办法啊，现在社会不学习是不行的</div>
+  </div>
+
+  <div class="addjob" style="margin-top:10px; border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <span class="font">置顶聊天</span>
+  </div>
+  <div class="addjob" style=""  (click)="updatePwd()">
+    <span class="font">我在本群的昵称</span>
+    <span class="font" style="float:right">马致远。。</span>
+  </div>
+  <div class="addjob" style="margin-top:10px;" (click)="updatePwd()">
+    <span class="font">清空聊天记录</span>
+  </div>
+  <div (click)="showCheckbox()" class="btn" >删除并退出</div>
+  <!---->
+</ion-content>

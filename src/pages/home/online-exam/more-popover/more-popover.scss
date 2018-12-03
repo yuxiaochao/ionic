@@ -1,0 +1,77 @@
+page-more-popover {
+  ion-row,
+  ion-col {
+    padding: 0;
+  }
+
+  .popover-page {
+    .text-color{
+     color:#18b4ed;
+    }
+    .text-smaller {
+      font-size: 13px;
+      border-right: 1px solid $list-ios-border-color;
+    }
+
+    .text-default {
+      border-right: 1px solid $list-ios-border-color;
+      font-size: 15px;
+    }
+
+    .text-larger {
+      border-right: 1px solid $list-ios-border-color;
+      font-size: 17px;
+    }
+
+    .row-dots {
+      margin-top: 5px;
+      border-bottom: .55px solid $list-ios-border-color;
+    }
+
+    .ion-segment{
+      margin: 10px auto 0px;
+      width: 90%;
+    }
+
+    .ion-icon{
+      font-size: 1rem;
+    }
+
+  }
+
+
+  .moon_test{
+
+    .row-dots {
+      border-color: #b0acac;
+    }
+    .segment-button.segment-activated{
+      background-color: #18637f !important;
+      color:#b0acac !important;
+    }
+
+    .text-smaller {
+      border-right-color: #18637f;
+      color:#b0acac;
+    }
+
+    .text-default {
+      border-right-color: #18637f;
+      color:#b0acac;
+    }
+
+
+    .text-larger {
+      border-right-color: #18637f;
+      color:#b0acac;
+    }
+    .text-color{
+      color:#18637f;
+    }
+
+  }
+
+}
+.popover-arrow_sup::after{
+  background-color: #253646 !important;
+}

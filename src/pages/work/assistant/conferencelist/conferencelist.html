@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ConferencelistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>会议签到</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li *ngFor="let meet of mettingList">
+        <ul>
+          <li class="imgw" (click)="tasksign(meet)">
+            <img  src="././assets/imgs/work/home/sign.png ">
+          </li>
+          <li class="conw" (click)="tasksign(meet)">
+            <span class="conw_1">{{meet.MEET002}}</span>
+            <span>会议时间：{{meet.MON}}月{{meet.DAYY}}日 周三  {{meet.STARTMINUT}} ~ {{meet.ENDMINUT}}</span>
+            <!--<span><p>签到次数：</p><p class="conw_p">{{meet.SIGNNUMBER}}/</p></span>-->
+          </li>
+        </ul>
+      </li>
+      <ion-card *ngIf="mettingList.length==0">
+        <ion-card-content>
+          暂无数据!
+        </ion-card-content>
+      </ion-card>
+      <!--<li>-->
+        <!--<ul>-->
+          <!--<li class="imgw" (click)="tasksign()">-->
+            <!--<img src="././assets/imgs/work/home/sign.png ">-->
+          <!--</li>-->
+          <!--<li class="conw">-->
+            <!--<span class="conw_1">项目启动会</span>-->
+            <!--<span>会议时间：9月14日 周三 16:00 ~ 17:00</span>-->
+            <!--<span><p>签到次数：</p><p class="conw_p">1/3</p></span>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<ul>-->
+          <!--<li class="imgw" (click)="tasksign()">-->
+            <!--<img src="././assets/imgs/work/home/sign.png ">-->
+          <!--</li>-->
+          <!--<li class="conw">-->
+            <!--<span class="conw_1">项目启动会</span>-->
+            <!--<span>会议时间：9月14日 周三 16:00 ~ 17:00</span>-->
+            <!--<span><p>签到次数：</p><p class="conw_p">1/3</p></span>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</li>-->
+    </ul>
+  </nav>
+
+</ion-content>

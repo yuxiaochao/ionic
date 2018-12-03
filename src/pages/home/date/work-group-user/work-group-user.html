@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>群组成员</ion-title>
+    <span style="float:right; color:#fff;" *ngIf="optionType==1" (click)="isFinish()">完成</span>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: RGB(241,241,241);">
+  <ion-list radio-group [(ngModel)]="relationship" *ngIf="optionType==0">
+    <ion-item *ngFor="let item of workGroupUserList">
+      <ion-avatar item-start>
+        <img [src]="item.ATTA007|coverHeadImpPath:item.USER006">
+      </ion-avatar>
+      <ion-label>{{item.USER005}}</ion-label>
+      <ion-radio [checked]="this.option==item.USER001" [value]="item.USER001" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="optionType==1">
+    <ion-item *ngFor="let item of workGroupUserList">
+      <ion-label>{{item.USER005}}</ion-label>
+      <ion-checkbox [(ngModel)]="item.check"></ion-checkbox>
+      <ion-avatar item-start>
+        <img [src]="item.ATTA007|coverHeadImpPath:item.USER006">
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,74 @@
+page-addbiji {
+
+  .xiangji{
+    float: right;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .addjob{
+    width:100%;
+    height:45px;
+    border-bottom: 1px solid #d2cece;
+    line-height: 50px;
+    padding:0 15px;
+    background:#fff;
+    overflow: hidden;
+    color:RGB(109,191,212);
+  }
+
+  .font{
+    width:100%;
+    font-size:18px;
+    color:#787878!important;
+  }
+
+  .textarea{
+    width:100%;
+    //min-height: 20px;
+    //max-height: 300px;
+    //_height: 120px;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 0;
+    border: 1px solid #a0b3d6;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 2px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  }
+
+  .box {
+    width: 100%;
+    padding: 0 10px 10px 15px;
+    //border-top: 10px solid #f2f6f9;
+  }
+
+  .imgbox > ul > li {
+    float: left;
+    width: 23%;
+    height: 72px;
+    //background: yellowgreen;
+    margin: 0 2% 5% 0;
+  }
+
+  .btn{
+    background: #18b4ed;
+    color: #fff;
+    height: 40px;
+    width: 80%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    position: fixed;
+    border-radius: 20px;
+    bottom: 30px;
+    right: 10%;
+  }
+}

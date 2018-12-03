@@ -1,0 +1,127 @@
+page-questionnaire-test {
+
+
+  .moon_test{
+    background-color: #253646;
+    .toolbar-background{
+      background-color: #253646;
+      border-color :#b0acac;
+    }
+
+    .moon .toolbar-background{
+      border-color :#253646;
+    }
+    [ion-button]{
+      color: #b0acac;
+    }
+
+    .semi-circle-bottom, .semi-circle-top{
+      border-color: #b0acac;
+    }
+    .semi-circle-text{
+      color:#b0acac;
+    }
+
+    .ion-grid{
+      background-color: #253646;
+      border-bottom: 1px solid #222;
+    }
+
+    .ion-grid .ion-grid-paper{
+      color: #b0acac;
+    }
+    .test_content .con dt{
+      color: #b0acac;
+    }
+    .test_content .con dd{
+      color: #b0acac;
+    }
+
+    .test_content .con dd em{
+      background-color: #253646;
+      color: #18637f;
+      border-color: #18637f;
+    }
+
+    .answer_input{
+      background-color: #253646;
+      border-bottom:1px solid #b0acac !important;
+    }
+
+    .essay textarea{
+      background-color: #253646;
+      border:1px solid #b0acac !important;
+    }
+
+    .test_content .con dd em.current{
+      background-color:  #18637f;
+      color:#b0acac;
+    }
+
+    .test_content .con dd.selected{
+      background-color: #3f3f3f;
+    }
+   }
+
+  .semi-circle-top{
+    width:15px;
+    height:3px;
+    margin-left: 30px;
+    border-width: 1px;
+    border-color: #fff;
+    border-style: solid;
+    border-bottom-width: 0;
+    border-radius:50%/100% 100% 0 0;
+  }
+
+  .semi-circle-bottom{
+    width:15px;
+    height:3px;
+    border-width: 1px;
+    border-color: #fff;
+    border-style: solid;
+    border-top-width: 0;
+    border-radius:50%/0 0 100% 100%;
+    margin-left: 30px;
+  }
+
+  .semi-circle-text{
+    font-size: 14px;
+    color:#FFFFFF;
+    display: inline-block;
+    width: 55px;
+    text-align: right;
+  }
+
+  .semi-circle-time{
+    position: relative;
+    top:4px;
+    display: inline-block;
+    width: 75%;
+    text-align: left;
+  }
+
+  .swiper-slide1{
+    font-size: inherit;
+  }
+
+  .swiper-button-disabled{
+    color:#c8c5c5 !important;
+  }
+}
+.rest .restTitle{
+  text-align: center;
+  height:  30px;
+}
+
+.rest .restContent{
+  font-weight: initial;
+}
+
+.rest .restContent .danger{
+  color: #f53d3d;
+}
+
+.rest .restContent .primary{
+  color: #18b4ed;
+}

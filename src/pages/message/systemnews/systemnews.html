@@ -1,0 +1,105 @@
+<!--
+  Generated template for the SystemnewsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>系统消息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="box_hd" [hidden]="!wuneirong">暂无通知内容</div>
+  <div class="box_hd" [hidden]="!box_hd_isShow">没有更多消息了</div>
+  <ion-infinite-scroll [hidden]="!isInfiniteScroll" position="top" threshold="1px" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="加载更多数据...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <div *ngFor="let item of items">
+    <div class="box">
+      <div class="left">
+        <div class="left-img"><img style="width:100%;height:100%;" src="./assets/imgs/sysion.png" alt=""></div>
+      </div>
+      <div class="right">
+        <div class="right_one_line">
+          <span class="one-left">{{item.CHME011}}</span>
+          <span class="one-right" [hidden]="item.CHME009 != '0' && item.CHME009 != '1' && item.CHME009 != '2' && item.CHME009 != '3' && item.CHME009 != '4' && item.CHME009 != '5' && item.CHME009 != '6' && item.CHME009 != '7' && item.CHME009 != '8' && item.CHME009 != '9'" (click)="clickCheck(item)">点击查看</span>
+        </div>
+        <div class="right_two_line">
+          <span style="margin-right: 7px;">{{item.CHME005N1}}</span>
+          <span>{{item.CHME005N2}}</span>
+        </div>
+        <div class="right_three_box">
+          <P>您好</P>
+          <P>{{item.CHME008}}</P>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="box">
+    <div class="left">
+      <div class="left-img"><img style="width:100%;height:100%;" src="./assets/imgs/sysion.png" alt=""></div>
+    </div>
+    <div class="right">
+      <div class="right_one_line">
+        <span class="one-left">您有一项新任务需要执行</span>
+        <span class="one-right">点击查看</span>
+      </div>
+      <div class="right_two_line">
+        <span style="margin-right: 7px;">2018-10-21</span>
+        <span>10:12:32</span>
+      </div>
+      <div class="right_three_box">
+        <P>您好</P>
+        <P>您有一场xxx任务需要执行</P>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="left">
+      <div class="left-img"><img style="width:100%;height:100%;" src="./assets/imgs/sysion.png" alt=""></div>
+    </div>
+    <div class="right">
+      <div class="right_one_line">
+        <span class="one-left">您有一场会议需要参加</span>
+        <span class="one-right">点击查看</span>
+      </div>
+      <div class="right_two_line">
+        <span style="margin-right: 7px;">2018-10-21</span>
+        <span>10:12:32</span>
+      </div>
+      <div class="right_three_box">
+        <P>您好</P>
+        <P>您有一场xxx会议需要参加</P>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="left">
+      <div class="left-img"><img style="width:100%;height:100%;" src="./assets/imgs/sysion.png" alt=""></div>
+    </div>
+    <div class="right">
+      <div class="right_one_line">
+        <span class="one-left">距离xxx会议签到还有5分钟</span>
+        <span class="one-right">点击签到</span>
+      </div>
+      <div class="right_two_line">
+        <span style="margin-right: 7px;">2018-10-21</span>
+        <span>10:12:32</span>
+      </div>
+      <div class="right_three_box">
+        <P>您好</P>
+        <P>距离xxx会议签到还有5分钟</P>
+      </div>
+    </div>
+  </div>-->
+</ion-content>

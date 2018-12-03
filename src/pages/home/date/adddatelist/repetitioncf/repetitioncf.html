@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>重复</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list radio-group [(ngModel)]="relationship">
+    <ion-item>
+      <ion-label>不重复</ion-label>
+      <ion-radio [checked]="this.repeat==0" value="0" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>每天</ion-label>
+      <ion-radio [checked]="this.repeat==1" value="1" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>每周</ion-label>
+      <ion-radio [checked]="this.repeat==2" value="2" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>每两周</ion-label>
+      <ion-radio [checked]="this.repeat==3" value="3" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>每月</ion-label>
+      <ion-radio [checked]="this.repeat==4" value="4" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>每年</ion-label>
+      <ion-radio [checked]="this.repeat==5" value="5" (ionSelect)="toSelect()"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

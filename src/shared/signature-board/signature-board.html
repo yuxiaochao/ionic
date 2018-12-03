@@ -1,0 +1,23 @@
+<ion-header #ionHeaderEl [class.moon_test]="moonClass">
+  <ion-toolbar>
+    <ion-buttons start style="width: 50%">
+      <button ion-button icon-only (click)="closeSignatureBoard()">
+        <ion-icon name="close" ></ion-icon>
+      </button>
+      <button ion-button style="left: 40%"  (click)="undoSignature()">
+        <ion-icon name="chexiao" [class.btn_d]="undo_btn"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end style="width: 50%">
+      <button ion-button  (click)="cleanSignature()" style="right: 45%">
+        <ion-icon name="lajitong" [class.btn_d]="undo_btn"></ion-icon>
+      </button>
+      <button ion-button (click)="restoreSignature()">
+        <ion-icon name="huifu" [class.btn_d]="drawIndex < 1"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content #contentEl [class.moon_test]="moonClass">
+  <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+</ion-content>

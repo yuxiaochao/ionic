@@ -1,0 +1,61 @@
+<!--
+  Generated template for the GroupAddPeoplePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>邀请好友进群</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <div class="jiadesousuokuang">
+      <div class="jiadesousuokuangDiv01" (click)="clickJiadesousuokuang()">
+        <p class="jiadesousuokuangP01"><i class="jiadesousuokuangI01"></i><span class="jiadesousuokuangSpan01">搜索</span></p>
+      </div>
+    </div>
+  </div>
+  <div #divList>
+    <div *ngFor="let item of contactItems">
+      <ion-item-divider class="item item-divider ng-binding shouzimu" id="index_{{item.USER023}}" *ngIf="item.isFirstData">
+        <span>{{item.USER023}}</span><div class="fengexianDiv"></div>
+      </ion-item-divider>
+      <ion-item class="item ng-binding peopleItem" [class.peopleItemLast]="item.isLastData">
+        <div class="headDiv" (click)="clickContacts(item)">
+          <img #img src="{{item.ATTA007 | coverHeadImpPath:item.USER006:img}}" class="headDivImg"/>
+          <span class="headDivSpan01"><span>{{item.USER005}}</span>
+            <!--<span style="font-size: small;">({{item.USER004}})</span>-->
+      </span>
+
+          <span class="headDivSpan02">
+        <!--<p class="man" *ngIf="item.USER006 == '男'"><p class="woman" *ngIf="item.USER006 == '女'"></p>-->
+            <span style="">[在线]</span>
+      </span>
+        </div>
+        <span (click)="invitingFriends(item.USER001)" class="yqhy">邀请好友</span>
+      </ion-item>
+    </div>
+
+
+  </div>
+</ion-content>
+
+<!--<div class="right-bar" [class.active]="treem==1" [style.top.px]="alphaSidebar_top">-->
+  <!--<div class="right-bar-box" >-->
+    <!--<p-->
+      <!--[class.cur]="item.cur==1"-->
+      <!--(touchstart)="onoverdo(item)"-->
+      <!--(touchmove)="onoverdo(item)"-->
+      <!--(touchend)="onoutdo()"-->
+      <!--(click)="gotoList('index_'+item.ss)"-->
+      <!--*ngFor="let item of ruler">{{item.ss}}</p>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="drawshow" *ngIf="treem==1">{{letter.ss}}</div>-->

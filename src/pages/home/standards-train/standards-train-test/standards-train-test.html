@@ -1,0 +1,51 @@
+<ion-header #popoverHeader [class.moon_test]="moonClass">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button  ion-button icon-only (click)="back()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <button  ion-button start (click)="openSignatureBoard()" style="margin-right:40px;margin-left:-10px;">
+        <ion-icon name="tianxie"></ion-icon>
+      </button>
+
+      <button  ion-button end (click)="openAnswerCard()">
+        <ion-icon name="datika"></ion-icon>
+      </button>
+    </ion-title>
+
+    <ion-buttons end>
+      <button  ion-button small>
+        {{time}}
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="tutorial-page" #popoverContent [class.moon_test]="moonClass">
+  <div class="swiper-container stop-swiping">
+    <div class="swiper-wrapper" #popoverText>
+      <div class="swiper-slide" *ngFor="let item of items;let itemIndex=index;">
+        <page-standards-train-topic class="slide-zoom" (heightChange)="heightChange($event)" (itemsChange)="itemsChange($event)" *ngIf="showSilde(itemIndex)" [slides]="slides" [is_answer]="is_answer" [topic_index]="itemIndex+1" [answer_key]="answer_key" [topic]="item"  [paper]="paper" [pageination]="pageination" [extg001]="extg001" [items]="items"></page-standards-train-topic>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer [class.moon_test]="moonClass">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button class="button-prev swiper-button-disabled" color="light" icon-start>
+        <ion-icon name='arrow-back'></ion-icon>
+        上一题
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button class="button-next" (click)="nextTopic()" color="light" icon-end>
+        下一题
+        <ion-icon name='arrow-forward'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,97 @@
+<!--
+  Generated template for the PlacerenwPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>周日历</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div *slide="'up'" (touchstart)="dealwith1()" class="target"  style="width:100px;height:100px;background:red;">11</div>
+  <div *slide="'down'" class="target"  style="width:150px;height:100px;background:red;">22</div>
+  <div class="top-bar" (click)="getnl()">{{showyear}}年{{showmonth}}月</div>
+
+  <div class="top-date">
+    <ul class="top-day">
+      <li>日</li>
+      <li>一</li>
+      <li>二</li>
+      <li>三</li>
+      <li>四</li>
+      <li>五</li>
+      <li>六</li>
+    </ul>
+
+    <!------------------------------------ 周日历-------------------------------->
+    <ion-slides #slides1 loop="true"
+                (ionSlideNextEnd)="ZhouslideNext()"
+                (ionSlidePrevEnd)="ZhouslidePrev()"
+                initialSlide="1">
+      <ion-slide>
+        <ul class="top-date-bar">
+
+          <li
+            [class.cur1]="item.iscolor"
+            *ngFor=" let item of itema1"
+            (click)="selectedDate(item,1)">
+            <span></span>
+            {{item.day}}
+            <i>{{item.subd}}</i>
+          </li>
+
+        </ul>
+        iteam1
+      </ion-slide>
+      <ion-slide>
+
+        <ul class="top-date-bar">
+          <li [class.cur1]="item.iscolor"
+              *ngFor=" let item of itema2"
+              (click)="selectedDate(item,2)">
+            <span></span>
+            {{item.day}}
+            <i>{{item.subd}}</i>
+          </li>
+        </ul>
+        itema2
+      </ion-slide>
+      <ion-slide>
+        <ul class="top-date-bar">
+          <li
+            [class.cur1]="item.iscolor"
+            *ngFor=" let item of itema3"
+            (click)="selectedDate(item,1)">
+            <span></span>
+            {{item.day}}
+            <i>{{item.subd}}</i>
+          </li>
+        </ul>
+        itema3
+      </ion-slide>
+    </ion-slides>
+
+    <!----------------------------- 月日历----------------------------->
+
+
+  </div>
+
+
+  <div class="radio-inline">
+    <input type="radio"  name="kill" value="1" checked/>
+    <label >是</label>
+  </div>
+  <div class="radio-inline">
+    <input type="radio"  name="killO" value="0" checked/>
+    <label >否</label>
+  </div>
+
+
+</ion-content>

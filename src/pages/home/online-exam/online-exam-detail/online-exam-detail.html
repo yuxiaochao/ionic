@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="body_content">
+  <div class="con_detail">
+    <h1 padding [innerHTML]="item.TACT004"></h1>
+    <div class="con_box">
+      <div class="con_li">
+        <h1>考试安排</h1>
+        <p>截止时间：{{item.TACT007}}</p>
+        <p>考试计时：{{item.TACT008}}</p>
+        <p>考试次数：{{item.EXAMNUM}}/{{item.TACT012}}</p>
+      </div>
+
+      <div class="con_li">
+        <h1>合格标准</h1>
+        <p>满分：{{item.TACT020}}分</p>
+        <p>及格：{{item.TACT021}}分</p>
+      </div>
+      <div >
+        <h1>考试须知</h1>
+        <div [innerHTML]="item.TACT019"></div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer color="primary">
+  <ion-toolbar color="primary">
+    <button ion-button full small (click)="startExam(item)">开始考试</button>
+  </ion-toolbar>
+</ion-footer>

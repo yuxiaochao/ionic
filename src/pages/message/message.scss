@@ -1,0 +1,221 @@
+page-message {
+  .peopleItem{
+    padding-right: 0px !important;
+  }
+  .item-ios.item-block .item-inner{
+    padding-right: 0px;
+  }
+  .item-ios{
+    padding-left: 0px;
+  }
+  .label-ios{
+    margin: 11px 8px 11px 8px !important;
+  }
+  .searchbar-ios{
+    background: #45c4f3;
+  }
+
+  .scroll-content{
+    padding:0px !important;
+  }
+  .content-ios{
+    background: #f7f6f8;
+  }
+  .item-divider ion-label{
+    margin: 8px 8px 8px 0;
+  }
+  ion-label{
+    overflow: initial !important;
+  }
+  .alpha_sidebar {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 100000
+  }
+  .alpha_sidebar li {
+    color: #49afcd;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  .alpha_list {
+    padding-right: 0px;
+  }
+
+  .peopleItem{
+    padding-right: 20px;
+    line-height: 30px;
+  }
+
+  .peopleItem .item-inner{
+    cursor: pointer;
+  }
+
+  .peopleItemLast .item-inner{
+    border-bottom: 0px !important;
+  }
+
+  .headDiv{
+    position: relative
+  }
+  .headDivImg{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .headDivSpan01{
+
+  }
+  .headDivSpan02{
+    position: absolute;
+    left: 50px;
+    top: 24px;
+    font-size: small;
+    color: #8a8a8a;
+  }
+
+  .headDivSpan02 p.man{
+    position: absolute;
+    left: -21px;
+    top: 4px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -4px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan02 p.woman{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -27px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan03{
+    position: absolute;
+    right: 0px;
+    top: 3px;
+    font-size: small;
+    color: #8a8a8a;
+  }
+  .headDivSpan04{
+    position: absolute;
+    right: 0px;
+    top: 33px;
+    font-size: small;
+    color: #fff;
+  }
+  .headDivSpan04 div{
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    height: 18px;
+    width: 18px;
+    line-height: 19px;
+    text-align: center;
+  }
+
+  ion-item-options button.button01{
+    background-color: #ff8216;
+  }
+  ion-item-options button.button01 span{
+    font-size: 13px;
+  }
+  ion-item-options button.button02{
+    background-color: #fc301b;
+  }
+  ion-item-options button.button02 span{
+    font-size: 13px;
+  }
+
+  .jiadesousuokuang{
+    padding-top: 4px;
+  }
+  .jiadesousuokuang .jiadesousuokuangDiv01{
+    height: 26px;
+    width: 87%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(243, 243, 243, 1);
+    text-align: center;
+    border-radius: 3px;
+  }
+  .jiadesousuokuang .jiadesousuokuangDiv01 .jiadesousuokuangP01{
+    padding-top: 3px;
+    color: rgba(166, 166, 166, 1);
+  }
+
+  .jiadesousuokuang .jiadesousuokuangI01{
+    background: url(./../assets/imgs/common/fangdajing.png) no-repeat scroll 0px 0px transparent;
+    background-size: 18px 18px;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+  }
+
+  .jiadesousuokuang .jiadesousuokuangSpan01{
+    position: relative;
+    top: -3px;
+  }
+
+  .rqstyle img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+  }
+
+  .qrscanner {
+    background: none;
+    &-area {
+      width: 100%;
+      height: 86%;
+      background: url(./././../assets/imgs/scanner.svg) no-repeat center center;
+      background-size: contain;
+    }
+  }
+  .through-line {
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: red;
+    position: absolute;
+    animation: myfirst 2s linear infinite alternate;
+  }
+  @keyframes myfirst {
+    0% {
+      background: red;
+      top: 30%;
+    }
+    25% {
+      background: yellow;
+      top: 35%;
+    }
+    50% {
+      background: blue;
+      top: 40%;
+    }
+    75% {
+      background: green;
+      top: 45%;
+    }
+    100% {
+      background: red;
+      top: 50%;
+    }
+  }
+  .button-bottom {
+    width: 128px;
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    margin-left: -64px;
+    .icon-camera {
+      float: left;
+    }
+  }
+
+}

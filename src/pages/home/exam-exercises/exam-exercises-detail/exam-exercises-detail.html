@@ -1,0 +1,157 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button  ion-button icon-only (click)="back()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-segment [(ngModel)]="exerciseType" color="light">
+      <ion-segment-button value="exercise">
+        按题库
+      </ion-segment-button>
+      <ion-segment-button value="knowledge">
+        按知识点
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content  class="body_content">
+  <ng-container [ngSwitch]="exerciseType">
+    <ng-container *ngSwitchCase="'exercise'">
+      <ng-container *ngFor="let item of items;let itemIndex=index;">
+        <ion-grid class="ion-grid" margin-top>
+          <ion-row>
+            <ion-col col-1 align-self-center>
+              <ion-icon name="add-circle" color="primary" *ngIf="!circle['circle_'+itemIndex] && item.CATA004 == '-1'" style="font-size: 1.5em" (click)="toggleCircle(itemIndex,item)" ></ion-icon>
+              <ion-icon name="remove-circle" color="primary" *ngIf="circle['circle_'+itemIndex] || item.CATA004 != '-1'" style="font-size: 1.5em" (click)="toggleCircle(itemIndex,item)" ></ion-icon>
+            </ion-col>
+            <ion-col col-11 text-nowrap style="min-width: 0; overflow: hidden; text-overflow: ellipsis;" (click)="answerExercise(item,1)">
+              {{item.CATA002}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-1 align-self-center>
+
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              题量：{{item.COUNTS}}
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              已做：{{item.YD}}
+            </ion-col>
+            <ion-col col-5 align-self-center class="colSize">
+              正确率：{{item.ZQL}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-1 align-self-center>
+
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              答错：{{item.CW}}
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              答对：{{item.ZQ}}
+            </ion-col>
+            <ion-col col-5 align-self-center class="colSize">
+              掌握率：{{item.ZWL}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        <ng-container *ngIf="circle['circle_'+itemIndex]">
+          <ion-grid class="ion-grid" *ngFor="let childItem of item.childItems;let childItemIndex=index;" margin-top >
+            <ion-row>
+              <ion-col col-2 text-right>
+                <ion-icon name="radio-button-on" color="primary" style="font-size: 1.5em">
+                </ion-icon>
+              </ion-col>
+              <ion-col col-10 text-nowrap style="min-width: 0; overflow: hidden; text-overflow: ellipsis;" (click)="answerExercise(item,1)">
+                {{childItem.CATA002}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-2 align-self-center>
+
+              </ion-col>
+              <ion-col col-3 align-self-center class="colSize">
+                题量：{{childItem.COUNTS}}
+              </ion-col>
+              <ion-col col-3 align-self-center class="colSize">
+                已做：{{childItem.YD}}
+              </ion-col>
+              <ion-col col-4 align-self-center class="colSize">
+                正确率：{{childItem.ZQL}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-2 align-self-center>
+
+              </ion-col>
+              <ion-col col-3 align-self-center class="colSize">
+                答错：{{childItem.CW}}
+              </ion-col>
+              <ion-col col-3 align-self-center class="colSize">
+                答对：{{childItem.ZQ}}
+              </ion-col>
+              <ion-col col-4 align-self-center class="colSize">
+                掌握率：{{childItem.ZWL}}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+
+    <ng-container *ngSwitchCase="'knowledge'">
+      <ng-container *ngFor="let item of knowItems">
+        <ion-grid class="ion-grid" margin-top >
+          <ion-row (click)="answerExercise(item,2)">
+            <ion-col col-12 text-nowrap style="min-width: 0; overflow: hidden; text-overflow: ellipsis;">
+              {{item.TOPI003}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2 text-center class="colSize">
+              <ion-icon name="radio-button-on" color="primary" style="font-size: 1.5em">
+              </ion-icon>
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              题量：{{item.KNOWLEDGENUM}}
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              已做：{{item.YD}}
+            </ion-col>
+            <ion-col col-4 align-self-center class="colSize">
+              正确率：{{item.ZQL}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2 text-center class="colSize">
+              <ion-icon name="radio-button-on" color="primary" style="font-size: 1.5em">
+              </ion-icon>
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              答错：{{item.CW}}
+            </ion-col>
+            <ion-col col-3 align-self-center class="colSize">
+              答对：{{item.ZQ}}
+            </ion-col>
+            <ion-col col-4 align-self-center class="colSize">
+              掌握率：{{item.ZWL}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+      </ng-container>
+    </ng-container>
+
+  </ng-container>
+ <!-- ios-remove-circle  ios-add-circle-->
+</ion-content>

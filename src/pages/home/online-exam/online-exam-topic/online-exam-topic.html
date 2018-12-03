@@ -1,0 +1,70 @@
+<ion-grid class="ion-grid">
+  <ion-row>
+    <ion-col col-4 push-8>
+      <ion-icon name="wenhao" [style.color]="uncert" (click)="selectedUncert()"  isActive="false" style="font-size: 1.5em" >
+      </ion-icon>
+      <i ion-text color="royal">{{pageination.currPage}}/{{pageination.allPage}}</i>
+    </ion-col>
+    <ion-col col-8 pull-4 text-left class="ion-grid-paper">
+      {{paper.TACT004}}
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<div class="test_content" *ngIf="topic">
+  <dl class="con" [ngSwitch]="true">
+    <ng-container *ngSwitchCase="topic.BASETYPE === 0">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [subTopic]="topic" [answer_key]="answer_key" [innerHTML]="topic!.TOPIC | replace:'___':'<input class=&quot;answer_input&quot;/>' | trustHtml"></span>
+      </dt>
+    </ng-container>
+    <ng-container *ngSwitchCase="topic.BASETYPE === 1 || topic.BASETYPE === 3">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <dd [class.selected]="option_index == current_index"
+          (tap)='answer_question($event,option_index,true)'
+          (press)="answer_question($event,option_index)"
+          *ngFor="let content of topic.TOPICOPTION | splitPipe;let option_index=index" >
+        <strong class="xuxiang"><em [class.current]="option_index==current_answer_index">{{option_index+1|numberTransition}}</em></strong>
+        <span [innerHTML]="content"></span>
+      </dd>
+    </ng-container>
+    <ng-container  *ngSwitchCase="topic!.BASETYPE === 2 || topic!.BASETYPE === 7">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <dd class="second" [class.selected]="option_index== multi_index['multi_'+option_index]"
+          (tap)='answer_question($event,option_index,true)'
+          (press)="answer_question($event,option_index)"
+          *ngFor="let content of topic.TOPICOPTION | splitPipe;let option_index=index" >
+        <strong class="xuxiang"><em [class.current]="option_index==multi_answer_index['multi_'+option_index]">{{option_index+1|numberTransition}}</em></strong>
+        <span [innerHTML]="content"></span>
+      </dd>
+    </ng-container>
+    <ng-container  *ngSwitchCase="topic!.BASETYPE === 4">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <textarea [(ngModel)]="essay" class="essay" (blur)="answer_essay($event)" [rows]="5"></textarea>
+    </ng-container>
+  </dl>
+  <ng-container [ngSwitch]="way">
+    <div *ngSwitchCase="'back'">
+      <ion-grid class="ion-grid-basetype" margin-top>
+        <ion-row>
+          <ion-col text-left>
+            正确答案是：<i ion-text color="secondary" [innerHTML]="topic_answer"></i>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <h6 ion-text text-left margin-top margin-left  style="border-bottom: 1px solid #dedede;">试题详解</h6>
+      <p text-left ion-text margin-top  margin-left margin-bottom color="tint">
+        {{topic.TOPREMARK}}
+      </p>
+    </div>
+  </ng-container>
+</div>

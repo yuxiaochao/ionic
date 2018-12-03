@@ -1,0 +1,73 @@
+page-canteen-details {
+
+  .box {
+    width:100%;
+    background: #fff;
+    margin-top:1px;
+  }
+
+  .renwu{
+    //height:160px;
+    width:100%;
+    padding:15px;
+    border-bottom: 1px dashed #d2cece;
+    overflow: hidden;
+  }
+  .renleft{
+    width: 31%;
+    height: 111px;
+    border:1px solid #ccc;
+    float:left;
+  }
+
+  .renright{
+    width:63%;
+    //height:110px;
+    //border:1px solid #ccc;
+    float:right;
+  }
+
+  .oneline > span{
+    display:inline-block;
+    color:#fff;
+    font-size:12px;
+    padding: 0 3px;
+    border-radius: 5px;
+    background:rgba(223,149,94,1);
+    margin-right:15px;
+  }
+  .oneline >span.onename{
+    font-size:16px;
+    background:none;
+    color:#373737;
+  }
+
+  .backg{
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 3px;
+    border-radius: 5px;
+    background: #df955e;
+  }
+  .addjob{
+    width:100%;
+    height:45px;
+    border-bottom: 1px solid #d2cece;
+    line-height: 50px;
+    padding:0 15px;
+    background:#fff;
+    color:RGB(109,191,212);
+  }
+  .font{
+    color:#787878!important;
+  }
+  .wuxian{
+    display: inline-block;
+    width: 64%;
+    height: 100%;
+    float: right;
+    color:#0981F9;
+  }
+
+}

@@ -1,0 +1,48 @@
+<!--
+  Generated template for the NotedetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>笔记详情</ion-title>
+    <!--<span style="float: right;color:#fff;font-size:24px;">...</span>-->
+    <ion-buttons end style="width: 50%;">
+      <button ion-button small>
+        <ion-icon name="more"></ion-icon>
+      </button>
+      <ion-select [(ngModel)]="deleValue" interface="popover"
+                  style="position: absolute;width: 20px;height: 2px;top: 6px;right: 0px;"
+                  [(ngModel)]="toppings"
+                  (ionChange)="deleteNote()">
+        <ion-option value=2>删除笔记</ion-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="addjob" style="border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <p class="font">{{noteBook.NOTE002}}</p>
+  </div>
+
+  <div class="neirong">{{noteBook.NOTE003}}</div>
+
+  <div class="imgbox">
+    <ul>
+      <li *ngFor="let item of noteBook.PHOTESPATH">
+        <!--<span class="deleteButton" (click)="deleteImg(i)">×</span>-->
+        <img src="{{item |coverPath }}" >
+      </li>
+      <!--<li><div></div></li>-->
+      <!--<li><div></div></li>-->
+      <!--<li><div></div></li>-->
+      <!--<li><div></div></li>-->
+      <!--<li><div></div></li>-->
+    </ul>
+  </div>
+</ion-content>

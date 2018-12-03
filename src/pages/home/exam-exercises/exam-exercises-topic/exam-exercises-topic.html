@@ -1,0 +1,129 @@
+<ion-grid class="ion-grid">
+  <ion-row align-items-center>
+    <ion-col col-9 text-left align-self-center class="ion-grid-paper" style="color: #999;">
+
+      <ion-icon name="zhengque" icon-only style="font-size: 1.7em;color: #292e37;">
+      </ion-icon>
+      <i ion-text color="primary" style="position: inherit;top:-4px">{{pageination.rightNum}}</i>
+
+      <ion-icon name="cuowu" margin-left style="font-size: 1.5em;top: -1px;position: inherit;color: #292e37;">
+      </ion-icon>
+      <i ion-text color="danger" style="position: inherit;top:-4px">{{pageination.errorNum}}</i>
+
+      <ion-icon name="baifenbi" margin-left style="top: -3px;position: inherit;color: #292e37;">
+      </ion-icon>
+      <i ion-text color="bright" style="position: inherit;top:-4px">{{pageination.accuracy}}%</i>
+
+    </ion-col>
+    <ion-col col-3 align-self-center>
+      <i ion-text color="royal">{{pageination.currPage}}/{{pageination.allPage}}</i>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<div class="test_content" *ngIf="topic">
+  <dl class="con" [ngSwitch]="true">
+    <ng-container *ngSwitchCase="topic.BASETYPE === 0">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [subTopic]="topic" [answer_key]="answer_key" [disabled]="disabled" [way]="way"  [innerHTML]="topic!.TOPIC | replace:'___':'<input class=&quot;answer_input stop-swiping&quot;/>' | trustHtml"></span>
+      </dt>
+    </ng-container>
+    <ng-container *ngSwitchCase="topic.BASETYPE === 1 || topic.BASETYPE === 3">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <dd [class.selected]="option_index == current_index"
+          (tap)='answer_question($event,option_index,true)'
+          (press)="answer_question($event,option_index)"
+          *ngFor="let content of topic.TOPICOPTION | splitPipe;let option_index=index" >
+        <strong class="xuxiang"><em [class.current]="option_index==current_answer_index">{{option_index+1|numberTransition}}</em></strong>
+        <span [innerHTML]="content"></span>
+      </dd>
+    </ng-container>
+    <ng-container  *ngSwitchCase="topic!.BASETYPE === 2 || topic!.BASETYPE === 7">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <dd class="second" [class.selected]="option_index== multi_index['multi_'+option_index]"
+          (tap)='answer_question($event,option_index,true)'
+          (press)="answer_question($event,option_index)"
+          *ngFor="let content of topic.TOPICOPTION | splitPipe;let option_index=index" >
+        <strong class="xuxiang"><em [class.current]="option_index==multi_answer_index['multi_'+option_index]">{{option_index+1|numberTransition}}</em></strong>
+        <span [innerHTML]="content"></span>
+      </dd>
+    </ng-container>
+    <ng-container  *ngSwitchCase="topic!.BASETYPE === 4">
+      <dt>
+        <i ion-text color="primary">({{topic!.BTXTITLE}})</i>
+        <span class="topic_in" [innerHTML]="topic.TOPIC"></span>
+      </dt>
+      <textarea  [readonly]="disabled || way == 'back'" [(ngModel)]="essay" class="essay stop-swiping" (blur)="answer_essay($event)" [rows]="5"></textarea>
+    </ng-container>
+    <ng-container *ngIf="topic!.BASETYPE ===4 || topic!.BASETYPE === 2 || topic!.BASETYPE === 7 || topic!.BASETYPE ===0">
+      <p text-center margin *ngIf="!disabled" >
+        <button ion-button full round (click)="confirmAnswer()">确认答案</button>
+      </p>
+    </ng-container>
+  </dl>
+  <div *ngIf="way == 'back' || showWay">
+    <h6 ion-text text-left margin-top margin-left >
+      <i ion-text color="danger" *ngIf="showWay">回答错误！</i>
+      正确答案是：<i ion-text color="secondary" [innerHTML]="topic_answer"></i>
+    </h6>
+
+    <h6 ion-text text-left margin-top margin-left color="primary" style="font-weight:700">试题详解：</h6>
+    <p text-left ion-text color="tint" margin-top margin-left margin-bottom [innerHTML]="topic.TOPREMARK">
+    </p>
+    <ion-card *ngIf="!topic.TOPREMARK">
+      <ion-card-content text-center >
+        暂无试题详解
+      </ion-card-content>
+    </ion-card>
+
+    <h6 ion-text text-left margin-top margin-left color="primary" style="font-weight:700">统计：</h6>
+    <p text-left ion-text margin-top margin-left margin-bottom color="tint">
+      本题答对{{topic.TOPI023}}次，答错{{topic.TOPI024}}次，正确率{{topic.TOPI025}}
+    </p>
+
+    <ion-list>
+      <ion-item style="border-top: none;">
+        <i ion-text style="font-weight:700" color="primary">学员评论：</i>
+        <button ion-button outline item-end (click)="meComment(topic.ID,'')">
+          我要评论
+        </button>
+      </ion-item>
+      <ion-card *ngIf="topic.reviewList && topic.reviewList.length <= 0">
+        <ion-card-content text-center>
+          暂无评论
+        </ion-card-content>
+      </ion-card>
+      <ng-container *ngFor="let item of topic.reviewList;let itemIndex=index;">
+        <ion-item style="border-top: 1px solid #e0dfe4">
+          <ion-avatar item-start style="margin-left: -10px;">
+            <img src="{{item.ATTA007 | personPath}}">
+          </ion-avatar>
+          <h3>{{item.USER005}}</h3>
+          <ion-note>{{item.EMES005 | amDateFormat:'YYYY-MM-DD'}}</ion-note>
+          <button ion-button clear  small class="commontBtn" *ngIf="userid == item.EMES003" (click)="delComment(item)">删除</button>
+          <p text-wrap>{{item.EMES004}}</p>
+          <button ion-button clear item-end small class="commontBtn" (click)="meComment(item.EMES002,item.EMES001)">评论</button>
+        </ion-item>
+        <ion-list style="margin-bottom: 0px;">
+          <ion-item style="border-top: none;border-bottom:none;" *ngFor="let childItem of item.childList" >
+            <ion-avatar item-start>
+              <img src="{{childItem.ATTA007 | personPath}}">
+            </ion-avatar>
+            <h3 text-nowrap>{{childItem.EMES003NAME}}</h3>
+            <ion-note>{{childItem.EMES005 | amDateFormat:'YYYY-MM-DD'}}</ion-note>
+            <!--  <button ion-button clear  small class="commontBtn" (click)="delComment(childItem)" >删除</button>-->
+            <p text-wrap>{{childItem.EMES004}}</p>
+            <button ion-button clear item-end small class="commontBtn" (click)="meComment(item.EMES002,item.EMES001)">评论</button>
+          </ion-item>
+        </ion-list>
+      </ng-container>
+
+    </ion-list>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<!--
+  Generated template for the MygroupclassPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的群组</ion-title>
+    <ion-icon style="float:right;font-size: 28px;
+    margin-right: 10px;" ios="md-add" md="md-add"></ion-icon>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  style="background: #f2f6f9;">
+
+  <div class="huntBox">
+    <div class="hunt">
+    <span class="SionicImg">
+      <img style="width:100%;height:100%;" src="././assets/imgs/xzxy/sousuo.png" alt="">
+    </span>
+      <span>搜索</span>
+    </div>
+  </div>
+
+
+  <div (click)="classnotefunc()" style="padding:10px 15px;background: #fff; border-bottom:1px dashed #d2cece;">
+    <div class="addjob" (click)="recordClick()">
+        <span class="xiaotubiao">
+         港
+        </span>
+      <span class="font ">港澳班级交流群</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+  </div>
+
+  <div (click)="classnotefunc()" style="padding:10px 15px;background: #fff;">
+    <div class="addjob" (click)="recordClick()">
+        <span class="xiaotubiao">
+         港
+        </span>
+      <span class="font ">港澳班级交流小组群</span>
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+    </div>
+  </div>
+
+  <div class="numbermain">2个群组</div>
+</ion-content>

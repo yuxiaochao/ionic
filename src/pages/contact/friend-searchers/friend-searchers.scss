@@ -1,0 +1,83 @@
+page-friend-searchers {
+  .item-divider ion-label{
+    margin: 8px 8px 8px 0;
+  }
+  .alpha_sidebar {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 100000
+  }
+  .alpha_sidebar li {
+    color: #49afcd;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  .alpha_list {
+    padding-right: 0px;
+  }
+
+  .peopleItem{
+    padding-right: 20px;
+    line-height: 30px;
+  }
+
+  .peopleItem .item-inner{
+    cursor: pointer;
+  }
+
+  .peopleItemLast .item-inner{
+    border-bottom: 0px !important;
+  }
+
+  .headDiv{
+    position: relative
+  }
+  .headDivImg{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .headDivSpan01{
+
+  }
+  .headDivSpan02{
+    position: absolute;
+    left: 71px;
+    top: 24px;
+    font-size: small;
+    color: #8a8a8a;
+  }
+
+  .headDivSpan02 p.man{
+    position: absolute;
+    left: -21px;
+    top: 4px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -4px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan02 p.woman{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -27px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan03{
+    position: absolute;
+    right: 0px;
+    top: 12px;
+  }
+
+  .headDivSpan03 div{
+    font-size: small;
+    border: 1px #9fb5b0 solid;;
+    padding: 2px 5px 2px 6px;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,135 @@
+page-boxtwo {
+  //如果有用以下标签的，复制样式代码可取消默认样式；
+  html, body, div, span, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  abbr, address, cite, code,
+  del, dfn, em, img, a, ins, kbd, q, samp,
+  small, strong, sub, sup, var,
+  b, i,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section, summary,
+  time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:none;
+    outline:0;
+    font-size:100%;
+    background:transparent;
+    // 默认字体大小14px,最小12px；
+  }
+
+  ul,ol,li {
+    list-style-type: none
+  }
+
+  input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun","宋体";
+  }
+
+
+
+  //头部
+  .top-bar {
+    overflow:hidden;       //清除子元素浮动
+  }
+
+  .top-bar > li {
+    font-size:14px;        //默认字体大小，可以不写
+    width:50%;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    float:left;
+    border-bottom:1px solid #ccc;
+  }
+
+  .top-bar > li.cur {
+    color: #18b4ed;
+    border-right:1px solid #ccc;
+  }
+
+  //box2 文字样式
+  .box2 {
+    padding:20px;
+    width:100%;
+    border-bottom:1px solid #ccc;
+  }
+
+  .box2 > p {
+    line-height:22px;
+    letter-spacing: 1px;
+  }
+
+  .box2 > .font {            //标题字体大小及加粗显示
+    font-size:18px;
+    color: #303030;
+    letter-spacing: 3px;
+    line-height: 28px;
+  }
+
+  .box2 > p.big {
+    font-size:16px;
+    margin-top:6px;
+    color:#919191;
+  }
+
+  .box2 > .over {             //文本超出两行显示省略号
+    color:#919191;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .indent{
+    text-indent:2em;
+    text-align:justify;
+  }
+  //box3样式
+  .box3 {
+    padding:20px;
+    border-bottom:1px solid #ccc;
+  }
+
+  .box3-right {
+    width:30%;
+    height:64px;
+    float:right;
+    margin-left: 5px
+  }
+
+  .box3 > p {
+    line-height:20px;
+    color:#919191;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+
+  .box3 > .font {            //标题字体大小及加粗显示
+    font-size:18px;
+    color:#303030;
+    letter-spacing: 3px;
+    line-height: 28px;
+  }
+
+  .box3 > p.big {
+    font-size:16px;
+    margin-top:6px;
+    color:#919191;
+  }
+
+  .box3 > .over {             //文本超出两行显示省略号
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-indent:2em;
+    text-align: justify;
+  }
+
+}

@@ -1,0 +1,37 @@
+page-drawbar {
+
+  .right-bar{
+    height: 84%;
+    width: 7%;
+    border: 1px solid #ccc;
+    line-height: 157%;
+    font-size: 12px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 3% 0;
+    position: fixed;
+    top: 13%;
+    right: 22px;
+  }
+
+  .active {
+    background: #eee;
+  }
+  .cur {
+    //color:RGB(24,180,237);
+    color:blue;
+  }
+
+  .drawshow{
+    width:40px;
+    height:40px;
+    text-align:center;
+    line-height:40px;
+    background:RGB(24,180,237);
+    color:#fff;
+    font-size:20px;
+    margin:0 auto;
+    margin-top:50%;
+    border-radius: 4px;
+  }
+}

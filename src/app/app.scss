@@ -1,0 +1,119 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{margin:0; padding:0; border:none;  box-sizing: border-box;}
+em,i{font-style:normal;}
+strong{font-weight: normal;}
+.clearfix:after{content:""; display:block; visibility:hidden; height:0; clear:both;}
+.clearfix{zoom:1;}
+a{text-decoration:none; color:#666; font-family: Microsoft YaHei,Tahoma,Arial,sans-serif;}
+a:hover{ text-decoration:none;}
+ul,ol{list-style:none;}
+img{border: none;
+  width: 100%;
+  vertical-align: top;}
+
+
+
+
+@font-face {
+  font-family: "Ionicons";
+  src: url('../assets/font/iconfont.eot?t=1523855902422'); /* IE9*/
+  src: url('../assets/font/iconfont.eot?t=15238559024272#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/font/iconfont.woff?t=1523855902422') format('woff'),
+  url('../assets/font/iconfont.ttf?t=1523855902422') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../assets/font/iconfont.svg?t=1523855902422#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.ion-ios-shouye:before { content: "\e606"; }
+.ion-md-shouye:before { content: "\e606"; }
+.ion-ios-shouye-outline:before { content: "\e606"; }
+
+.ion-ios-wode:before { content: "\e705"; }
+.ion-md-wode:before { content: "\e705"; }
+.ion-ios-wode-outline:before { content: "\e705"; }
+
+.ion-ios-tianxie:before { content: "\e664"; }
+.ion-md-tianxie:before { content: "\e664"; }
+.ion-ios-tianxie-outline:before { content: "\e664"; }
+
+.ion-ios-datika:before { content: "\e60d"; }
+.ion-md-datika:before { content: "\e60d"; }
+.ion-ios-datika-outline:before { content: "\e60d"; }
+
+.ion-ios-tijiao:before { content: "\e62e"; }
+.ion-md-tijiao:before { content: "\e62e"; }
+.ion-ios-tijiao-outline:before { content: "\e62e"; }
+
+.ion-ios-lianxiren:before { content: "\e661"; }
+.ion-md-lianxiren:before { content: "\e661"; }
+.ion-ios-lianxiren-outline:before { content: "\e661"; }
+
+
+.ion-ios-chexiao:before { content: "\e6af"; }
+.ion-md-chexiao:before { content: "\e6af"; }
+.ion-ios-chexiao-outline:before { content: "\e6af"; }
+
+.ion-ios-huifu:before { content: "\e6c9"; }
+.ion-md-huifu:before { content: "\e6c9"; }
+.ion-ios-huifu-outline:before { content: "\e6c9"; }
+
+.ion-ios-lajitong:before { content: "\e658"; }
+.ion-md-lajitong:before { content: "\e658"; }
+.ion-ios-lajitong-outline:before { content: "\e658"; }
+
+.ion-ios-wenhao:before { content: "\e622"; }
+.ion-md-wenhao:before { content: "\e622"; }
+.ion-ios-wenhao-outline:before { content: "\e622"; }
+
+.ion-ios-dian:before { content: "\e601"; }
+.ion-md-dian:before { content: "\e601"; }
+.ion-ios-dian-outline:before { content: "\e601"; }
+
+.ion-ios-hezi:before { content: "\e605"; }
+.ion-md-hezi:before { content: "\e605"; }
+.ion-ios-hezi-outline:before { content: "\e605"; }
+
+.ion-ios-huifu:before { content: "\e720"; }
+.ion-md-huifu:before { content: "\e720"; }
+.ion-ios-huifu-outline:before { content: "\e720"; }
+
+.ion-ios-lajitong:before { content: "\e73d"; }
+.ion-md-lajitong:before { content: "\e73d"; }
+.ion-ios-lajitong-outline:before { content: "\e73d"; }
+
+.ion-ios-chexiao:before { content: "\e722"; }
+.ion-md-chexiao:before { content: "\e722"; }
+.ion-ios-chexiao-outline:before { content: "\e722"; }
+
+
+.ion-ios-baifenbi:before { content: "\e60a"; }
+.ion-md-baifenbi:before { content: "\e60a"; }
+.ion-ios-baifenbi-outline:before { content: "\e60a"; }
+
+.ion-ios-cuowu:before { content: "\e613"; }
+.ion-md-cuowu:before { content: "\e613"; }
+.ion-ios-cuowu-outline:before { content: "\e613"; }
+
+.ion-ios-zhengque:before { content: "\e621"; }
+.ion-md-zhengque:before { content: "\e621"; }
+.ion-ios-zhengque-outline:before { content: "\e621"; }
+
+

@@ -1,0 +1,84 @@
+page-jibenxinxi {
+
+  .box {
+    width:100%;
+    border-top: 10px solid #f2f6f9;
+    border-bottom: 10px solid #f2f6f9;
+  }
+
+  .renwu{
+    //height:160px;
+    width:100%;
+    padding:15px;
+    border-bottom: 1px dashed #d2cece;
+    overflow: hidden;
+  }
+  .renleft{
+    width: 31%;
+    height: 111px;
+    border:1px solid #ccc;
+    float:left;
+  }
+
+  .renright{
+    //width:63%;
+    //height:110px;
+    //border:1px solid #ccc;
+    //float:right;
+  }
+
+  .oneline > span{
+    display:inline-block;
+    color:#fff;
+    font-size:12px;
+    padding: 0 3px;
+    border-radius: 5px;
+    background:rgba(223,149,94,1);
+    margin-right:15px;
+  }
+  .oneline >span.onename{
+    font-size:16px;
+    background:none;
+    color:#373737;
+  }
+
+  .addjob{
+    width:100%;
+    height:45px;
+    border-bottom: 1px solid #d2cece;
+    line-height: 50px;
+    padding:0 15px;
+    background:#fff;
+    color:RGB(109,191,212);
+  }
+
+  .zaocan{
+    width:100%;
+    height:25px;
+    //border-bottom: 1px solid #d2cece;
+    line-height: 25px;
+    padding:0 15px;
+    background:#fff;
+    color:RGB(109,191,212);
+  }
+  .fanshijian{
+    padding:5px 0;
+  }
+  .font{
+    color:#787878!important;
+  }
+  .right {
+    float: right;
+    color:#9b9b9b;
+    position: relative;
+    top: 12px;
+  }
+
+  .wuxian{
+    display: inline-block;
+    width: 72%;
+    height: 100%;
+    float: right;
+    color:#0981F9;
+  }
+}

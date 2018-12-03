@@ -1,0 +1,53 @@
+page-factconfirm {
+  .scroll-content{
+    padding:0px !important;
+  }
+
+  .title_1{
+    font-weight: bold;
+    margin-left: 15px;
+    line-height: 45px;
+  }
+  ul li ul li{
+    margin-left: 15px;
+  }
+  .con_1{
+    border-bottom: 5px solid #f0f0f0;
+  }
+  .con_1 ul{
+    padding-bottom: 10px;
+  }
+
+  ul>.adddw{
+    float: left;
+    width: 335px;
+    height: 47px;
+    z-index: 78;
+    opacity: 1;
+    transition: none 0s ease 0s;
+    margin-top:20px;
+  }
+
+  .button_adddw{
+    width: 335px;
+    height: 47px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    background-color: rgb(59, 175, 236);
+    border-color: rgba(5, 5, 5, 0.08);
+    border-radius: 5px;
+    font-size: 1.8rem;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    line-height: 47px;
+    color:white;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    transition: none 0s ease 0s;
+  }
+
+}

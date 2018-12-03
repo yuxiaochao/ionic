@@ -1,0 +1,91 @@
+page-clearcache {
+
+  *{letter-spacing:1px;}
+  .xinxi{
+    height: 120px;
+    width: 100%;
+    background-color: #fff;
+    margin-top:14px;
+    font-size: 15px;
+    line-height: 60px;
+    padding: 0 1rem;
+  }
+
+  .icon{
+    font-size: 18px;
+    position: relative;
+    top: 6px;
+  }
+  .ziliao{
+    float: left;
+
+  }
+  .mine{
+    margin-top:10px;
+  }
+  .zl-rig{
+    float: right;
+    line-height: 60px;
+  }
+  .right {
+    float: right;
+    color:#9b9b9b;
+    position: relative;
+    top: 11px;
+    margin-top:10px;
+  }
+
+  .line{
+    border-bottom:1px dashed #e9e7e7;
+    width: 100%;
+    padding-top: 60px;
+  }
+
+  .sex{
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    margin-top: 14px;
+    line-height: 60px;
+
+  }
+  .sex .ion-ios-arrow-forward{
+    display:none;
+  }
+  #clear{
+    width: 100%;
+    height: 100%;
+    background: rgba(186,186,186,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display:none;
+  }
+  #tankuang{
+    margin: 200px auto;
+    width: 280px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+  }
+  .btn{
+    background: #fff;
+    color: green;
+    height: 20px;
+    width: 30px;
+    margin-right:10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 20px;
+    float: right;
+  }
+
+}

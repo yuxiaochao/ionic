@@ -1,0 +1,68 @@
+<!--
+  Generated template for the FactconfirmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>纪实表确认</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul>
+      <li class="title_1">
+        履职纪实
+      </li>
+      <li class="con_1">
+        <ul>
+          <li *ngFor="let duty of dutyList ">{{duty.NUMBER01}}.{{duty.DOFA003}}；</li>
+         <!-- <li>2.联系区委组织部干部科，完成领导干部相关工作;</li>
+          <li>3.联系区委农工委基层组织科，指导完成村干部待遇、第一书记管理、村级班子建设相关工作</li>
+          <li>4.联系区委统战部 （区政协），完成统战相关工作</li>
+          <li>6.联系区政府绩效办，完成绩效考核相关工作</li>-->
+        </ul>
+      </li>
+      <li class="title_1">
+        实绩纪实
+      </li>
+      <li class="con_1">
+        <ul >
+          <li *ngFor="let achievement of achievementList">{{achievement.NUMBER01}}.{{achievement.DOFA003}}</li>
+         <!-- <li>2.联系区委组织部干部科，完成领导干部相关工作;</li>
+          <li>3.联系区委农工委基层组织科，指导完成村干部待遇、第一书记管理、村级班子建设相关工作</li>
+          <li>4.联系区委统战部 （区政协），完成统战相关工作</li>
+          <li>6.联系区政府绩效办，完成绩效考核相关工作</li>-->
+        </ul>
+      </li>
+      <li class="title_1">
+        问题纪实
+      </li>
+      <li class="con_1">
+        <ul>
+          <li *ngFor="let problem of problemList">{{problem.NUMBER01}}.{{problem.DOFA003}}；</li>
+        <!--  <li>2.联系区委组织部干部科，完成领导干部相关工作;</li>-->
+        </ul>
+      </li>
+      <!--如果已完成页面点击跳转到这里    这里的完成按钮不显示  start-->
+      <li>
+        <ul>
+          <li class="adddw" *ngIf="type==0">
+            <div class="button_adddw" (click)="ok()">
+              完成
+            </div>
+          </li>
+        </ul>
+      </li>
+      <!--end-->
+    </ul>
+
+  </nav>
+
+
+</ion-content>

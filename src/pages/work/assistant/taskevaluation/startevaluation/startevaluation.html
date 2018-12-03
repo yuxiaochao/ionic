@@ -1,0 +1,103 @@
+<!--
+  Generated template for the StartevaluationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>任务评价</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li class="fir_span">
+        <span class="fir_span_1">任务详情</span>
+      </li>
+      <li>
+        <ul>
+
+          <li class="conw">
+            <span class="conw_1">{{ITEM.CALT002}}</span>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>截止时间</p><p class="conw_p" style="color: rgba(0, 0, 0, 0.65);">{{ITEM.ENDYEAR}}   {{ITEM.WEEK01}}  {{ITEM.ENDTIME01}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>完成时间</p><p class="conw_p" style="color: rgba(0, 0, 0, 0.65);">{{ITEM.COMPLETETIME}}   {{ITEM.WEEK}}  {{ITEM.ENDTIME}}</p></span>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <ul>
+
+          <li class="conw_2">
+            <span style="margin-bottom: 5px"><p>执行人</p><p style="margin-left: 3rem;">{{signNumber}}人已完成</p></span>
+          </li>
+        </ul>
+
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>协助人</p><p *ngFor="let peole of assistant" style="margin-left: 3rem;">{{peole}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>主管领导</p><p *ngFor="let leader of leadership" class="conw_p">{{leader}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <ul>
+          <li class="conw_2" style="color: rgba(59, 175, 236, 1);font-family: PingFangSC, sans-serif;">
+            <span><p>被评价人</p><p *ngFor="let peole of assistant" class="conw_p">{{peole}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li class="sec_span">
+        <span class="fir_span_1">任务总结</span>
+      </li>
+      <li>
+        <ul>
+
+          <li class="conw">
+            <span class="conw_1">联系区委组织部新闻发布会联系区委组织部新闻发布会</span>
+          </li>
+        </ul>
+      </li>
+      <li class="submit_1">
+        <ul>
+          <li class="adddw">
+            <div class="button_adddw" (click)="startEvaluation()">
+              开始评价
+            </div>
+
+          </li>
+
+        </ul>
+
+      </li>
+
+
+    </ul>
+  </nav>
+</ion-content>

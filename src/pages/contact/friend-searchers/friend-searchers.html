@@ -1,0 +1,51 @@
+<!--
+  Generated template for the FriendSearchersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar class="searchbar-ios-dark"
+                   [(ngModel)]="myInput"
+                   animated = 'true'
+                   (ionInput)="ionInput($event)"
+                   cancelButtonText="取消"
+                   showCancelButton="true"
+                   (ionCancel)="ionCancel()"
+                   (ionClear)="ionClear()"
+                   placeholder='用户名称'>
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div #divList>
+    <p *ngIf="items.length >= 1">联系人：</p>
+    <div *ngFor="let item of items">
+      <ion-item class="item ng-binding peopleItem" >
+        <div class="headDiv" (click)="clickContacts(item)">
+          <img #img src="{{item.ATTA007 | coverHeadImpPath:item.USER006:img}}" class="headDivImg"/>
+          <span class="headDivSpan01"><span>{{item.USER005}}</span> <span
+            style="font-size: small;">({{item.USER004}})</span>
+      </span>
+          <span class="headDivSpan02">
+        <p class="man" *ngIf="item.USER006 == '男'"><p class="woman" *ngIf="item.USER006 == '女'"></p><span style="">{{item.USER006}}&nbsp;&nbsp;</span>
+      </span>
+        </div>
+      </ion-item>
+    </div>
+    <!--群组/工作组-->
+    <p *ngIf="items02.length >= 1">群组/工作组：</p>
+    <div *ngFor="let item02 of items02">
+
+    </div>
+    <!--<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="加载更多数据...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>-->
+  </div>
+</ion-content>

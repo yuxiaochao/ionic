@@ -1,0 +1,42 @@
+page-aboutmine {
+
+  .logo{
+    letter-spacing:1px;
+    padding:50px 0;
+    width: 100%;
+    height:250px ;
+  }
+  img{
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+ .logo p{
+   text-align: center;
+    margin-top:130px;
+    font-size: 18px;
+  }
+  .banben{
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    padding: 0 2rem;
+    line-height: 60px;
+
+  }
+  .bano{
+    float: left;
+  }
+  .bant{
+    float: right;
+  }
+
+
+
+}

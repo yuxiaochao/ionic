@@ -1,0 +1,92 @@
+<!--
+  Generated template for the DetailsFriendsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header #ionHeader hidden="hidden">
+
+  <ion-navbar>
+    <ion-title>details-Friends</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="div01">
+    <div class="div0104" #div0104 [class.div0104man]="friendInfo.USER006 == '男'" [class.div0104woman]="friendInfo.USER006 == '女'"></div>
+    <div class="div0101">
+      <button (click)="callback()"
+              class="back-button disable-hover bar-button bar-button-ios back-button-ios bar-button-default bar-button-default-ios show-back-button"
+              ion-button="bar-button" ng-reflect-klass="back-button" ng-reflect-ng-class="back-button-ios"
+              style=""><span
+        class="button-inner"><ion-icon
+        class="back-button-icon icon icon-ios back-button-icon-ios ion-ios-arrow-round-back"
+        role="img" ng-reflect-klass="back-button-icon"
+        ng-reflect-ng-class="back-button-icon-ios" aria-label="arrow round-back"
+        ng-reflect-name="arrow-round-back"></ion-icon><span
+        class="back-button-text back-button-text-ios" ng-reflect-klass="back-button-text"
+        ng-reflect-ng-class="back-button-text-ios" style="transform: translateX(0px);"></span></span>
+        <div class="button-effect"></div>
+      </button>
+    </div>
+    <div class="div0102" #div0102><img #img01 src="{{friendInfo.ATTA007 | coverHeadImpPath:friendInfo.USER006:img01}}"
+                                       class="headDivImg"/></div>
+    <div class="div0103" (click)="clickGood()">
+      <p class="goodThumb"
+         *ngIf="friendInfo.PRAISE != undefined && friendInfo.PRAISE != '0' && friendInfo.PRAISE != 0 && friendInfo.PRAISE != ''">
+        <img src="./assets/imgs/contact/good_07.png" *ngIf="friendInfo.FRRS005 != '1'"/><img
+        src="./assets/imgs/contact/good1_07.png" *ngIf="friendInfo.FRRS005 == '1'"/>{{friendInfo.PRAISE}}</p>
+      <p class="goodThumb"
+         *ngIf="friendInfo.PRAISE == undefined || friendInfo.PRAISE == '0' || friendInfo.PRAISE == 0 || friendInfo.PRAISE == ''">
+        点赞</p>
+    </div>
+    <div class="div0105">
+      <div class="div010501"><span>{{friendInfo.FIRSTNAME}}</span></div>
+      <div class="div010502">
+        <span *ngIf="friendInfo.USPS005 != undefined && friendInfo.USPS005 != ''">{{friendInfo.USPS005}}</span>
+        <span *ngIf="friendInfo.USPS005 == undefined || friendInfo.USPS005 == ''">这家伙居然一句话也没有留下~~</span>
+      </div>
+    </div>
+  </div>
+  <div class="div02">
+    <ion-item>
+      <div class="div0201"><p></p>
+        <span *ngIf="friendInfo.SECONDNAME != undefined && friendInfo.SECONDNAME != ''">{{friendInfo.SECONDNAME}}({{friendInfo.USER004}})</span>
+        <span *ngIf="friendInfo.SECONDNAME == undefined || friendInfo.SECONDNAME == ''">{{friendInfo.USER004}}</span>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="div0202"><p [class.woman]="friendInfo.USER006 == '女'" [class.man]="friendInfo.USER006 == '男'"></p>
+        <span class="span01">{{friendInfo.USER006}}&nbsp;</span>
+        <span *ngIf="friendInfo.AGE != undefined && friendInfo.AGE != ''">{{friendInfo.AGE}}&nbsp;</span>
+        <span *ngIf="friendInfo.XINGZUO != undefined && friendInfo.XINGZUO != ''">{{friendInfo.XINGZUO}}&nbsp;</span>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="friendInfo.ORGA005 != undefined  && friendInfo.ORGA005 != ''"><!-- 机构 -->
+      <div class="div0204"><p></p><span>{{friendInfo.ORGA005}}</span></div>
+    </ion-item>
+    <ion-item><!-- 电话号 -->
+      <div class="div0203"><p></p><span>{{friendInfo.USER014}}</span></div>
+    </ion-item>
+    <ion-item *ngIf="friendInfo.QQ != undefined  && friendInfo.QQ != ''"><!-- QQ -->
+      <div class="div0205"><p></p><span>{{friendInfo.QQ}}</span></div>
+    </ion-item>
+    <ion-item *ngIf="friendInfo.WX != undefined  && friendInfo.WX != ''"><!-- 微信 -->
+      <div class="div0206"><p></p><span>{{friendInfo.WX}}</span></div>
+    </ion-item>
+    <ion-item *ngIf="friendInfo.MAIL != undefined  && friendInfo.MAIL != ''"><!-- 邮箱 -->
+      <div class="div0207"><p></p><span>{{friendInfo.MAIL}}</span></div>
+    </ion-item>
+  </div>
+
+
+</ion-content>
+<ion-footer class="myIonFooter" *ngIf="friendInfo.isOneself == 0">
+  <ion-toolbar>
+    <button *ngIf="friendInfo.ismyfriend == '0' && friendInfo.APPL005 == '0'" ion-button block class="addButton Verification" >等待验证</button>
+    <button *ngIf="friendInfo.ismyfriend == '0' && friendInfo.APPL005 != '0'" ion-button block class="addButton" (click)="addFriendButton(friendInfo)">添加好友</button>
+    <button *ngIf="friendInfo.ismyfriend == '1'" ion-button block class="addButton" (click)="sendMessage()">发消息</button>
+  </ion-toolbar>
+</ion-footer>

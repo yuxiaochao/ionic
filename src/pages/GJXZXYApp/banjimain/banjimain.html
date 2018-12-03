@@ -1,0 +1,153 @@
+<ion-header (click)="tosign()" style="background-image: url('././assets/imgs/work/top.png') !important;">
+
+  <ion-navbar>
+    <ion-title>班级</ion-title>
+
+    <div style="float:right;position:relative">
+      <div style="width:10px;height:10px;position:absolute;top:0;right:0;">
+        <img style="width:100%; height:100%;" src="././assets/imgs/xzxy/copy2.png">
+      </div>
+      <div style="width:25px;height:25px;">
+        <img style="height:100%;width:100%;" src="././assets/imgs/xzxy/copy23.png">
+      </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-slides pager autoplay="1500" loop="true" id="frame">
+    <ion-slide>
+      <img src="././assets/imgs/xzxy/banner1.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="././assets/imgs/xzxy/banner2.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="././assets/imgs/xzxy/banner3.jpg">
+    </ion-slide>
+  </ion-slides>
+  <!-- end 轮播图-->
+
+  <div *ngIf="trainCourseNumber>1" class="peixun" (click)="changeOne()">
+    <p class="titleName">{{courName}}</p>
+    <ion-icon (click)="changeOne()" class="right" name="arrow-forward"></ion-icon>
+  </div>
+
+  <div *ngIf="trainCourseNumber==1" class="peixun" (click)="changeOne()">
+    <p class="titleName">{{courName}}</p>
+  </div>
+
+  <nav>
+    <ul class="clearfix tubiao">
+      <li>
+        <a href="javacript:;" [navPush]="JibenxinxiPage">
+          <p><img src="./assets/imgs/home/fen1.png" alt=""/></p>
+          <span>基本信息</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="KechengbiaoPage">
+          <p><img src="./assets/imgs/home/fen2.png" alt=""/></p>
+          <span>课程表</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="QuestionnaireListPage">
+          <p><img src="./assets/imgs/home/fen3.png" alt=""/></p>
+          <span>培训评估</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="TongzhigonggaoPage" [navParams]="exerciseParams">
+          <p><img src="./assets/imgs/home/fen4.png" alt=""/></p>
+          <span>通知公告</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="JiangyixiazaiPage">
+          <p><img src="./assets/imgs/home/fen5.png" alt=""/></p>
+          <span>讲义下载</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="BanjixiangcePage">
+          <p><img src="./assets/imgs/home/fen6.png" alt=""/></p>
+          <span>班级相册</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="BanjijiaoliuPage">
+          <p><img src="./assets/imgs/home/fen7.png" alt=""/></p>
+          <span>班级交流</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="ErrorTopicListPage">
+          <p><img src="./assets/imgs/home/fen8.png" alt=""/></p>
+          <span>小组讨论</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="banjibar" (click)="moreclassClick()">
+      <span class="spanone"> <img style="width:100%;height: 100%;" src="././assets/imgs/xzxy/xiaoren.png"></span><i
+      style="margin-right:8px;">课堂同学</i>
+      <span style="z-index: 1">
+        <img style="width:100%;height: 100%;" src="././assets/imgs/work/copy21.png">
+      </span>
+      <span style="z-index: 2">
+        <img style="width:100%;height: 100%;" src="././assets/imgs/work/copy22.png">
+      </span>
+      <span style="z-index: 3">
+        <img style="width:100%;height: 100%;" src="././assets/imgs/work/copy23.png">
+      </span>
+      <span style="z-index: 4">
+        <img style="width:100%;height: 100%;" src="././assets/imgs/work/copy24.png">
+      </span>
+      <span style="z-index: 5">
+        <img style="width:100%;height: 100%;" src="././assets/imgs/work/copy25.png">
+      </span>
+      <span style="z-index: 6">
+        <img style="width:100%;height: 100%;" src="././assets/imgs/work/copy26.png">
+      </span>
+      <span style="z-index: 7">
+        <img style="width:100%;height: 100%;" src="././assets/imgs/work/copy27.png">
+      </span>
+      <a style="margin-right:5px;float: right;">共23人
+        <ion-icon name="arrow-forward"></ion-icon>
+      </a>
+    </div>
+  </nav>
+
+  <div class="footbox">
+    <div class="fone">
+      <div class="ftleft">
+        今日笔记
+      </div>
+      <div class="ftright">
+        <ion-icon (click)="addbiji()" class="xiezi" ios="ios-create-outline" md="md-create"></ion-icon>
+        <ion-icon class="xiangji" ios="ios-camera-outline" md="md-camera"></ion-icon>
+        <span (click)="morebiji()" class="gduo">更多</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="noteList.length==0">
+    <ion-card>
+      <ion-card-content>
+        暂无笔记
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="noteList.length>0">
+    <div class="fxiaoxi" *ngFor="let note of noteList">
+      <p class="btbj">{{note.NOTE002}}</p>
+      <div class="shijian"><span>{{note.NOTE005S}}日的笔记</span><span style="float:right">{{note.TIME}}</span></div>
+    </div>
+  </div>
+
+  <!--<div class="fxiaoxi">-->
+  <!--<p>港澳培训第一天</p>-->
+  <!--<div class="shijian"><span>2018.10.13日的笔记</span><span style="float:right">14:25</span></div>-->
+  <!--</div>-->
+</ion-content>

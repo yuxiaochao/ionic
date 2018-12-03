@@ -1,0 +1,50 @@
+<!--<link rel="stylesheet" href="online-electivecourse-list.scss">-->
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar class="searchbar-ios-light"
+                   (ionInput)="getItems($event)"
+                   animated=true
+                   placeholder='查询'
+                   showCancelButton=true
+                   cancelButtonText="取消">
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content scrollDownOnLoad="true">
+
+
+  <div class="tab">
+    <ul class="tab-left">
+      <div class="scroll-box">
+        <li class="evaluate-hd cur"
+            *ngFor="let item of selectItem let i=index "
+            (click)="tab(item) "
+            [class.cur]="item.isCur == 1 || currn==i">{{item.CATA002 | limitLength:4}}
+        </li>
+      </div>
+    </ul>
+
+
+    <div class="tab-right">
+
+      <div class="img">
+        <img [src]="item.CATA016 | coverPath"
+             width="100%" height="100%">
+      </div>
+      <div class="color ">
+        <span
+
+          (click)="intoAllcourseListPage()"
+
+          *ngFor="let item1 of item.secondLevelDirectory">{{item1.CATA002}}</span>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+</ion-content>

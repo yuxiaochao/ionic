@@ -1,0 +1,55 @@
+<!--
+  Generated template for the GerenziliaoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>个人资料</ion-title>
+    <ion-icon (click)="jiechuhaoyou()" style="float: right;color:#fff;font-size:26px;" name="more"></ion-icon>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <div class="topxia"  (click)="haoyouliaotianClick()">
+    <div class="touxiangleft">
+      <div class="touxiang"><img style="width:100%;height:100%;" src="././assets/imgs/work/copy27.png" alt=""></div>
+    </div>
+    <div class="touxiangright">
+      <span class="usename">陈贤超</span>
+      <span class="dingwei">
+        <img style="width:100%;height:100%;" src="././assets/imgs/work/din102.png" alt="">
+      </span>
+      <div class="lastbox">
+        <span class="jobpost" >广州财政厅长</span>
+      </div>
+    </div>
+  </div>
+
+
+  <ion-item style="border-bottom:1px solid #d2cece;font-size: 16px;color:#373737;">
+    个人信息
+  </ion-item>
+
+  <div class="addjob" style="border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <span class="font">姓名</span><span class="wuxian">陈贤超</span>
+  </div>
+  <div class="addjob" style="border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <span class="font">单位</span><span class="wuxian">广州教育部</span>
+  </div>
+  <div class="addjob" style="border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <span class="font">职务</span><span class="wuxian">部长</span>
+  </div>
+  <div class="addjob" style="border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <span class="font">电话号码</span><span class="wuxian">502 2765 119</span>
+  </div>
+  <div class="addjob" style="border-bottom:1px dashed #d2cece;" (click)="updatePwd()">
+    <span class="font">邮箱</span><span class="wuxian">18293725161@163.com</span>
+  </div>
+</ion-content>

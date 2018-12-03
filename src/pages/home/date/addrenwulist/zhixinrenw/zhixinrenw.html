@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>任务执行人</ion-title>
+    <span style="float:right; color:#fff;">完成</span>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: RGB(241,241,241);" >
+
+  <div style="margin:0px 0;">
+    <div class="addjob" (click)="remindtxClick()">
+      <span class="font">添加执行人</span>
+      <div class="right">
+        <!--<span>不提醒</span>-->
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px;right:10px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+    <div class="addjob" (click)="repetitcfClick()">
+      <span class="font">选择群组成员</span>
+      <div class="right">
+        <!--<span>不重复</span>-->
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px; right:10px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+    <div class="addjob" (click)="repetitcfClick()">
+      <span class="font">发给自己</span>
+      <!--<div class="right">-->
+        <!--&lt;!&ndash;<span>不重复</span>&ndash;&gt;-->
+        <!--<ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px; right:10px;" name="arrow-forward"></ion-icon>-->
+      <!--</div>-->
+    </div>
+  </div>
+  <div class="huizi">已选择的会议组织人</div>
+
+  <div class="addjob" style="margin:0px">
+    <ion-icon style="color:RGB(24,180,237)"  name="checkbox"></ion-icon>
+    <div class="imgbox"><img style="width:100%;height:100%;" src="./assets/imgs/home/touxiang.png"></div>
+    <span style="color:#000;">安鹏</span>
+
+  </div>
+  <!--<div class="huizi">只能选择一个会议组织人</div>-->
+</ion-content>

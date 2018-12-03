@@ -1,0 +1,25 @@
+page-banjixiangce {
+
+  ul,li{
+    list-style: none;
+  }
+
+  .box_li_01,imgbox{
+    width: 100%;
+    float: left;
+  }
+
+  .imgbox > ul > li {
+    float: left;
+    width: 23%;
+    height: 72px;
+    background: yellowgreen;
+    margin: 0 2% 5% 10px;
+  }
+  .showBorder{
+    border: 3px solid red;
+  }
+  .showBorder2{
+    border: 5px solid black;
+  }
+}

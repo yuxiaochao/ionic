@@ -1,0 +1,79 @@
+<!--
+  Generated template for the DutydocPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>履职纪实</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul>
+      <li class="title_1">
+        {{factsName}}
+      </li>
+      <li class="updoc">
+        <textarea [(ngModel)]="dofa003"></textarea>
+        <textarea *ngIf="flage==1 || flage==2" [(ngModel)]="dofa003"></textarea>
+        <textarea *ngIf="flage==3" readonly></textarea>
+      </li>
+      <li class="title_2">
+        纪实来源:&nbsp;&nbsp;&nbsp;
+       <!-- <input *ngIf="dofa004==1" [(ngModel)]="dofa004" value="1" type="radio" [checked]="true"  name="rad_12"  style="margin-left: 20px;">--> <i *ngIf="dofa004==1">系统生成</i>
+        <!--<input *ngIf="dofa004==2" [(ngModel)]="dofa004" value="2" type="radio" checked="checked"  name="rad_1" style="margin-left: 20px;">--> <i *ngIf="dofa004==2">手工填写</i>
+      </li>
+      <li>
+        <ul>
+          <li *ngIf="flage==1" class="adddw"(click)="submitInfo(1)">
+            <div  class="button_adddw" >
+              完成
+            </div>
+          </li>
+          <li *ngIf="flage==2" class="adddw" (click)="submitInfo(2)">
+            <div  class="button_adddw" >
+              完成
+            </div>
+          </li>
+          <li  *ngIf="flage==3" class="adddw">
+            <div  class="button_adddw02" >
+              完成
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li class="uplist">
+        <ul *ngFor="let fact of taskHistoryList">
+          <li>{{fact.SERIALNUMBER}}.{{fact.DOFA003}};</li>
+          <li>纪实来源 : {{fact.STYLE}}　{{fact.DOFA0071}}<img *ngIf="flage==1 ||flage==2 "  src="././assets/imgs/work/home/write.png " (click)="changeFact(fact)"></li>
+        </ul>
+        <ion-card *ngIf="taskHistoryList.length==0">
+          <ion-card-content>
+            暂无履职纪实！
+          </ion-card-content>
+        </ion-card>
+        <!--<ul>-->
+          <!--<li>1.联系区委组织部组织科，完成基层组织建设相关工作；</li>-->
+          <!--<li>纪实来源 : 系统生成　2018-9-28 20:45<img src="././assets/imgs/work/home/write.png "></li>-->
+        <!--</ul>-->
+        <!--<ul>-->
+          <!--<li>1.联系区委组织部组织科，完成基层组织建设相关工作；</li>-->
+          <!--<li>纪实来源 : 系统生成　2018-9-28 20:45<img src="././assets/imgs/work/home/write.png "></li>-->
+        <!--</ul>-->
+        <!--<ul>-->
+          <!--<li>1.联系区委组织部组织科，完成基层组织建设相关工作；</li>-->
+          <!--<li>纪实来源 : 系统生成　2018-9-28 20:45<img src="././assets/imgs/work/home/write.png "></li>-->
+        <!--</ul>-->
+      </li>
+    </ul>
+
+  </nav>
+
+</ion-content>

@@ -1,0 +1,60 @@
+page-boxfour {
+  //如果有用以下标签的，复制样式代码可取消默认样式；
+  html, body, div, span, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  abbr, address, cite, code,
+  del, dfn, em, img, ins, kbd, q, samp,
+  small, strong, sub, sup, var,
+  b, i,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section, summary,
+  time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:none;
+    outline:0;
+    font-size:100%;
+    background:transparent;
+    // 默认字体大小14px,最小12px；
+  }
+
+  ul,ol,li {
+    list-style-type: none
+  }
+
+  input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun","宋体";
+  }
+
+  // box6 查看详情文本样式
+  .box6-top {
+    border-bottom:1px solid #ccc;
+    padding:20px;
+  }
+
+  .box6-top > p {
+    text-align:center;
+    font-size:16px;
+    line-height:26px;
+  }
+
+  .box6-top .time {
+    color:#b9b9b9;
+  }
+
+  .box6 .box6-main {
+    padding:20px;
+  }
+
+  .box6 .box6-main > p {
+    text-align:justify;
+    color:#505050;
+    text-indent: 2em;
+    line-height: 26px;
+  }
+}

@@ -1,0 +1,36 @@
+<!--
+  Generated template for the DrawbarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>drawbar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="right-bar" [class.active]="treem==1">
+    <div class="right-bar-box" >
+      <p
+        [class.cur]="item.cur==1"
+        (touchstart)="onoverdo(item)"
+        (touchmove)="onoverdo(item)"
+        (touchend)="onoutdo()"
+        *ngFor="let item of ruler">{{item.ss}}</p>
+    </div>
+  </div>
+
+  <div class="drawshow" *ngIf="treem==1">{{letter.ss}}</div>
+
+  <!--(mouseover)="onDragUp()"-->
+  <!--(mouseout)="onDragDown()"-->
+  <!--(mousedown)="onDragDown()"-->
+  <!--(mouseup)="onDragUp()"-->
+
+</ion-content>

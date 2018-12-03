@@ -1,0 +1,67 @@
+<!--
+  Generated template for the WeekmeetingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>本周会议</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li *ngFor="let meeting of mettingList">
+        <ul (click)="wkmtdetail(meeting)">
+          <li class="imgw">
+            <img src="././assets/imgs/work/home/ren_3.png ">
+          </li>
+          <li class="conw">
+            <span class="conw_1">{{meeting.MEET002}}</span>
+            <span *ngIf="meeting.STYLE==1" class="conw_2">已结束</span>
+            <span>会议时间:{{meeting.MON}}月{{meeting.DAYY}}日 {{meeting.WEEKDAY}} {{meeting.STARTMINUT}} ~ {{meeting.ENDMINUT}}</span>
+            <span>{{meeting.USER005}} | {{meeting.CREATTIME}}</span>
+          </li>
+        </ul>
+      </li>
+      <ion-card *ngIf="mettingList.length==0">
+        <ion-card-content>
+          暂无会议！
+        </ion-card-content>
+      </ion-card>
+      <!--<li (click)="wkmtdetail()">
+        <ul>
+          <li class="imgw">
+            <img src="././assets/imgs/work/home/ren_3.png ">
+          </li>
+          <li class="conw">
+            <span class="conw_1">项目启动会</span>
+            <span class="conw_2">已结束</span>
+            <span>会议时间：9月14日 周三 16:00 ~ 17:00</span>
+            <span>我发布的 | 2018-09-27 16:00</span>
+          </li>
+        </ul>
+      </li>
+      <li (click)="wkmtdetail()">
+        <ul>
+          <li class="imgw">
+            <img src="././assets/imgs/work/home/ren_3.png ">
+          </li>
+          <li class="conw">
+            <span class="conw_1">项目启动会</span>
+            <span class="conw_2">已结束</span>
+            <span>会议时间：9月14日 周三 16:00 ~ 17:00</span>
+            <span>我发布的 | 2018-09-27 16:00</span>
+          </li>
+        </ul>
+      </li>-->
+
+
+    </ul>
+  </nav>
+</ion-content>

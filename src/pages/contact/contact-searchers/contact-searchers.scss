@@ -1,0 +1,80 @@
+page-contact-searchers {
+
+
+  .searchbar-ios{
+    background: #45c4f3;
+  }
+
+  .scroll-content{
+    padding:0px !important;
+  }
+  .content-ios{
+    background: #f7f6f8;
+  }
+  .ApplyRecordDiv .item{
+    border-bottom: 1px solid #e0dfe4;
+    border-top: 1px solid #e0dfe4;
+  }
+  .item-inner{
+    border-bottom: none !important;
+  }
+
+  .headDiv{
+    position: relative
+  }
+  .headDivImg{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .headDivSpan01{
+
+  }
+  .headDivSpan02{
+    position: absolute;
+    left: 71px;
+    top: 26px;
+    font-size: small;
+    color: #8a8a8a;
+  }
+
+  .headDivSpan02 p.man{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -4px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan02 p.woman{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -27px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan03{
+    position: absolute;
+    right: 0px;
+    top: 12px;
+  }
+
+  .headDivSpan03 div{
+    font-size: small;
+    border: 1px #9fb5b0 solid;;
+    padding: 2px 5px 2px 6px;
+    border-radius: 5px;
+  }
+
+  .boundary{
+    padding: 5px 11px;
+  }
+  .title01{
+    font-family: cursive;
+    color: #545353;
+    margin-top: 8px;
+  }
+}

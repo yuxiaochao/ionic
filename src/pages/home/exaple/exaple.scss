@@ -1,0 +1,300 @@
+page-exaple {
+//如果有用以下标签的，复制样式代码可取消默认样式；
+  html, body, div, span, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  abbr, address, cite, code,
+  del, dfn, em, img, ins, kbd, q, samp,
+  small, strong, sub, sup, var,
+  b, i,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section, summary,
+  time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:none;
+    outline:0;
+    font-size:100%;
+    background:transparent;
+    // 默认字体大小14px,最小12px；
+  }
+
+  ul,ol,li {
+    list-style-type: none
+  }
+
+  input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun","宋体";
+    }
+
+
+
+  //头部
+  .top-bar {
+    overflow:hidden;       //清除子元素浮动
+  }
+
+  .top-bar > li {
+    font-size:14px;        //默认字体大小，可以不写
+    width:50%;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    float:left;
+    border-bottom:1px solid #ccc;
+    }
+
+  .top-bar > li.cur {
+    color: #18b4ed;
+    border-right:1px solid #ccc;
+  }
+
+
+// 主体
+  .box-main {
+    width:100%;
+    height:120px;
+    border:1px solid transparent;
+    overflow:hidden;
+    border-bottom:1px solid #ccc;
+  }
+
+  .box-main > div {
+    float:left;
+    display:inline-block;
+  }
+
+  //主体左边图片
+  .box-left {
+    margin:20px;
+    width:30%;
+    height:82px;
+  }
+
+  .box-left > img {
+    width:100%;
+    height:100%;
+  }
+
+  //主体右边文字
+  .box-right {
+    margin-top:20px;
+  }
+
+  .box-right > p {
+    font-size:12px;
+    color:#999;
+    height:20px;
+    line-height:20px;        //行间距
+  }
+
+  .box-right > p.name {
+    font-size: 14px;
+    width: 63%;
+    color: #333;
+    line-height: 24px;
+    height: 24px;
+    overflow: hidden;        //超出一行文本显示。。
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+
+  .box-right > p i {
+    color: #18b4ed !important;
+  }
+
+  //主体右边进度条
+  .reset {
+    font-size:12px;
+    color:#999;
+    height:20px;
+    line-height:20px;
+    position:relative;
+  }
+
+  .reset .zhccjd {
+    width: 60%;
+    height: 10px;
+    background-color: #fff;
+    border:1px solid #eee;
+    display: block;
+    float: right;
+    position:absolute;
+    top: 5px;
+    left: 45%;
+  }
+
+  .reset .zfccjd02 {
+    height: 10px;
+    background-color: #18b4ed;
+  }
+
+  .reset .sp {
+    position:absolute;
+    top: -5px;
+    margin-left: 36%;
+    color:green;
+  }
+
+
+  //box2 文字样式
+  .box2 {
+    padding: 20px;
+    border-bottom:1px solid #ccc;
+  }
+
+  .box2 > p {
+    line-height:24px;
+  }
+
+  .box2 > .font {            //标题字体大小及加粗显示
+    font-size:18px;
+    font-weight:bold;
+  }
+
+  .box2 > p.big {
+    font-size:16px;
+    margin-top:6px;
+  }
+
+  .box2 > .over {             //文本超出两行显示省略号
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+//box3样式
+  .box3 {
+    padding:20px;
+    border-bottom:1px solid #ccc;
+  }
+
+  .box3-right {
+    width:30%;
+    height:82px;
+    float:right;
+    margin-left: 5px
+  }
+
+  .box3 > p {
+    line-height:24px;
+  }
+
+  .box3 > .font {            //标题字体大小及加粗显示
+    font-size:18px;
+    font-weight:bold;
+  }
+
+  .box3 > p.big {
+    font-size:16px;
+    margin-top:6px;
+  }
+
+  .box3 > .over {             //文本超出两行显示省略号
+    //display: -webkit-box;
+    //-webkit-box-orient: vertical;
+    //-webkit-line-clamp: 2;
+    //overflow: hidden;
+  }
+
+  //box4课程详情样式
+  .box4-img {
+    width:100%;
+    height:170px;
+    border:1px solid #ccc;
+  }
+
+  .border {
+    padding:20px;
+    border-top:7px solid #e8e8e8;
+    border-bottom:7px solid #e8e8e8;
+  }
+
+  .names {
+    font-size: 14px;
+    width: 63%;
+    color: #333;
+    line-height: 24px;
+    height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pd {
+    padding:20px;
+  }
+
+  .text {
+    text-align:justify;
+    text-indent: 2rem;
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #999;
+  }
+
+  .box4-main i {
+    color: #18b4ed !important;
+  }
+
+  .play-icon {
+    font-size: 12px;
+    color:#999;
+  }
+
+  //box5 底部按钮样式
+  .box5 {
+    margin-top:50px;
+  }
+
+  .but {
+    border-radius: 0px;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    float:left;
+    position:fixed;
+    bottom:0px;
+  }
+
+  .color {
+    background:#fff;
+    color:#70788c;
+    border:1px solid #ccc;
+    right:0;
+  }
+
+  // box6 查看详情文本样式
+
+
+  .box6-top {
+    border-bottom:1px solid #ccc;
+    padding:20px;
+  }
+
+  .box6-top > p {
+    text-align:center;
+    font-size:16px;
+    line-height:26px;
+  }
+
+  .box6-top .time {
+    color:#b9b9b9;
+  }
+
+  .box6 .box6-main {
+    padding:20px;
+  }
+
+  .box6 .box6-main > p {
+    text-align:justify;
+    color:#505050;
+    text-indent: 2em;
+    line-height: 26px;
+  }
+}

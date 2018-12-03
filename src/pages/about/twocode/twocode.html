@@ -1,0 +1,34 @@
+<!--
+  Generated template for the TwocodePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>我的二维码</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--<img width="103" height="77" src="{{items.imagePath | coverPath}}"/>-->
+  <ion-card class="card">
+    <ion-card-content>
+      <div>
+        <!--<qr-code class="erweima" [value]="'用户ID:'+USER001"></qr-code>-->
+        <qr-code class="erweima" [value]="USER001"></qr-code>
+      </div>
+      <p class="text-c font-n font-light">扫一扫上面的二维码图案 加我好友</p>
+    </ion-card-content>
+  </ion-card>
+  <!--<ion-item>
+    <div (click)="goQrdcan()">
+      点我扫描
+    </div>
+  </ion-item>-->
+
+  <button ion-button block color="secondary" class="Scan-button" (click)="goQrdcan()" [disabled]="loading">点我扫描</button>
+</ion-content>

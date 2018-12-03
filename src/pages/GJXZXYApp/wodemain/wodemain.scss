@@ -1,0 +1,168 @@
+page-wodemain {
+
+
+  .top{
+    width:100%;
+    height:165px;
+    background-image: url(../assets/imgs/work/myback.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .topright{
+    width:100%;
+    height:50px;
+    position:relative;
+  }
+
+  .topriimg{
+    width:25px;
+    height:25px;
+    position:absolute;
+    bottom:0px;
+    right:20px;
+  }
+
+  .topxia{
+    height:75px;
+    width:100%;
+    margin-top:10px;
+  }
+
+  .touxiangleft{
+    width:30%;
+    display:inline-block;
+  }
+  .touxiang{
+    width:70px;
+    height:70px;
+    border-radius: 35px;
+    border:1px solid #ccc;
+    margin-left:20px;
+    overflow: hidden;
+  }
+
+  .touxiangright{
+    width: 67%;
+    height: 70px;
+    float: right;
+    position:relative;
+    display: inline-block;
+  }
+
+  .usename {
+    font-size: 18px;
+    color: #ffff;
+    margin-top: 12px;
+  }
+
+  .dingwei{
+    width:15px;
+    height:15px;
+    display:inline-block;
+  }
+
+  .lastbox {
+    margin-top: 10px;
+  }
+  .jobpost{
+    background:#18b4ed;
+    color:#fff;
+    font-family:PingFangSC-Regular;
+    margin-left: 10px;
+    padding: 0px 2px;
+    letter-spacing:1px;
+    border-radius: 10px;
+  }
+
+  .tuwbar {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 35%;
+    right: 20px;
+  }
+  .addjob{
+    width:100%;
+    height:50px;
+    margin-top:1px;
+    line-height: 50px;
+    border-bottom:1px solid #d2cece;
+    background:#fff;
+  }
+
+  .xiaotubiao{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 30%;
+    /* margin-top: 3px; */
+  }
+  .font{
+    color:#373737;
+    font-size:16px;
+    margin-left:15px;
+  }
+
+  .icon{
+    font-size: 18px;
+    position: relative;
+    top: 6px;
+  }
+
+  .right {
+    float: right;
+    color:#9b9b9b;
+    position: relative;
+    top: 34%;
+  }
+  .but {
+    width:100%;
+    margin-top:60px;
+  }
+
+  .btn{
+    background: #18b4ed;
+    color: #fff;
+    height: 40px;
+    width: 80%;
+    margin: 70px auto 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 20px;
+  }
+  #gengxin{
+    width: 100%;
+    height: 100%;
+    background: rgba(186,186,186,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display:none;
+  }
+  #tankuang{
+    margin: 237px auto;
+    width: 250px;
+    height: 200px;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+  }
+  #gengxin .btn{
+    margin: 0px auto 0;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 102;
+    border-radius: 5px;
+
+  }
+}

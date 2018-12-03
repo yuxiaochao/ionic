@@ -1,0 +1,124 @@
+page-morebiji {
+
+  .huntBox{
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid #d2cece;
+  }
+
+  .hunt {
+    width:90%;
+    height:30px;
+    line-height: 30px;
+    color:#787878;
+    border-radius: 15px;
+    background:#d2cece;
+    margin:0 auto;
+  }
+
+  .SionicImg{
+    display: inline-block;
+    height: 15px;
+    margin: 0 10px 0 15px;
+    width: 15px;
+    position: relative;
+    top: 22%;
+  }
+
+
+  .nodeBox{
+    margin-top:20px;
+  }
+  .yuan {
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    background:#d2cece;
+    margin:0 auto;
+  }
+
+  .node {
+    overflow: hidden;
+  }
+  .nodeleft{
+    width:50%;
+    margin: 10px 0;
+    height:100px;
+    float:left;
+    border-right:1px solid #d2cece;
+    padding:0 20px;
+  }
+  .noderight{
+    width:50%;
+    margin: 10px 0;
+    height:100px;
+    float:right;
+    border-left:1px solid #d2cece;
+    padding:0 20px;
+  }
+
+  .biaoti {
+    font-size: 16px;
+    color: #373737;
+    line-height: 23px;
+    letter-spacing: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .neirong {
+    font-size: 13px;
+    color: #9b9b9b;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 38px;
+  }
+
+  .time {
+    color: #9b9b9b;
+    font-size:12px;
+  }
+
+  .jiahao{
+    width: 40px;
+    height: 40px;
+    border-radius: 35px;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+  }
+
+  .fanhuitop{
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 183px;
+    right: 50px;
+  }
+
+
+  .searchbar-ios {
+    padding: 0 8px;
+    min-height: 44px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: #fff !important;
+  }
+
+  .searchbar-ios .searchbar-input {
+    padding: 0 28px;
+    border-radius: 27px !important;
+    height: 33px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000;
+    background-color: #999 !important;
+  }
+
+}

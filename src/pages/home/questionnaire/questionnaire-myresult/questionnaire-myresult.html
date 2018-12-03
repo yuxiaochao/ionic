@@ -1,0 +1,17 @@
+
+<ion-content padding>
+  <ion-card *ngFor="let item of resultItems;let i = index">
+    <ion-card-content>
+      <p style="font-size: 1.8rem;">{{i+1}}.{{item.QTOP011}}</p>
+      <!--<p>题型：{{item.QTOP009}}</p>-->
+      <ion-item *ngFor="let oneitem of item.QTOP014 | limitTimeLength :'':3;let k = index">
+        <ion-label>{{oneitem}}</ion-label>
+        <ion-checkbox [checked]="k+'' | limitTimeLength :item.URES006:2"
+                      [disabled]="true"></ion-checkbox>
+      </ion-item>
+      <!--<p>我的选项：{{item.URES006}}</p>-->
+      <!--<p>开始时间：{{item.QGTA004 | date:'yyyy年MM月dd日 HH:mm:ss'}}</p>-->
+      <!--<p>结束时间：{{item.QGTA005 | date:'yyyy年MM月dd日 HH:mm:ss'}}</p>-->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

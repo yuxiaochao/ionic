@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>港澳班
+      <ion-icon (click)="squareshowdata()" *ngIf="xianzhou" ios="md-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
+      <ion-icon (click)="squareshowdate()" *ngIf="xianyue" ios="md-arrow-dropup" md="md-arrow-dropup"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--<ion-header xmlns="http://www.w3.org/1999/html">-->
+<!--<ion-navbar>-->
+<!--<ion-title>日常</ion-title>-->
+<!--</ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-content>
+
+  <div class="top-bar" (click)="getnl()">{{chuannian}}年{{chuanyue}}月{{chuanri}}日</div>
+  <div>
+    <ion-list>
+      <!------------------------日历##开始--------------------------------->
+      <div class="top-date">
+
+        <ul class="top-day">
+          <li>日</li>
+          <li>一</li>
+          <li>二</li>
+          <li>三</li>
+          <li>四</li>
+          <li>五</li>
+          <li>六</li>
+        </ul>
+        <!--周日历开始-->
+        <div [style.visibility]="!xianzhou?'hidden':''" [style.height]="!xianzhou?'0px':'auto'"
+             (swipedown)="xianyuetodo()">
+          <ion-slides #slides2 loop="true"
+                      (ionSlideNextEnd)="zhouSlideNext()"
+                      (ionSlidePrevEnd)="zhouSlidePrev()"
+                      initialSlide="1"
+                      style="margin-bottom: 12px;">
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li
+                  [class.cur1]="item.iscolor"
+                  *ngFor=" let item of itema1; let i=index"
+                  (click)="zhouSelectedClick(i,item)">
+                  <span *ngIf="item.Showzhoupoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.nong}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li [class.cur1]="item.iscolor"
+                    *ngFor=" let item of itema2; let i=index"
+                    (click)="zhouSelectedClick(i,item)">
+                  <span *ngIf="item.Showzhoupoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.nong}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li
+                  [class.cur1]="item.iscolor"
+                  *ngFor=" let item of itema3;let i=index"
+                  (click)="zhouSelectedClick(i,item)">
+                  <span *ngIf="item.Showzhoupoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.nong}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <!--周日历结束-->
+        <div [style.visibility]="!xianyue?'hidden':''" [style.height]="!xianyue?'0px':'auto'"
+             (swipeup)="xianzhoutodo()">
+          <ion-slides #slides1 loop="true"
+                      (ionSlideNextEnd)="slideNext()"
+                      (ionSlidePrevEnd)="slidePrev()"
+                      initialSlide="1">
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li *ngFor=" let item of items1"
+                    [class.cur1]="item.isday && (item.current)"
+                    [class.cur]="!item.current "
+                    (click)="selectedDate(item)">
+                  <span *ngIf="item.isShowPoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.subd}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li *ngFor=" let item of items2"
+                    [class.cur1]="item.isday && (item.current)"
+                    [class.cur]="!item.current"
+                    (click)="selectedDate(item)">
+                  <span *ngIf="item.isShowPoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.subd}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+            <ion-slide>
+              <ul class="top-date-bar">
+                <li *ngFor=" let item of items3"
+                    [class.cur1]="item.isday && (item.current)"
+                    [class.cur]="!item.current"
+                    (click)="selectedDate(item)">
+                  <span *ngIf="item.isShowPoint>0"></span>
+                  {{item.day}}
+                  <i>{{item.subd}}</i>
+                </li>
+              </ul>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+    </ion-list>
+  </div>
+  <!------------------------结束------------------------------------>
+
+  <!---------------------国家行政学院开始------------------------------->
+
+  <div class="addjob" (click)="getnl()">
+    <span class="font">{{chuannian}}年{{chuanyue}}月{{chuanri}}日</span>
+  </div>
+  <div *ngFor="let item of selectCourseList">
+    <div class="fanshijian">
+      <div class="zaocan" (click)="updatePwd()">
+        <span class="shuxian"></span><span style="font-size:16px;color:#373737;">{{item.TRPC005|limitLength:15}}</span>
+      </div>
+      <div class="zaocan" (click)="updatePwd()">
+        <span class="font font2">授课地点</span><span class="wuxian font">{{item.LOCATIONNAME}}</span>
+      </div>
+      <div class="zaocan" (click)="updatePwd()">
+        <span class="font font2">授课教师</span><span class="wuxian font">{{item.TEAC002?item.TEAC002:'其他'}}</span>
+      </div>
+      <div class="zaocan" style="" (click)="updatePwd()">
+        <span class="font font2">授课时间</span><span class="wuxian font"><span>{{item.TRPC002|date:'yyyy-MM-dd'}}</span>
+      <span class="timebgd">{{item.TRPC003N}}</span></span>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

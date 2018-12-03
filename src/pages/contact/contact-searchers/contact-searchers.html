@@ -1,0 +1,124 @@
+<!--
+  联系人--添加好友（搜索页面）
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>添加好友</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    (ionFocus)="ionFocus()"
+    (ionInput)="ionInput($event)"
+    (ionCancel)="ionCancel($event)"
+    (ionClear)="ionClear()"
+    placeholder='搜索'>
+  </ion-searchbar>
+  <div *ngIf="myInput.length == 0" class="ApplyRecordDiv">
+    <div class="boundary title01" *ngIf="items02.length > 0">
+      好友申请
+    </div>
+    <ion-item class="item ng-binding peopleItem" *ngFor="let item02 of items02">
+      <div class="headDiv">
+        <div (click)="clickContacts(item02.APPL002)">
+          <img [src]="item02.ATTA007 | coverHeadImpPath:item02.USER006" class="headDivImg"/>
+          <span class="headDivSpan01">
+            <span>{{item02.USER005}}</span>
+            <span style="font-size: small;">({{item02.USER004}})</span>
+          </span>
+          <span class="headDivSpan02">
+            <p class="man" *ngIf="item02.USER006 == '男'"></p>
+            <p class="woman" *ngIf="item02.USER006 == '女'"></p>
+            <span style="">{{item02.USER006}}&nbsp;&nbsp;&nbsp;{{item02.APPL006 | limitLength:9}}</span>
+          </span>
+        </div>
+        <span class="headDivSpan03" (click)="agreeButton(item02)" *ngIf="item02.APPL005 == '0'">
+          <div>同意</div>
+        </span>
+        <span class="headDivSpan03" *ngIf="item02.APPL005 == '1'" style="font-size: smaller;color: #6d6d6d;">已添加</span>
+        <span class="headDivSpan03" *ngIf="item02.APPL005 == '2'" style="font-size: smaller;color: #6d6d6d;">已拒绝</span>
+      </div>
+    </ion-item>
+
+    <div class="boundary title01" *ngIf="items03.length>0">我的申请</div>
+    <ion-item class="item ng-binding peopleItem" *ngFor="let item03 of items03">
+      <div class="headDiv">
+        <div (click)="clickContacts(item03.APPL003)">
+          <img [src]="item03.ATTA007 | coverHeadImpPath:item03.USER006" class="headDivImg"/>
+          <span class="headDivSpan01">
+            <span>{{item03.USER005}}</span>
+            <span style="font-size: small;">({{item03.USER004}})</span>
+          </span>
+          <span class="headDivSpan02">
+            <p class="man" *ngIf="item03.USER006 == '男'"></p>
+            <p class="woman" *ngIf="item03.USER006 == '女'"></p>
+            <span style="">{{item03.USER006}}</span>
+          </span>
+        </div>
+        <span class="headDivSpan03" *ngIf="item03.APPL005 == '0'"
+              style="font-size: smaller;color: #6d6d6d;">等待验证</span>
+        <span class="headDivSpan03" *ngIf="item03.APPL005 == '1'"
+              style="font-size: smaller;color: #6d6d6d;">对方已同意</span>
+        <span class="headDivSpan03" *ngIf="item03.APPL005 == '2'"
+              style="font-size: smaller;color: #6d6d6d;">对方已拒绝</span>
+      </div>
+    </ion-item>
+    <!-- <ion-infinite-scroll  (ionInfinite)="doInfinite($event)">
+       <ion-infinite-scroll-content
+         *ngIf="items.length !=0 "
+         loadingSpinner="crescent"
+         loadingText="加载更多数据...">
+       </ion-infinite-scroll-content>
+     </ion-infinite-scroll>-->
+  </div>
+
+
+  <div *ngIf="items.length==0 && type ">
+    <ion-card>
+      <ion-card-content>
+        搜索用户不存在， 请重新输入!
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+  <div *ngIf="myInput.length > 0">
+    <ion-item class="item ng-binding peopleItem" *ngFor="let item of items">
+      <div class="headDiv">
+        <div (click)="clickContacts(item.USER001)">
+          <img [src]="item.ATTA007 | coverHeadImpPath:item.USER006" class="headDivImg"/>
+          <span class="headDivSpan01">
+            <span [innerHTML]="item.USER005 | keywordMarkUp:myInput"></span>
+            <span style="font-size: small;">(
+              <span [innerHTML]="item.USER004 | keywordMarkUp:myInput"></span>
+              )
+            </span>
+          </span>
+
+          <span class="headDivSpan02">
+            <p class="man" *ngIf="item.USER006 == '男'"></p>
+            <p class="woman" *ngIf="item.USER006 == '女'"></p>
+            {{item.USER006}}
+          </span>
+        </div>
+        <span class="headDivSpan03" (click)="addFriendButton(item)" *ngIf="item.ismyfriend == '0'">
+          <div *ngIf="item.APPL005 == '-1' || item.APPL005 == '2'">添加</div>
+          <span *ngIf="item.APPL005 == '0'" style="font-size: smaller;color: #6d6d6d;">等待验证</span>
+        </span>
+        <span class="headDivSpan03" *ngIf="item.ismyfriend == '1'" style="font-size: smaller;color: #6d6d6d;">好友</span>
+      </div>
+    </ion-item>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="加载更多数据...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+</ion-content>

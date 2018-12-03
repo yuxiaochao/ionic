@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>任务详情</ion-title>
+    <ion-buttons end style="width: 50%;"  *ngIf="taskInfo.CALT009==userid">
+      <button ion-button small>
+        <ion-icon name="more"></ion-icon>
+      </button>
+      <ion-select interface="popover"
+                  style="position: absolute;width: 20px;height: 2px;top: 6px;right: 0px;"
+                  [(ngModel)]="toppings"
+                  (ionChange)="toChange()">
+          <ion-option [value]="i">修改任务</ion-option>
+          <ion-option [value]="j">取消任务</ion-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li>
+        <ul>
+          <li class="imgw">
+            <img src="././assets/imgs/work/home/qizhi.png ">
+          </li>
+          <li class="conw">
+            <span class="conw_1">{{taskInfo.CALT002}}</span>
+            <span>{{taskInfo.CALT009N}}分配的 | {{taskInfo.CALT010|date:'yyyy-MM-dd HH:mm'}}</span>
+          </li>
+        </ul>
+      </li>
+      <li style="border-top: 5px solid #f0f0f0">
+        <ul>
+          <li class="conw_2">
+            <span><p>任务类型</p><p class="conw_p">{{taskInfo.CATA002}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>任务标签</p><p class="conw_b">{{taskInfo.TALI002}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>任务地点</p><p class="conw_p">{{taskInfo.CALT004}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li style="border-top: 5px solid #f0f0f0">
+        <ul>
+          <li class="conw_2">
+            <span><p>开始时间</p><p class="conw_p" style="color: rgba(0, 0, 0, 0.65);">{{taskInfo.CALT005|date:'yyyy-MM-dd HH:mm'}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>截止时间</p><p class="conw_p" style="color: rgba(0, 0, 0, 0.65);">{{taskInfo.CALT006|date:'yyyy-MM-dd HH:mm'}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>签到次数</p><p class="conw_p" style="color:red;font-weight: bold;">{{taskInfo.SIGNINNUM}}/{{taskInfo.CALT007}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>任务提醒</p><p class="conw_p">{{taskInfo.CALT008|optionText:2}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li style="border-top: 5px solid #f0f0f0" (click)="showUser(0)">
+        <ul>
+          <li class="conw_2">
+            <span style="margin-bottom: 5px"><p>执行人</p><p style="margin-left: 3rem;">{{taskZxInfo.length}}人</p></span>
+            <span class="arr_03"></span>
+            <span style="float: right;"></span>
+          </li>
+        </ul>
+
+      </li>
+      <li (click)="showUser(1)">
+        <ul>
+          <li class="conw_2">
+            <span><p>协助人</p>
+              <p style="margin-left: 3rem;" *ngFor="let item of taskInfo.taskXzInfo">{{item.USER005}}</p>
+            </span>
+            <span class="arr_03"></span>
+            <span style="float: right;"></span>
+          </li>
+        </ul>
+      </li>
+      <li (click)="showUser(2)">
+        <ul>
+          <li class="conw_2">
+            <span>
+              <p>主管领导</p>
+              <p class="conw_p" *ngFor="let item of taskInfo.taskLdInfo">{{item.USER005}}</p>
+            </span>
+            <span class="arr_03"></span>
+            <span style="float: right;"></span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+</ion-content>

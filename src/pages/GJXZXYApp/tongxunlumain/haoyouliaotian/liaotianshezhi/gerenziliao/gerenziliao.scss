@@ -1,0 +1,94 @@
+page-gerenziliao {
+
+  .item-ios.item-block .item-inner {
+    border-bottom: none;
+  }
+
+  .addjob{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #d2cece;
+    line-height: 50px;
+    padding: 0 15px;
+    background: #fff;
+    color: RGB(109, 191, 212);
+  }
+
+  .font{
+    color:#787878!important;
+  }
+
+  .wuxian{
+    display: inline-block;
+    width: 72%;
+    height: 100%;
+    float: right;
+    color:#373737;
+  }
+
+  .topxia{
+    width: 100%;
+    height: 135px;
+    background: #fff;
+    border-top: 15px solid #f2f6f9;
+    border-bottom: 15px solid #f2f6f9;
+  }
+
+  .touxiangleft{
+    width: 40%;
+    float: right;
+    /* margin-right: 20px; */
+    margin-top: 20px;
+    display: inline-block;
+  }
+  .touxiang{
+    width: 68px;
+    height: 68px;
+    margin: 0 auto;
+    border-radius: 35px;
+  }
+
+  .touxiangright{
+    width: 40%;
+    margin: 20px 0 0 30px;
+    height: 45px;
+    float: left;
+    position: relative;
+    display: inline-block;
+  }
+
+  .usename {
+    font-size: 16px;
+    color: #373737;
+    letter-spacing: 1px;
+  }
+
+  .dingwei{
+    width:15px;
+    height:15px;
+    margin-left: 5px;
+    display:inline-block;
+  }
+
+  .lastbox {
+    margin-top: 6%;
+  }
+
+  .jobpost{
+    background:#18b4ed;
+    color:#fff;
+    font-size:10px;
+    font-family:PingFangSC-Regular;
+    padding: 0px 2px;
+    letter-spacing:1px;
+    border-radius: 10px;
+  }
+
+  .tuwbar {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 35%;
+    right: 20px;
+  }
+}

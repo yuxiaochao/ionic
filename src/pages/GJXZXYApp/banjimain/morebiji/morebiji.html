@@ -1,0 +1,98 @@
+<!--
+  Generated template for the MorebijiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>笔记</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="position: relative;">
+
+
+  <div class="huntBox">
+    <ion-searchbar class="searchbar-ios-dark"
+                   [(ngModel)]="myInput"
+                   animated = 'true'
+                   (ionFocus)="ionFocus()"
+                   (ionInput)="ionInput($event)"
+                   cancelButtonText="取消"
+                   showCancelButton="true"
+                   (ionCancel)="ionCancel($event)"
+                   (ionClear)="ionClear()"
+                   placeholder='搜索'>
+    </ion-searchbar>
+    <!--<div class="hunt">-->
+    <!--<span class="SionicImg">-->
+      <!--<img style="width:100%;height:100%;" src="././assets/imgs/xzxy/sousuo.png" alt="">-->
+    <!--</span>-->
+      <!--<span>搜索</span>-->
+    <!--</div>-->
+  </div>
+
+  <div class="nodeBox" *ngFor="let note of noteList">
+
+    <!--<div class="node" (click)="notodetailClick()">-->
+      <!--<div class="yuan"></div>-->
+      <!--<div class="nodeleft">-->
+        <!--<p class="biaoti">港澳培训第三天</p>-->
+        <!--<p class="neirong">内容两行内容两行内容两行内容两行</p>-->
+        <!--<p class="time"><span>2018.11.12</span><span style="margin-left:15px;">12:15</span></p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="node">-->
+      <!--<div class="yuan"></div>-->
+      <!--<div class="noderight">-->
+        <!--<p class="biaoti">港澳培训第三天</p>-->
+        <!--<p class="neirong">内容两行内容两行内容两行内容两行</p>-->
+        <!--<p class="time"><span>2018.11.12</span><span style="margin-left:15px;">12:15</span></p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div *ngIf="note.ROWNUM%2==0" class="node" (click)="notodetailClick(note)">
+      <div class="yuan"></div>
+      <div class="nodeleft">
+        <p class="biaoti">{{note.NOTE002}}</p>
+        <p class="neirong">{{note.NOTE003}}</p>
+        <p class="time"><span>{{note.NOTE005S}}</span><span style="margin-left:15px;">{{note.TIME}}</span></p>
+      </div>
+    </div>
+
+    <div *ngIf="note.ROWNUM%2==1" class="node" (click)="notodetailClick(note)">
+      <div class="yuan"></div>
+      <div class="noderight">
+        <p class="biaoti">{{note.NOTE002}}</p>
+        <p class="neirong">{{note.NOTE003}}</p>
+        <p class="time"><span>{{note.NOTE005S}}</span><span style="margin-left:15px;">{{note.TIME}}</span></p>
+      </div>
+    </div>
+
+
+    <div class="fanhuitop"><img  (click)="gotop()" style="width:100%;height:100%;" src="././assets/imgs/xzxy/zhiding.png" alt=""></div>
+    <!--<div class="fanhuitop"><img style="width:100%;height:100%;" src="././assets/imgs/xzxy/zhiding.png" alt=""></div>-->
+  </div>
+
+  <ion-card *ngIf="noteList.length==0">
+    <ion-card-content>
+      暂无资源！
+    </ion-card-content>
+  </ion-card>
+
+  <div (click)="toTop()" class="fanhuitop"><img style="width:100%;height:100%;" src="././assets/imgs/xzxy/zhiding.png" alt=""></div>
+  <div (click)="tiaozhuantianjia()" class="jiahao"><img style="width:100%;height:100%;" src="././assets/imgs/xzxy/jiahao.png" alt=""></div>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="加载更多数据...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

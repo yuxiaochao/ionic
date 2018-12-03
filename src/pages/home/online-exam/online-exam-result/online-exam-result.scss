@@ -1,0 +1,59 @@
+page-online-exam-result {
+  .conresult{
+    width: 100%;
+    padding: 94px 0 50px 0;
+    background: color($colors, primary);
+    color: #fff;
+    font-size: 56px;
+    text-align: center;
+    position: relative;
+
+  }
+  .conresult .time{
+    position: absolute;
+    left: 20px;
+    top:20px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .conresult>span{
+    position: absolute;
+    right: 20px;
+    top:20px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .conresult .score{
+    position: absolute;
+    right: 20px;
+    bottom:20px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .iconresult{
+    width:90%;
+    margin: 15px auto 0;
+
+  }
+  .iconresult ul{
+    width: 100%;
+
+  }
+  .iconresult ul li{
+    width:20%;
+    float: left;
+    margin:10px 8.3%;
+
+  }
+  .iconresult ul li img{
+    width:100%;
+
+
+  }
+  .iconresult ul li span{
+    width:100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+  }
+}

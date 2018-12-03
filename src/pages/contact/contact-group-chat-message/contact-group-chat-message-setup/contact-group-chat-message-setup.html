@@ -1,0 +1,86 @@
+<!--
+  Generated template for the ContactGroupChatMessageSetupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>聊天设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="div01">
+      <ion-item class="peopleItem">
+        <div (click)="updateGroup()">
+                 我的工作组
+                 <p float-right>{{GROU002}}</p>
+        </div>
+        <ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item no-lines (click)="addPeople(GROU001,GROU002)">
+        <div >
+          班级人数
+          <p float-right >{{groupnumber.MEMBERCOUNT}}人</p>
+        </div>
+        <ion-icon class="tubiao" name="arrow-forward" item-right ></ion-icon>
+      </ion-item >
+
+      <ion-item>
+        <div>
+          <div *ngFor="let item of items" no-border class="peopleItem div00" no-lines>
+            <ion-avatar>
+               <img class="img" src="{{item.ATTA007 | coverHeadImpPath:item.USER006}}">
+            </ion-avatar>
+            <h2 class="text">{{item.USER005}}</h2>
+          </div>
+         <!-- <div>
+            <ion-avatar>
+              <img (click)="addPeople(GROU001,GROU002)"  src="../../../../assets/imgs/add.jpg">
+            </ion-avatar>
+          </div>-->
+        </div>
+      </ion-item>
+  </div>
+
+        <!--<div class="div02" class="peopleItem">-->
+            <!--<div (click)="groupPublic()">-->
+                <!--<ion-item>-->
+
+                     <!--<P>公告</P>-->
+                  <!--<ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>-->
+                <!--</ion-item>-->
+            <!--</div>-->
+            <!--<div (click)="groupFile()">-->
+                <!--<ion-item>-->
+                    <!--<p>共享文件</p>-->
+                  <!--<ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>-->
+                <!--</ion-item>-->
+            <!--</div>-->
+               <!--<div (click)="groupPhotoes()">-->
+                    <!--<ion-item>-->
+                         <!--<p>群相册</p>-->
+                      <!--<ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>-->
+                    <!--</ion-item>-->
+               <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="div03" class="peopleItem">-->
+              <!--<ion-item>-->
+                <!--<ion-label> 冻结讨论组</ion-label>-->
+                <!--<ion-toggle [(ngModel)]="endgruop"  item-right></ion-toggle>-->
+              <!--</ion-item>-->
+
+              <!--<ion-item>-->
+                <!--<ion-label> 消息免打扰</ion-label>-->
+                <!--<ion-toggle [(ngModel)]="endmessage" ></ion-toggle>-->
+              <!--</ion-item>-->
+
+        <!--</div>-->
+
+</ion-content>

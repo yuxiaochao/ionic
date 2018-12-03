@@ -1,0 +1,109 @@
+<!--
+  Generated template for the JibenxinxiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>基本信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="box">
+    <div class="renwu" >
+      <!--<div class="renleft">-->
+        <!--<img style="width:100%; height:100%;" src="././assets/imgs/work/jiaoshi2.png">-->
+      <!--</div>-->
+      <div class="renright">
+        <div class="oneline"><span class="onename">{{Headmaster.TRPP002}}</span><span>班主任</span></div>
+        <div style="margin:10px 0;"><span>{{Headmaster.TRPP005}}</span><span (click)="callPhone(Headmaster.TRPP005)" style="float:right;display: inline-block; width:20px;height:20px;"><img style="width:100%;height: 100%;" src="././assets/imgs/work/dianhua-3.png"></span></div>
+        <div style="color:#787878;font-size:13px;">从事教育工作21年，一向担任语文教学兼班主任工作。曾获省、市教研教改先进个人，</div>
+      </div>
+    </div>
+
+    <div class="renwu" >
+      <!--<div class="renleft">-->
+        <!--<img style="width:100%; height:100%;" src="././assets/imgs/work/jiaoshi3.png">-->
+      <!--</div>-->
+      <div class="renright">
+        <div class="oneline"><span class="onename">{{AssistantTeacher.TRPP002}}</span><span style="background:rgb(223,186,133);">班主任助理</span></div>
+        <div style="margin:10px 0;"><span>{{AssistantTeacher.TRPP005}}</span><span (click)="callPhone(AssistantTeacher.TRPP005)" style="float:right;display: inline-block; width:20px;height:20px;"><img style="width:100%;height: 100%;" src="././assets/imgs/work/dianhua-3.png"></span></div>
+        <div style="color:#787878;font-size:13px;">从事教育工作20年，其间连续15年担任语文教学并兼班主任工作。曾获省、市教研教改先进个人、洪江市首届“十佳”班主任等光荣称号。</div>
+      </div>
+    </div>
+
+    <div class="renwu" >
+      <!--<div class="renleft">-->
+      <!--<img style="width:100%; height:100%;" src="././assets/imgs/work/jiaoshi3.png">-->
+      <!--</div>-->
+      <div class="renright">
+        <div class="oneline"><span class="onename">{{classAssistant.TRPP002}}</span><span style="background:rgb(223,186,133);">班务助理</span></div>
+        <div style="margin:10px 0;"><span>{{classAssistant.TRPP005}}</span><span (click)="callPhone(classAssistant.TRPP005)" style="float:right;display: inline-block; width:20px;height:20px;"><img style="width:100%;height: 100%;" src="././assets/imgs/work/dianhua-3.png"></span></div>
+        <div style="color:#787878;font-size:13px;">学士学位。小学高级教师，国家二级心理咨询师，市级优秀教师。用心经营着教育，用爱温暖童心，引领孩子沐浴阳光，引导孩子浸润书香</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box" style="border-top:none;">
+    <div class="addjob"  (click)="canteenDetails()">
+      <span style="display: inline-block; width: 4%; height: 28px;margin-right: 7px; position: relative; top: 5px;"><img style="width:100%;height: 100%;" src="././assets/imgs/work/fenzu101.png"></span>
+      <span style="font-size:16px;color:#373737;">餐厅信息</span>
+      <ion-icon  class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob" style="border-bottom:1px dashed #d2cece;" >
+      <span class="font">{{canteenName}}</span>
+    </div>
+
+    <div class="fanshijian">
+
+      <div class="zaocan"  >
+        <span  class="font">早餐时间</span><span class="wuxian font">{{BreakfastTime.DINN004}}-{{BreakfastTime.DINN005}}</span>
+      </div>
+      <div class="zaocan"  >
+        <span class="font">午餐时间</span><span class="wuxian font">{{LunchTime.DINN004}}-{{LunchTime.DINN005}}</span>
+      </div>
+      <div class="zaocan" style="border-bottom:1px dashed #d2cece;" >
+        <span class="font">晚餐时间</span><span class="wuxian font">{{DinnerTime.DINN004}}-{{DinnerTime.DINN005}}</span>
+      </div>
+    </div>
+
+
+    <div class="addjob" style="border-bottom:1px dashed #d2cece;" >
+      <span class="font">可容纳人数</span><span class="wuxian font">{{canteenNumber}}</span>
+    </div>
+    <div class="addjob" style="border-bottom:none" >
+      <span class="font">订餐电话</span><span (click)="callPhone(canteenPhoto)" class="wuxian">{{canteenPhoto}}</span>
+    </div>
+  </div>
+
+
+  <div class="box" style="border-top:none;">
+    <div class="addjob"  (click)="dormitorydetails()">
+      <span style="display: inline-block; width: 4%; height: 28px;margin-right: 7px; position: relative; top: 5px;"><img style="width:100%;height: 100%;" src="././assets/imgs/work/fenzu101.png"></span>
+      <span style="font-size:16px;color:#373737;">住宿信息</span>
+      <ion-icon  class="right" name="arrow-forward"></ion-icon>
+    </div>
+    <div class="addjob" style="border-bottom:1px dashed #d2cece;" >
+      <span class="font">{{dormitory.HOTE002}}</span>
+    </div>
+
+    <div class="addjob" style="border-bottom:1px dashed #d2cece;" >
+      <span class="font">房间号</span><span class="wuxian font">{{dormitory.HORO003}}</span>
+    </div>
+    <div class="addjob" style="border-bottom:1px dashed #d2cece;" >
+      <span class="font">前台电话</span><span (click)="callPhone(dormitory.HOTE006)" class="wuxian">{{dormitory.HOTE006}}</span>
+    </div>
+    <div class="addjob" style="border-bottom:1px dashed #d2cece;" >
+    <span class="font">房间电话</span><span  (click)="callPhone(dormitory.HORO008)"class="wuxian">{{dormitory.HORO008}}</span>
+    </div>
+    <div class="addjob" style="border-bottom:1px dashed #d2cece;" >
+      <span class="font">上网密码</span><span class="wuxian font">{{dormitory.HORO007}}</span>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,47 @@
+page-online-exam-detail {
+  .con_detail{
+    width: 100%;
+  }
+  .con_detail>h1{
+    width: 100%;
+    text-align: left;
+    background-color: #FFFFFF;
+    font-size: 16px;
+  }
+  .con_box{
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 16px;
+    background-color:#FFFFFF ;
+  }
+  .con_box h1{
+    font-size: 17px;
+    line-height: 34px;
+    padding-left: 26px;
+    background: url(./../assets/imgs/home/online-exam/ksap.png) no-repeat left center;
+    background-size: 20px;
+    margin-bottom: 5px;
+  }
+  .con_li{
+    padding: 10px 0;    border-bottom: 1px solid #f1f1f1;
+  }
+  .con_li:nth-child(2) h1{
+    background: url(./../assets/imgs/home/online-exam/watchs.png) no-repeat left center;
+    background-size: 20px;
+  }
+  .con_li:nth-child(3) h1{
+    background: url(./../assets/imgs/home/online-exam/checked.png) no-repeat left center;
+    background-size: 20px;
+  }
+  .con_li p{
+    line-height: 22px;
+    font-size: 14px;
+    margin-left: 28px;
+    margin-bottom: 8px;
+  }
+
+  .body_content{
+    background-color: #EFEFEF;
+  }
+}
+

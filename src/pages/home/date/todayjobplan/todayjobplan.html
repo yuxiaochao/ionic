@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>日程</ion-title>
+    <ion-buttons end style="width: 50%;">
+      <button ion-button (click)="deleteRiCheng()"small>
+        <ion-icon name="more"></ion-icon>
+      </button>
+      <ion-select interface="popover"
+                  style="position: absolute;width: 20px;height: 2px;top: 6px;right: 0px;"
+                  [(ngModel)]="toppings"
+                  (ionChange)="toChange()">
+        <ion-option value="0">删除日程</ion-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: RGB(241,241,241);">
+
+  <div class="topbox">
+    <P style="color:#000;font-size:15px;font-weight: 600;">{{item.came002}}</P>
+    <!--<P>-->
+      <!--<span style="margin-right:15px;">{{item.came003 | date:'yyyy年MM月dd日'}}</span>-->
+      <!--<span>{{week|weekPipe}}</span>-->
+    <!--</P>-->
+    <P>开始： {{item.came003 | date:'yyyy年MM月dd日 HH:mm'}}</P>
+    <P>结束： {{item.came004 | date:'yyyy年MM月dd日 HH:mm'}}</P>
+    <P>重复:{{item.came009 | optionText:1}}</P>
+  </div>
+
+  <div class="addjob" (click)="tixinrenClick()">
+    <span class="font">任务提醒</span>
+    <!--<div class="right">-->
+      <!--<ion-icon style="font-size:28px;margin:0 10px; position: relative;top: 6px;" name="arrow-forward"></ion-icon>-->
+    <!--</div>-->
+    <span class="right">{{item.came008 | optionText:0}}</span>
+  </div>
+
+  <div class="topbox">
+    <P style="color:#000">备注</P>
+    <P>{{item.came007}}</P>
+  </div>
+</ion-content>

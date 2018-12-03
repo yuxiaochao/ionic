@@ -1,0 +1,118 @@
+page-login {
+
+
+
+  .backimg{
+    //background-image: url(../assets/imgs/login/bg.jpg);
+    //background-repeat: no-repeat;
+    //background-size: cover;
+    //background:red;
+  }
+
+  .logBox {
+    margin-top: -20px;
+    width: 100%;
+    height: 280px;
+    padding-top: 60px;
+    background-image: url(../assets/imgs/xzxy/xzbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .logImg {
+    width: 110px;
+    height: 110px;
+    margin:0 auto;
+    background-image: url(../assets/imgs/xzxy/xzlog1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+  .headline{
+    text-align:center;
+    color:#fff;
+  }
+
+  .chinese {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .English {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+
+  .logo{
+    width: 80%;
+    margin: 110px auto 60px;
+  }
+
+  .logo span{
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color:#fff;
+  }
+  .zhanghao{
+    width: 90%;
+    height: 35px !important;
+    line-height: 35px;
+    font-size:18px !important;
+    margin: 40px auto 0;
+    background: #fff;
+    border-radius: 40px;
+  }
+  .mtop{
+    width: 86%;
+    height: 40px;
+    background: Rgb(0, 122, 249);
+    border-radius: 40px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .spdui{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+
+  .yanse{
+    float:left;
+    color:#ccc !important;
+  }
+
+  .imgabox{
+    width:23px;
+    height:23px;
+  }
+
+  .item-block{
+    min-height: 0px;
+  }
+  .text-input-ios{
+    margin:0px;
+  }
+  .input-ios[clearInput] .text-input {
+    font-size: 13px;
+  }
+  .label-ios{
+    margin:0 0 0 0;
+  }
+
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgb(0, 0, 0) !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+  }
+}

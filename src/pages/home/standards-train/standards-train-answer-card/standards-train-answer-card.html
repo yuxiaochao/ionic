@@ -1,0 +1,29 @@
+<ion-header #answerHeader [class.moon_test]="moonClass">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="closeAnswerCard()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>答题卡</ion-title>
+    <ion-buttons end text-center>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content #answerCardContent [class.moon_test]="moonClass">
+  <ion-grid *ngFor="let item of tx">
+    <ion-row class="row_border">
+      <ion-col>{{item.exts007}}</ion-col>
+    </ion-row>
+    <ion-row row-wrap>
+      <ng-container *ngFor="let itemtopic of topic;let itemIndex=index;">
+        <ion-col col-2 text-center class="answerCardDistance"  *ngIf="item.exts007 === itemtopic.BTXTITLE"  >
+          <div class="top_index" [ngClass]="{'rightAnswerCard': 'right'==answerCard['answer_'+itemtopic.ID],'errorAnswerCard':'error'==answerCard['answer_'+itemtopic.ID]}">{{itemIndex+1}}</div>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+</ion-content>

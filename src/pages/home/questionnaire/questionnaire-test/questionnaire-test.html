@@ -1,0 +1,52 @@
+<ion-header #popoverHeader [class.moon_test]="moonClass">
+  <ion-toolbar>
+    <ion-buttons start style="width: 49%">
+      <button  ion-button icon-only (click)="back()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+      <!--<button  ion-button  small style="left: 23%" (click)="openSignatureBoard()">-->
+        <!--<ion-icon name="tianxie"></ion-icon>-->
+      <!--</button>&lt;!&ndash;画板&ndash;&gt;-->
+      <button  ion-button small  style="left: 50%" (click)="openAnswerCard()">
+        <ion-icon name="datika"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end style="width: 50%;" >
+      <button ion-button small (click)="haveRest()" style="margin-right: 20px;">
+        已用时：{{time}}
+      </button>
+      <button ion-button small (click)="morePopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="tutorial-page" #popoverContent [class.moon_test]="moonClass">
+  <div class="swiper-container1">
+    <div class="swiper-wrapper" #popoverText>
+      <div class="swiper-slide" *ngFor="let item of items;let itemIndex=index;">
+        <questionnaire-topic class="slide-zoom" [way]="way" [slides]="slides" [is_answer]="is_answer" [topic_index]="itemIndex+1" [answer_key]="answer_key" [topic]="item"  [paper]="paper" [pageination]="pageination" ></questionnaire-topic>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer [class.moon_test]="moonClass">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button class="button-prev" color="light" icon-start>
+        <ion-icon name='arrow-back'></ion-icon>
+        上一题
+      </button>
+    </ion-buttons>
+    <ion-title><button ion-button clear color="light" (click)="openAnswerCard()">交卷</button></ion-title>
+    <ion-buttons end>
+      <button ion-button class="button-next" color="light" icon-end>
+        下一题
+        <ion-icon name='arrow-forward'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

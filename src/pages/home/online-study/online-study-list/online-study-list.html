@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar class="searchbar-ios-dark"
+                   [(ngModel)]="myInput"
+                   animated = 'true'
+                   (ionFocus)="ionFocus()"
+                   (ionInput)="ionInput($event)"
+                   cancelButtonText="取消"
+                   showCancelButton="true"
+                   (ionCancel)="ionCancel()"
+                   (ionClear)="ionClear()"
+                   placeholder='请输入课程名称'>
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content scrollDownOnLoad="true">
+  <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+     <ion-refresher-content
+       pullingIcon="arrow-round-up"
+       pullingText="下拉更新"
+       refreshingSpinner="crescent"
+       refreshingText="更新中...">
+     </ion-refresher-content>
+   </ion-refresher>-->
+  <ion-card *ngIf="unRecord">
+    <ion-card-header text-center>
+      暂无相关记录！
+    </ion-card-header>
+  </ion-card>
+  <div class="test_list">
+    <ul>
+      <li tappable *ngFor="let item of items" (click)="intoStudyDetail(item)">
+        <div class="test_item1 clearfix">
+          <div class="pic">
+            <img width="103" height="77" src="{{item.LEAC009 | coverPath}}"/>
+          </div>
+
+          <div class="con">
+            <p class="name">{{item.LEAC004}}</p>
+            <p>主讲人：{{item.COUR008}}</p>
+            <p>课程类型：{{item.LEAC005}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="加载更多数据...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

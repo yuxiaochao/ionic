@@ -1,0 +1,156 @@
+<ion-header></ion-header>
+<ion-content>
+
+
+  <!-- start 轮播图-->
+  <!--<ion-slides pager autoplay="3000" loop="true" id="frame" >
+    <ion-slide *ngFor="let item of rotaryPressItems">
+      <img [src]="item.PICTUREPATH"  />
+    </ion-slide>
+  </ion-slides>-->
+
+  <ion-slides pager autoplay="1500" loop="true" id="frame">
+    <ion-slide>
+      <img src="././assets/imgs/home/bq.jpg " >
+    </ion-slide>
+    <ion-slide>
+      <img src="././assets/imgs/home/banner.png ">
+    </ion-slide>
+    <ion-slide>
+      <img src="././assets/imgs/home/pic_08.png ">
+    </ion-slide>
+  </ion-slides>
+  <!-- end 轮播图-->
+
+
+  <nav>
+    <ul class="clearfix tubiao">
+      <li>
+        <a href="javacript:;" [navPush]="OnlineElectivecourseListPage">
+          <p><img src="./assets/imgs/home/nav_1.png" alt="" /></p>
+          <span>选课中心</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="OnlineStudyListPage">
+          <p><img src="./assets/imgs/home/nav_2.png" alt="" /></p>
+          <span>在线学习</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="OnlineExamListPage" [navParams]="examParams">
+          <p><img src="./assets/imgs/home/nav_3.png" alt="" /></p>
+          <span>在线考试</span>
+        </a>
+      </li>
+	  <li>
+        <a href="javacript:;" [navPush]="OnlineExamListPage" [navParams]="exerciseParams">
+          <p><img src="./assets/imgs/home/nav_9.png" alt="" /></p>
+          <span>模拟练习</span>
+        </a>
+      </li>
+     <li>
+        <a href="javacript:;" [navPush]="ExamExercisesListPage">
+          <p><img src="./assets/imgs/home/nav_4.png" alt="" /></p>
+          <span>题库练习</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="StandardsTrainListPage">
+          <p><img src="./assets/imgs/home/nav_10.png" alt="" /></p>
+          <span>达标训练</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="QuestionnaireListPage">
+          <p><img src="./assets/imgs/home/nav_5.png" alt="" /></p>
+          <span>问卷调查</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="ErrorTopicListPage">
+          <p><img src="./assets/imgs/home/nav_6.png" alt="" /></p>
+          <span>错题中心</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="DatePage">
+          <p><img src="./assets/imgs/home/nav_7.png" alt="" /></p>
+          <span>日常</span>
+        </a>
+      </li>
+      <li>
+        <a href="javacript:;" [navPush]="ExaplePage">
+          <p><img src="./assets/imgs/home/nav_8.png" alt="" /></p>
+          <span>页面demo</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <section margin-top>
+    <div class="jqks">
+      <div class="sec_title clearfix">
+        <h2>近期考试</h2>
+        <span [navPush]="OnlineExamListPage" [navParams]="examParams"></span>
+      </div>
+      <ul class="clearfix">
+        <li *ngFor="let item of recentExamItems">
+          <a (click)="intoExamDetail(item)">
+            <p><img [src]="item.TACT041 | coverPath"/></p>
+            <span>{{item.TACT004 | limitLength:5}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section margin-top>
+    <div class="jqwj">
+      <div class="sec_title clearfix">
+        <h2>近期问卷</h2>
+        <span></span>
+      </div>
+      <ul class="clearfix">
+        <li *ngFor="let item of recentQuestionnaireItems">
+          <a (click)="intoQuestionnaire(item)">
+            <p><img [src]="item.QUES020 | coverPath"/></p>
+            <span>{{item.QUES003 | limitLength:13}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="jqwj rmkc">
+      <div class="sec_title clearfix">
+        <h2>热门课程</h2>
+        <span [navPush]="OnlineStudyListPage"></span>
+      </div>
+      <ul class="clearfix">
+        <li *ngFor="let item of hottestCourseItems">
+          <a (click)="intoStudyDetail(item)">
+            <p><img [src]="item.LEAC009 | coverPath" alt="" /></p>
+            <span>{{item.LEAC004 | limitLength:13}}</span>
+            <em><i>{{item.SELECTNUMBEROF}}</i>人已选</em>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="zxkc">
+      <div class="sec_title clearfix">
+        <h2>最新课程</h2>
+        <span [navPush]="OnlineStudyListPage"></span>
+      </div>
+      <ul class="clearfix">
+        <li *ngFor="let item of newestCourseItems">
+          <a (click)="intoStudyDetail(item)">
+            <p><img [src]="item.LEAC009 | coverPath" alt="" /></p>
+            <span>{{item.LEAC004 | limitLength:13}}</span>
+            <em><i>{{item.SELECTNUMBEROF}}</i>人已选</em>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</ion-content>

@@ -1,0 +1,234 @@
+page-contact {
+  .item-divider ion-label{
+    margin: 1px 8px 1px 0;
+  }
+  .alpha_sidebar {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 100000
+  }
+  .alpha_sidebar li {
+    color: #49afcd;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  .alpha_list {
+    padding-right: 0px;
+  }
+
+  .peopleItem{
+    padding-right: 10px;
+    line-height: 30px;
+  }
+
+  .peopleItem .item-inner{
+    cursor: pointer;
+  }
+
+  .peopleItemLast .item-inner{
+    border-bottom: 0px !important;
+  }
+
+  .peopleItem span.biaoti{
+    font-size: 1.6rem;
+  }
+
+  .headDiv{
+    position: relative
+  }
+  .headDivImg{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .headDivSpan01{
+
+  }
+  .headDivSpan02{
+    position: absolute;
+    left: 71px;
+    top: 24px;
+    font-size: small;
+    color: #8a8a8a;
+  }
+
+  .headDivSpan02 p.man{
+    position: absolute;
+    left: -21px;
+    top: 4px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -4px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan02 p.woman{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -27px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan03{
+    position: absolute;
+    right: 0px;
+    top: 12px;
+  }
+
+  .headDivSpan03 div{
+    font-size: small;
+    border: 1px #9fb5b0 solid;;
+    padding: 2px 5px 2px 6px;
+    border-radius: 5px;
+  }
+
+  .fengexian{
+    min-height: auto;
+    background-color: #f7f7f7;
+    border-top: 0.5px solid #e0dfe4;
+    border-bottom: 0.5px solid #e0dfe4;
+  }
+
+  .fengexian .item-inner{
+    height: 7px;
+    min-height: auto;
+  }
+
+  .fengexian .input-wrapper{
+    height: 16px;
+  }
+
+
+  .shouzimu{
+    min-height: auto;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .shouzimu .item-inner{
+    height: 18px;
+    min-height: auto;
+  }
+
+  .shouzimu .input-wrapper{
+    height: 16px;
+  }
+  .shouzimu .fengexianDiv{
+    border-top: 1px solid #545454;
+    position: absolute;
+    left: 32px;
+    top: 8px;
+    width: 800px;
+  }
+
+  .jiadesousuokuang{
+
+  }
+  .jiadesousuokuang .jiadesousuokuangDiv01{
+    height: 26px;
+    width: 87%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(243, 243, 243, 1);
+    text-align: center;
+    border-radius: 3px;
+  }
+  .jiadesousuokuang .jiadesousuokuangDiv01 .jiadesousuokuangP01{
+    padding-top: 3px;
+    color: rgba(166, 166, 166, 1);
+  }
+
+  .jiadesousuokuang .jiadesousuokuangI01{
+    background: url(./../assets/imgs/common/fangdajing.png) no-repeat scroll 0px 0px transparent;
+    background-size: 18px 18px;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+  }
+
+  .jiadesousuokuang .jiadesousuokuangSpan01{
+    position: relative;
+    top: -3px;
+  }
+  .wodehaoyou{
+    width: 100px;
+    height: 90px;
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 10%;
+  }
+  .wodehaoyou .wodehaoyouImg01{
+    width: 55px;
+    height: 55px;
+    border-radius: 60px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    float: left;
+  }
+  .wodehaoyou .wodehaoyouSpan01{
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    left: 20px;
+  }
+
+  .wodegongzuozu{
+    width: 100px;
+    height: 90px;
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 12%;
+  }
+  .wodegongzuozu .wodegongzuozuImg01{
+    width: 55px;
+    height: 55px;
+    border-radius: 60px;
+    position: relative;
+    top: 10px;
+    left: 25px;
+    float: left;
+  }
+  .wodegongzuozu .wodegongzuozuSpan01{
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    left: 15px;
+  }
+  .quanyuanqun .quanyuanqunSpan02{
+    float: right;
+    font-size: 1.3rem;
+    color: #3eb0bd;
+  }
+
+  .quanyuanqun .quanyuanqunSpan03{
+    float: right;
+    font-size: 25px;
+  }
+
+  .addjob{
+    width:100%;
+    height:50px;
+    margin-top:1px;
+    line-height: 50px;
+    padding-left:35px;
+    color:RGB(109,191,212);
+    position: absolute;
+    top: -40%;
+    left: -60%;
+  }
+
+  .font{
+    color:#8a8a8a !important;
+  }
+
+  .icon{
+    font-size: 28px;
+    position: relative;
+    top: 6px;
+    margin-right: 5px;
+  }
+
+}

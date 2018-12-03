@@ -1,0 +1,118 @@
+<!--
+  Generated template for the TaskdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>任务详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <nav>
+    <ul class="fir_ul">
+      <li>
+        <ul>
+          <li class="imgw">
+            <img src="././assets/imgs/work/home/qizhi.png ">
+          </li>
+          <li class="conw">
+            <span class="conw_1">{{taskInfo.CALT002}}</span>
+            <span>{{taskInfo.USER005}}分配的 | {{taskInfo.CREATMON}}月{{taskInfo.CREATDAY}}日 {{taskInfo.CREATTIME}}</span>
+          </li>
+        </ul>
+      </li>
+      <li style="border-top: 5px solid #f0f0f0">
+        <ul>
+          <li class="conw_2">
+            <span><p>任务类型</p><p class="conw_p">{{taskInfo.CATA002}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>任务标签</p><p class="conw_b">{{taskInfo.TALI002}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>任务地点</p><p class="conw_p">{{taskInfo.CALT004}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li  style="border-top: 5px solid #f0f0f0">
+        <ul>
+          <li class="conw_2" >
+            <span><p>开始时间</p><p class="conw_p" style="color: rgba(0, 0, 0, 0.65);">{{taskInfo.STARTYEAR}}  {{taskInfo.WEEKSTYLE}}  {{taskInfo.STARTTIME}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>截止时间</p><p class="conw_p" style="color: rgba(0, 0, 0, 0.65);">{{taskInfo.ENDYEAR}}   {{taskInfo.WEEKSTYLE01}}  {{taskInfo.ENDTIME}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span *ngIf="flage==0 && startDay==0"  ><p>任务签到</p><p class="conw_p" style="color:red;font-weight: bold;">距签到还有{{startHours}}小时{{startMinute}}分</p></span>
+            <span *ngIf="flage==0 && startDay>0"  ><p>任务签到</p><p class="conw_p" style="color:red;font-weight: bold;">距签到还有{{startDay}}天{{startHours}}小时</p></span>
+            <span  *ngIf="flage==1 && endDay==0" ><p>任务签到</p><p class="conw_p" style="color:green;font-weight: bold;">距签到结束还有{{endHours}}小时{{endMinute}}分</p></span>
+            <span  *ngIf="flage==1 && endDay>0" ><p>任务签到</p><p class="conw_p" style="color:green;font-weight: bold;">距签到结束还有{{endDay}}天{{endHours}}小时</p></span>
+            <span  *ngIf="flage==2" ><p>任务签到</p><p class="conw_p" style="color:red;font-weight: bold;">任务已结束</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span *ngIf="taskInfo.CALT008==0"><p>任务提醒</p><p class="conw_p">不提醒</p></span>
+            <span *ngIf="taskInfo.CALT008==1"><p>任务提醒</p><p class="conw_p">任务开始时</p></span>
+            <span *ngIf="taskInfo.CALT008==2"><p>任务提醒</p><p class="conw_p">提前5分钟</p></span>
+            <span *ngIf="taskInfo.CALT008==3"><p>任务提醒</p><p class="conw_p">提前1小时</p></span>
+            <span *ngIf="taskInfo.CALT008==4"><p>任务提醒</p><p class="conw_p">提前一天</p></span>
+            <span *ngIf="taskInfo.CALT008==5"><p>任务提醒</p><p class="conw_p">截止前15分钟 </p></span>
+            <span *ngIf="taskInfo.CALT008==6"><p>任务提醒</p><p class="conw_p">截止前1小时</p></span>
+            <span *ngIf="taskInfo.CALT008==7"><p>任务提醒</p><p class="conw_p">截止前3小时</p></span>
+            <span *ngIf="taskInfo.CALT008==8"><p>任务提醒</p><p class="conw_p">截止前1天</p></span>
+          </li>
+        </ul>
+      </li>
+      <li  style="border-top: 5px solid #f0f0f0">
+        <ul>
+          <li class="conw_2" >
+            <span style="margin-bottom: 5px"><p>执行人</p><p style="margin-left: 3rem;">{{signNumber}}人已完成</p></span>
+            <span class="arr_03"></span>
+            <span style="float: right;" > {{signNumber}}/{{totalNumber}}人已完成</span>
+          </li>
+        </ul>
+
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>协助人</p><p *ngFor="let people of assistant" style="margin-left: 3rem;">{{people}}</p></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="conw_2">
+            <span><p>主管领导</p><p *ngFor="let peoplew of leadership" class="conw_p">{{peoplew}}</p></span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+</ion-content>

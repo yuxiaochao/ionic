@@ -1,0 +1,84 @@
+page-work-home {
+  .scroll-content{
+    padding:0px !important;
+  }
+
+
+
+  #top1 {
+    position:relative;
+    width:100%;
+    height:130px;
+    overflow:hidden;
+
+  }
+
+
+  .main_1_1{
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 20px;
+    line-height: 50px;
+  }
+
+
+  .main_2{
+    height: 70px;
+    border-bottom: 1px solid #f5f6f6;
+  }
+  .tubiao p img{
+    width:35px;
+    height:35px;
+  }
+
+  .tubiao  li{
+    width: 25%;
+    text-align: center;
+    float: left;
+    font-size: 13px;
+  }
+
+  .tubiao  li p{
+      width: 55%;
+      margin: 0 auto 5px;
+     position: relative;
+  }
+  .tubiao_1{
+    margin: 0px 12% 0px 13%;
+  }
+
+  .main_3_1{
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 20px;
+    line-height: 50px;
+  }
+
+  .main_4{
+    height: 70px;
+    border-bottom: 1px solid #f5f6f6;
+  }
+
+  .main_5_1{
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 20px;
+    line-height: 50px;
+  }
+  .tixing{
+    position: absolute;
+    top: -9px;
+    right: -3px;
+    margin-left: 60%;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    border-radius: 10px;
+  }
+  .ziti{
+    color: white;
+  }
+  .p002{
+    margin-top: -16px !important;
+  }
+}

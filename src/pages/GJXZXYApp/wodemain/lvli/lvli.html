@@ -1,0 +1,16 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>培训履历</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="text">
+  <div class="peixun" *ngFor="let item of trainingResume">
+    <a href="">{{item.TRPR002|limitLength:20}}</a>
+    <p>{{item.TRPR004|date:'yyyy-MM-dd'}}</p>
+  </div>
+</ion-content>

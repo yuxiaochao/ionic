@@ -1,0 +1,37 @@
+<!--
+  申请添加好友页面
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>添加好友</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="headDiv">
+    <img src="{{item.ATTA007 | coverHeadImpPath:item.USER006}}" class="headDivImg"/>
+    <span class="headDivSpan01"><span>{{item.USER005}}</span> <span style="font-size: small;" >({{item.USER004}})</span>
+      </span>
+
+    <span class="headDivSpan02">
+        <p class="man" *ngIf="item.USER006 == '男'"><p class="woman" *ngIf="item.USER006 == '女'"></p>{{item.USER006}}
+      </span>
+  </div>
+  <div class="boundary title01">
+    填写验证信息
+  </div>
+  <ion-item>
+    <ion-textarea placeholder="" [(ngModel)]="in_VerificationInfo" value="{{in_VerificationInfo}}"></ion-textarea>
+  </ion-item>
+
+
+</ion-content>
+<ion-footer class="myIonFooter">
+  <ion-toolbar>
+    <!--<ion-title><button ion-button block>Block Button</button></ion-title>-->
+    <button ion-button block class="addButton" (click)="applyFriendButton()" >加好友</button>
+  </ion-toolbar>
+</ion-footer>

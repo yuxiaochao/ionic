@@ -1,0 +1,186 @@
+page-group-add-people {
+
+
+  .item-divider ion-label{
+    margin: 8px 8px 8px 0;
+  }
+  .alpha_sidebar {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 100000
+  }
+  .alpha_sidebar li {
+    color: #49afcd;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  .alpha_list {
+    padding-right: 0px;
+  }
+
+  .peopleItem{
+    padding-right: 20px;
+    line-height: 30px;
+  }
+
+  .peopleItem .item-inner{
+    cursor: pointer;
+  }
+
+  .peopleItemLast .item-inner{
+    border-bottom: 0px !important;
+  }
+
+  .headDiv{
+    position: relative
+  }
+  .headDivImg{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+  }
+  .headDivSpan01{
+
+  }
+  .headDivSpan02{
+    position: absolute;
+    left: 71px;
+    top: 24px;
+    font-size: small;
+    color: #8a8a8a;
+  }
+
+  .headDivSpan02 p.man{
+    position: absolute;
+    left: -21px;
+    top: 4px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -4px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan02 p.woman{
+    position: absolute;
+    left: -21px;
+    width: 17px;
+    height: 17px;
+    background: url("./../assets/imgs/common/man&woman01.jpg") no-repeat scroll -27px -3px transparent;
+    background-size: 48px 48px;
+  }
+
+  .headDivSpan03{
+    position: absolute;
+    right: 0px;
+    top: 12px;
+  }
+
+  .headDivSpan03 div{
+    font-size: small;
+    border: 1px #9fb5b0 solid;;
+    padding: 2px 5px 2px 6px;
+    border-radius: 5px;
+  }
+
+  .jiadesousuokuang{
+
+  }
+  .jiadesousuokuang .jiadesousuokuangDiv01{
+    height: 26px;
+    width: 87%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(243, 243, 243, 1);
+    text-align: center;
+    border-radius: 3px;
+  }
+  .jiadesousuokuang .jiadesousuokuangDiv01 .jiadesousuokuangP01{
+    padding-top: 3px;
+    color: rgba(166, 166, 166, 1);
+  }
+
+  .jiadesousuokuang .jiadesousuokuangI01{
+    background: url(./../assets/imgs/common/fangdajing.png) no-repeat scroll 0px 0px transparent;
+    background-size: 18px 18px;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+  }
+
+  .jiadesousuokuang .jiadesousuokuangSpan01{
+    position: relative;
+    top: -3px;
+  }
+
+  .shouzimu{
+    min-height: auto;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .shouzimu .item-inner{
+    height: 18px;
+    min-height: auto;
+  }
+
+  .shouzimu .input-wrapper{
+    height: 16px;
+  }
+  .shouzimu .fengexianDiv{
+    border-top: 1px solid #545454;
+    position: absolute;
+    left: 32px;
+    top: 8px;
+    width: 800px;
+  }
+
+  .right-bar{
+    height: 83%;
+    width: 7%;
+    border: 1px solid #ccc;
+    line-height: 157%;
+    font-size: 12px;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+    padding: 3% 0;
+    position: fixed;
+    top: 15%;
+    right: 5%;
+    z-index: 1000;
+  }
+
+  .active {
+    background: #eee;
+  }
+  .cur {
+    color:RGB(24,180,237);
+  }
+
+  .drawshow{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: RGB(24, 180, 237);
+    color: #fff;
+    font-size: 20px;
+    margin: 0 auto;
+    /* margin-top: 50%; */
+    border-radius: 4px;
+    opacity: 0.9;
+    position: fixed;
+    z-index: 1000;
+    top: 38%;
+    left: 42%;
+  }
+  .yqhy{
+    font-size: smaller;
+    color: #6d6d6d;
+    margin-left: 8%;
+    position: absolute;
+    bottom: 4px;
+    left: 172px;
+  }
+
+}

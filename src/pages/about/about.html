@@ -1,0 +1,101 @@
+<ion-header #headerEle>
+  <ion-navbar>
+    <ion-title>
+      我的
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div >
+  <ion-list>
+    <ion-item class="peopleItem">
+      <ion-avatar item-left>
+         <img width="103" height="77" src="{{items.ATTA007 | coverHeadImpPath}}" />
+      </ion-avatar>
+      <div (click)="showInfo()">
+         <h2>{{items.USER004}}</h2>
+         <p>{{items.USER005}}</p>
+      </div>
+      <ion-icon class="tubiao" name="arrow-forward" item-right ></ion-icon>
+    </ion-item>
+  </ion-list>
+  </div>
+
+
+
+  <div class="div">
+     <ion-item class="peopleItem">
+       <ion-icon name="happy-outline" item-left></ion-icon>
+          <div (click)="showExam()">
+            考试记录
+          </div>
+      <ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+
+    <ion-item class="peopleItem">
+      <ion-icon name="timer-outline" item-left></ion-icon>
+          <div (click)="surveyRecords()">
+            调查记录
+          </div>
+          <ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>
+     </ion-item>
+
+    <ion-item class="peopleItem">
+      <ion-icon name="paper-outline" item-left></ion-icon>
+         <div (click)="showStudy()">
+            学习记录
+         </div>
+         <ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>
+      </ion-item>
+
+    <ion-item class="peopleItem">
+      <ion-icon name="cloud-download-outline" item-left></ion-icon>
+          <div (click)="OfflineCenter()">
+            离线中心
+          </div>
+          <ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>
+    </ion-item >
+
+    <ion-item class="peopleItem">
+          <ion-icon name="clipboard" item-left></ion-icon>
+          <div (click)="classNotes()">
+            课程笔记
+          </div>
+          <ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>
+      </ion-item>
+  </div>
+
+  <div class="div">
+    <ion-item class="peopleItem">
+      <ion-icon name="qr-scanner" item-left></ion-icon>
+          <div (click)="myTwoCode()">
+             我的二维码
+          </div>
+          <ion-icon class="tubiao" name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+
+    <ion-item class="peopleItem">
+          <ion-icon name="link" item-left></ion-icon>
+          <div (click)="AboutSystem()">
+              关于系统
+          </div>
+          <ion-icon class="tubiao"  name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="div">
+    <ion-item class="peopleItem">
+          <ion-icon name="settings" item-left></ion-icon>
+          <div (click)="SetUp()">
+              设置
+          </div>
+          <ion-icon class="tubiao"  name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+  </div>
+
+
+
+
+
+</ion-content>

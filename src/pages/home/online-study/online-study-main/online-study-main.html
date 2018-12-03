@@ -1,0 +1,210 @@
+<!--
+  Generated template for the OnlineStudyMainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header #headerEle>
+
+  <ion-navbar>
+    <ion-title>在线学习</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <header>
+    <div #coursewareDiv>
+      <!--<div class="back">
+        <em></em>
+      </div>-->
+      <div class="video"  *ngIf="curriculumType == 1">
+        <video #video1 style="vertical-align:top;" width="100%" height="200" controls >
+          <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+          您的浏览器不支持 HTML5 video 标签。
+        </video>
+        <div *ngIf = "lecw009=='0'" style="width: 100%;height: 30px;position: absolute;bottom: 0px;z-index: 100;"></div>
+      </div>
+      <div *ngIf="curriculumType == 2 ">
+        <!--<embed #text1 style="width: 100%;height: 200px;"-->
+               <!--src="http://lexue.net.cn:18889/fydjWebFiles/24c87890d28e42d08766474b304ada0a/partymeeting/20180404093649064368.pdf" />-->
+        <
+        <object #text1 style="width: 100%;height: 200px;"
+                src="http://lexue.net.cn:18889/fydjWebFiles/24c87890d28e42d08766474b304ada0a/partymeeting/20180404093649064368.pdf" ></object>
+      </div>
+    </div>
+  </header>
+  <section class="tips" #tipsSection [style.margin-top.px]="tipsSectionHeight">
+
+    <div class="video-tips clearfix">
+		<span class="play-icon">
+			学习人数{{timesNumMap.STUDYTIMES}}人
+		</span>
+      <ul class="clearfix">
+        <li class="note-icon">笔记</li>
+        <li class="share-icon">分享</li>
+        <li class="load-icon mr0">下载</li>
+      </ul>
+    </div>
+    <div class="wind-tips">
+      <div class="arrows" (click)="conditionsOfCompletion()" [style.background-image]="isConditionsOfCompletion == 1 ? 'url(./../assets/imgs/home/online-study/arr.png)' : 'url(./../assets/imgs/home/online-study/arr2.png)'"></div>
+      <p><em>结业条件</em>{{timesNumMap.LEAC018TEXT}}</p>
+      <p class="mb0 dqzt" [hidden]="isConditionsOfCompletion == 1"><em>当前状态</em>{{completionMap.CRESULT}}</p>
+    </div>
+    <div style="width: 100%;height: 10px;background: #ecf0f1;">
+    </div>
+  </section>
+  <section >
+    <div class="details-tab" #detailsTab>
+      <ul class="clearfix">
+        <li class="evaluate-hd cur" [class.cur]="detailsUlLiCur == 1" (click)="switchLabel(1)" >评价</li>
+        <li class="detail-hd" [class.cur]="detailsUlLiCur == 2" (click)="switchLabel(2)">详情</li>
+        <li class="catalogue-hd " [class.cur]="detailsUlLiCur == 3" (click)="switchLabel(3)">目录</li>
+        <li class="material-hd mr0" [class.cur]="detailsUlLiCur == 4" (click)="switchLabel(4)">资料</li>
+      </ul>
+    </div>
+    <div class="details-body" [style.margin-top.px]="detailsBodyHeight">
+      <div class="evaluate" style="" [hidden]="detailsUlLiCur != 1">
+        <div class="filter">
+          <span [class.cur]="cur==-1"(click)="initClickEvaluateData(-1)">全部<br>{{evaluationNumMapItem.GENERAL}}</span>
+          <span [class.cur]="cur==0"(click)="initClickEvaluateData(0)">好评<br>{{evaluationNumMapItem.PRAISE}}</span>
+          <span [class.cur]="cur==1"(click)="initClickEvaluateData(1)">中评<br>{{evaluationNumMapItem.RATING}}</span>
+          <span [class.cur]="cur==2"(click)="initClickEvaluateData(2)">差评<br>{{evaluationNumMapItem.BAD}}</span>
+          <span [class.cur]="cur==-2"(click)="initClickEvaluateData(-2)">我的<br>{{evaluationNumMapItem.ICOMMENT}}</span>
+        </div>
+        <ul class="estimate">
+          <li tappable *ngFor="let item of evaluateItems" >
+            <div class="estimate-top clearfix">
+              <div class="person-pic"><img width="39" height="39" src="{{ftpServer + '/' + item.ATTA007}}" alt="" /></div>
+              <div class="person-name">{{item.USER005}}</div>
+              <div class="person-estimate">{{item.UMES005TEXT}}</div>
+            </div>
+            <p>{{item.UMES004}}</p>
+            <div class="estimate-bot clearfix">
+              <span class="estimate-time">{{item.UMES007TEXT}}</span>
+              <span class="good">{{item.FABULOUSTOTAL}}</span>
+            </div>
+          </li>
+          <!--<li>
+            <div class="estimate-top clearfix">
+              <div class="person-pic"><img src="./../assets/imgs/home/online-study/pic_person_03.png" alt="" /></div>
+              <div class="person-name">J***</div>
+              <div class="person-estimate">好评</div>
+            </div>
+            <p>非常好</p>
+            <div class="estimate-bot clearfix">
+              <span class="estimate-time">2016-12-15 17:20</span>
+              <span class="good">1</span>
+            </div>
+          </li>-->
+
+        </ul>
+        <!--<div class="review">
+                  <div class="select">匿名评论</div>
+                  <a href="">我要评价</a>
+              </div>-->
+        <ion-infinite-scroll (ionInfinite)="doEvaluateInfinite($event)">
+          <ion-infinite-scroll-content
+            loadingSpinner="crescent"
+            loadingText="加载更多数据...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </div>
+      <div class="detail" [hidden]="detailsUlLiCur != 2" (click)="initCourseInfoData(leac001)">
+        <div class="course-title">
+          <p>{{courseInfoMapItems.LEAC004}}</p>
+          <span>{{courseInfoMapItems.LEARNINGPEOPLE}}人已选</span>
+          <span>好评率：{{courseInfoMapItems.FAVORABLERATE}}</span>
+          <span>排行：{{courseInfoMapItems.RANKING}}</span>
+        </div>
+        <div class="overview">
+          <h3>课程简介</h3>
+          <div [innerHTML]="courseInfoMapItems.LEAC010"></div>
+          <span>主讲人：{{speakerListItems.USER005}}</span>
+          <span>课程类型：{{courseInfoMapItems.LEAC005}}</span>
+          <br>
+          <span>有效时间：{{courseInfoMapItems.LEAC007}}--{{courseInfoMapItems.LEAC008}}</span>
+        </div>
+      </div>
+      <div class="catalogue" [hidden]="detailsUlLiCur != 3">
+        <ul>
+          <li tappable *ngFor="let item of catalogItems " (click)="playCourseware(item)" [class.cur]="item.isCur == 1">
+            <em >{{item.COUR003TEXT}}</em>
+            <div class="progress" ></div>
+            <p>{{item.COUR002}}<i>【{{item.LECW007}}】</i></p>
+            <span>{{item.COUR005TEXT}}</span>
+          </li>
+          <!--<li class="cur">
+            <em>视频</em>
+            <div class="progress"></div>
+            <p>迈入Java开发殿堂<i>【选学】</i></p>
+            <span>15:20</span>
+          </li>-->
+        </ul>
+        <ion-infinite-scroll (ionInfinite)="doCatalogInfinite($event)">
+          <ion-infinite-scroll-content
+            loadingSpinner="crescent"
+            loadingText="加载更多数据...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </div>
+      <div class="material" [hidden]="detailsUlLiCur != 4">
+        <ul>
+          <li class="clearfix">
+            <p>辞书编著数字化（电子版）</p>
+            <span>2335人看过</span>
+            <a href="">下载(5)</a>
+          </li>
+          <li class="clearfix">
+            <p>辞书编著数字化（电子版）</p>
+            <span>2335人看过</span>
+            <a href="">下载(5)</a>
+          </li>
+          <li class="clearfix">
+            <p>辞书编著数字化（电子版）</p>
+            <span>2335人看过</span>
+            <a href="">下载(5)</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+  <!--<section>
+    <div class="add"></div>
+    <div class="add_content" #addContent>
+      <ul class="clearfix">
+        <li>
+          <a href="">
+            <img src="images/detail_icon_03.png" alt="" />
+            <span id="">课程笔记</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="images/detail_icon_05.png" alt="" />
+            <span id="">效果评估</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="images/detail_icon_07.png" alt="" />
+            <span id="">结业考试</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="images/detail_icon_01.png" alt="" />
+            <span id="">我要评价</span>
+          </a>
+        </li>
+
+
+      </ul>
+      <button class="closeadd"></button>
+    </div>
+  </section>-->
+
+</ion-content>

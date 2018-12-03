@@ -1,0 +1,207 @@
+page-tongxunlumain {
+
+  @keyframes myfirst {
+    0%{
+      background:red;
+      top:25%
+      //margin-left:30px;
+    }
+    25%{
+      background:yellow;
+      height:25%;
+      top:50%
+      //margin-left:60px;
+    }
+    50%{
+      background:blue;
+      height:50%;
+      top:75%
+      //margin-left:90px;
+    }
+    75%{
+      background:blue;
+      height:75%;
+      top:100%
+      //margin-left:120px;
+    }
+  }
+
+  .huntBox{
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .hunt {
+    width:90%;
+    height:30px;
+    line-height: 30px;
+    color:#787878;
+    border-radius: 15px;
+    background:#d2cece;
+    margin:0 auto;
+  }
+
+  .SionicImg{
+    display: inline-block;
+    height: 15px;
+    margin: 0 10px 0 15px;
+    width: 15px;
+    position: relative;
+    top: 6px;
+  }
+
+  .topxia{
+    //height:45px;
+    padding:6px 0;
+    width:100%;
+    //border-top:10px solid #d2cece;
+    border-bottom:1px dashed #d2cece;
+  }
+
+
+  .addjob{
+    width: 100%;
+    height: 35px;
+    margin-top: 1px;
+    line-height: 35px;
+    background: #fff;
+  }
+
+  .xiaotubiao{
+    display: inline-block;
+    width: 35px;
+    height: 100%;
+    border-radius: 40px;
+  }
+  .font{
+    color:#373737;
+    font-size:16px;
+    margin-left:15px;
+  }
+
+  .right {
+    float: right;
+    color:#9b9b9b;
+    position: relative;
+    top: 12px;
+  }
+
+  .topxia{
+    //height:45px;
+    padding:6px 0;
+    width:100%;
+    background:#fff;
+    //border-top:10px solid #d2cece;
+    border-bottom:1px dashed #d2cece;
+  }
+
+  .touxiangleft{
+    width:24%;
+    display:inline-block;
+  }
+  .touxiang{
+    width:45px;
+    height:45px;
+    margin: 0 auto;
+    border-radius: 35px;
+  }
+
+  .touxiangright{
+    width: 76%;
+    height: 45px;
+    float: right;
+    position:relative;
+    display: inline-block;
+  }
+
+  .usename {
+    font-size: 16px;
+    color: #373737;
+  }
+
+  .dingwei{
+    width:15px;
+    height:15px;
+    display:inline-block;
+  }
+
+  .lastbox {
+    margin-top: 3%;
+  }
+
+  .jobpost{
+    background:#18b4ed;
+    color:#fff;
+    font-size:10px;
+    font-family:PingFangSC-Regular;
+    padding: 0px 2px;
+    letter-spacing:1px;
+    border-radius: 10px;
+  }
+
+  .tuwbar {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 35%;
+    right: 20px;
+  }
+  .numbermain{
+    color:#9B9B9B;
+    font-size: 12px;
+    margin:10px auto;
+    text-align: center;
+  }
+
+  .qrscanner {
+    background: none;
+    &-area {
+      width: 100%;
+      height: 86%;
+      background: url(./././../assets/imgs/scanner.svg) no-repeat center center;
+      background-size: contain;
+    }
+  }
+  .through-line {
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: red;
+    position: absolute;
+    animation: myfirst 2s linear infinite alternate;
+  }
+  @keyframes myfirst {
+    0% {
+      background: red;
+      top: 30%;
+    }
+    25% {
+      background: yellow;
+      top: 35%;
+    }
+    50% {
+      background: blue;
+      top: 40%;
+    }
+    75% {
+      background: green;
+      top: 45%;
+    }
+    100% {
+      background: red;
+      top: 50%;
+    }
+  }
+  .button-bottom {
+    width: 128px;
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    margin-left: -64px;
+    .icon-camera {
+      float: left;
+    }
+  }
+}

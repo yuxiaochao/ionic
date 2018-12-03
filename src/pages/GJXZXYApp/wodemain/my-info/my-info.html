@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的资料</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content style="background-color:#f2f6f9;">
+  <div id="bodyo">
+    <div class="xinxi">
+      <div class="one">
+        <p class="ziliao">头像</p>
+        <div class="zl-rig" (click)="changeimage()">
+          <img #imgs class="mine" [src]="userInfo.ATTA007 | coverHeadImpPath:userInfo.USER006:imgs" alt="此图片无法显示">
+          <ion-icon class="right" name="arrow-forward"></ion-icon>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="two">
+        <p class="ziliao">姓名</p>
+        <div class="data">{{userInfo.USER005}}</div>
+      </div>
+    </div>
+
+    <div class="sex">
+      <ion-icon class="right" name="arrow-forward"></ion-icon>
+      <ion-list>
+        <ion-item style="border-bottom: 0px solid #e0dfe4;border-top: 0px solid #e0dfe4;font-size: 14px;">
+          <ion-label>性别</ion-label>
+          <ion-select
+            [(ngModel)]="sex"
+            okText="确定"
+            cancelText="取消">
+            <ion-option value="男">男</ion-option>
+            <ion-option value="女">女</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="xinxi">
+      <div class="one">
+        <p class="ziliao">工作单位</p>
+        <div class="zl-r">
+          <ion-input class="data1" [(ngModel)]="trus012"></ion-input>
+          <!--<div class="data">{{userInfo.TRUS012}}</div>-->
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="two">
+        <p class="ziliao">职务</p>
+        <div class="zl-r">
+          <ion-input class="data1" [(ngModel)]="trus007"></ion-input>
+        </div>
+      </div>
+    </div>
+
+    <div class="xinxi">
+      <div class="one">
+        <p class="ziliao">手机号码</p>
+        <div class="zl-r">
+          <ion-input class="data1" [(ngModel)]="trus005"></ion-input>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="two">
+        <p class="ziliao">邮箱</p>
+        <div class="zl-r">
+          <ion-input class="data1" [(ngModel)]="trus011"></ion-input>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

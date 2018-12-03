@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>班级签到</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>{{thisDate|date:'yyyy-MM-dd'}} {{time}}</div>
+  <div *ngIf="signinList.length==0">
+    <ion-card>
+      <ion-card-content>
+        暂无需要签到的课程
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="signinList.length>0">
+    <ion-list *ngFor="let item of signinList">
+      <ion-item *ngIf="(time==item.TRPC003N||item.TRPC003N=='全天')|testPipe">
+        <div>课程名称：{{item.TRPC005}}</div>
+        <div>时间：{{item.TRPC016}}-{{item.TRPC017}} {{item.TRPC003N}}</div>
+        <div>老师：{{item.TEAC002 ? item.TEAC002 : '其他'}}</div>
+        <div>教室：{{item.LOCATIONNAME}}</div>
+        <div *ngIf="item.TCS005!=0&&item.SIGNINNUM==0" (click)="initialization(item)" style="color: #00CCFF">签到</div>
+        <div *ngIf="item.TCS005!=0&&item.SIGNINNUM>0" style="color: #32ff3b">已签到</div>
+        <div *ngIf="item.TCS005==0" style="color: #999999">无需签到</div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>组织会议</ion-title>
+    <span style="float:right; color:#fff;" (click)="submitMeeting()">完成</span>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: RGB(241,241,241);">
+  <div class="box-text">
+    <textarea placeholder="请输入会议内容" class="text" [(ngModel)]="meetingText"> </textarea>
+  </div>
+
+  <div class="addjob">
+    <ion-item>
+      <ion-label style="font-size:14px !important;">开始时间</ion-label>
+      <ion-datetime cancelText="取消"
+                    doneText="确定"
+                    displayFormat="YYYY-MM-DD HH:mm"
+                    [(ngModel)]="startDate"
+                    max="2100-10-31">
+      </ion-datetime>
+      <ion-label style="position:absolute;right:0; top:5px; color:#ccc; font-size:22px !important;">
+        <ion-icon name="ios-calendar-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <div class="addjob">
+    <ion-item>
+      <ion-label style="font-size:14px !important;">结束时间</ion-label>
+      <ion-datetime cancelText="取消"
+                    doneText="确定"
+                    displayFormat="YYYY-MM-DD HH:mm"
+                    [(ngModel)]="endDate"
+                    [min]="startDate"
+                    max="2100-10-31">
+      </ion-datetime>
+      <ion-label style="position:absolute;right:0; top:5px; color:#ccc; font-size:22px !important;">
+        <ion-icon name="ios-calendar-outline"></ion-icon>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <div class="addjob">
+    <ion-list>
+      <ion-item style="font-size:14px !important;">
+        <ion-label>选择会议室</ion-label>
+        <ion-select [(ngModel)]="toppings" multiple="false" cancelText="取消" okText="确定">
+          <ion-option *ngFor="let item of meetingRoomList" [value]="item.CATA001">{{item.CATA002}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="addjob">
+    <span class="font fontter">地点</span>
+    <div class="righttb">
+      <input type="text" [(ngModel)]="address" placeholder="请输入地点">
+    </div>
+  </div>
+
+  <div style="margin:20px 0;">
+    <div class="addjob" (click)="hyorgantionmanClick()">
+      <span class="font">会议组织人</span>
+      <div class="right">
+        <span>{{zzUsername}}</span>
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+    <div class="addjob" (click)="attendeeClick()">
+      <span class="font">参会人</span>
+      <div class="right">
+        <span>{{chUserid.length}}人  </span>
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+
+    <div class="addjob" (click)="remindtxClick()">
+      <span class="font">会议提醒</span>
+      <div class="right">
+        <span>{{remind|optionText:0}}</span>
+        <ion-icon style="font-size:28px; margin-left: 8px; position: relative;top: 6px;" name="arrow-forward"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

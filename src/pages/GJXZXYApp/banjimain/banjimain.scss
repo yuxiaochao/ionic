@@ -1,0 +1,310 @@
+page-banjimain {
+
+  //轮播图
+  #frame {
+    position:relative;
+    width:100%;
+    height:165px;
+    overflow:hidden;
+  }
+  #dis {
+    position:absolute;
+    left:-50px;
+    top:-10px;
+    opacity:.5
+  }
+  #dis li {
+    display:inline-block;
+    width:200px;
+    height:20px;
+    margin:10px 50px;
+    float:left;
+    text-align:center;
+    color:#fff;
+    border-radius:10px;
+    background:#000
+  }
+  #frame img {
+    float:left;
+    width:100%;
+    height:165px
+  }
+
+  .titleName{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 13em;
+  }
+  .peixun{
+    height: 64px;
+    font-size: 16px;
+    color: #373737;
+    line-height: 46px;
+    border-top: 10px solid #f2f6f9;
+    padding-left: 15px;
+    border-bottom: 10px solid #f2f6f9;
+  }
+
+  .banjibar {
+    width: 90%;
+    height: 35px;
+    //background: red;
+    /* padding: 15px; */
+    color:#787878;
+    line-height: 35px;
+    font-size:13px;
+    border-radius: 15px;
+    position: relative;
+    border:1px solid #d2cece;
+    margin: 0 auto 15px;
+  }
+
+  .banjibar > span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    /* display: table-cell; */
+    border-radius: 12px;
+    margin-left: -7px;
+    position:relative;
+    top:5px;
+  }
+  .banjibar > span.spanone{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    margin: 0px 4px;
+    top: 8px;
+    background: transparent;
+  }
+
+
+  .footbox{
+    padding:15px;
+    overflow: hidden;
+    width:100%;
+  }
+  .ftleft{
+    //background: red;
+    float:left;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    margin-left:20px;
+  }
+  .ftright{
+    width: 50%;
+    //background: red;
+    float:right;
+    height: 30px;
+    text-align: right;
+    line-height:30px;
+    position:relative;
+  }
+
+  .gduo{
+    width: 27%;
+    text-align: center;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  .xiangji{
+    font-size: 28px;
+    position: absolute;
+    right: 42%;
+  }
+
+  .xiezi{
+    font-size: 28px;
+    position: absolute;
+    right:72%;
+  }
+
+
+
+  .fxiaoxi{
+    width:90%;
+    height:65px;
+    margin:0 auto 10px;
+    background:rgb(249,246,246);
+    border-radius:5px;
+    padding:10px;
+  }
+
+  .shijian{
+    font-size: 12px;
+    margin-top: 10px;
+    color:#9b9b9b;
+  }
+
+
+
+
+
+  .photos {
+    position:absolute;
+    z-index:9;
+    /*---修改图片数量的话需要修改下面的动画参数*/
+  }
+  .play {
+    animation:ma 15s ease-out infinite alternate;
+  }
+  @keyframes ma {
+    0%,25% {
+      margin-left:0px;
+    }
+    30%,50% {
+      margin-left:-325px;
+    }
+    55%,75% {
+      margin-left:-650px;
+    }
+    80%,100% {
+      margin-left:-975px;
+    }
+  }
+
+
+  nav{
+    background-color: white;
+    border-bottom: 10px solid #f2f6f9;
+  }
+
+  nav ul{
+    padding-top: 20px;
+  }
+  nav ul li{
+    width: 25%;
+    text-align: center;
+    float: left;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+  nav ul li p {
+    width: 55%;
+    margin: 0 auto 5px;
+  }
+  .sec_title h2{
+    border-left: 4px solid #18b4ed;
+    padding-left: 7px;
+    font-size: 16px;
+    color: #111;
+    margin-left: 10px;
+    height: 18px;
+    line-height: 18px;
+    float: left;
+  }
+  .sec_title span{
+    float: right;
+    margin-top: 2px;
+    margin-right: 10px;
+    width: 7px;
+    height: 13px;
+    background: url(./../assets/imgs/home/arr_03.png) no-repeat left center;
+    background-size: 7px;
+  }
+  .jqks ul{
+    margin-top: 15px;
+  }
+  .jqks ul li{
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+  }
+  .jqks ul li:nth-child(3n){
+    margin-right: 0;
+  }
+  .jqks ul li span{
+    padding: 5px;
+    /*display: block;*/
+    line-height: 16px;
+    height: 32px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  .jqwj ul{
+    margin-top: 15px;
+  }
+  .jqwj ul li{
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+  }
+  .jqwj ul li:nth-child(2n){
+    margin-right: 0;
+  }
+  .jqwj ul li span{
+    padding: 5px;
+    /* display: block;*/
+    line-height: 16px;
+    height: 16px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+
+  .rmkc ul li span{
+    height: 16px;
+  }
+  .rmkc ul li em{
+    font-size: 12px;
+    color: #999;
+    padding: 5px;
+  }
+  .rmkc ul li em i{
+    color: #18b4ed;
+  }
+  .zxkc ul {
+    margin-top: 15px;
+  }
+  .zxkc ul li{
+    margin-bottom: 10px;
+  }
+  .zxkc ul li p{
+    width: 29%;
+    float: left;
+  }
+  .zxkc ul li span{
+    padding: 8px 0 0 5px;
+    display: block;
+    line-height: 16px;
+    height: 32px;
+    overflow: hidden;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .zxkc ul li em{
+    font-size: 12px;
+    color: #999;
+    padding: 5px;
+  }
+
+  .tubiao p img{
+    width:35px;
+    height:35px;
+  }
+
+  .right {
+    float: right;
+    color: #9b9b9b;
+    position: relative;
+    top: -34px;
+    font-size: 25px;
+    right: 10px;
+  }
+
+  .btbj{
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+    white-space: nowrap!important;
+    width: 190px!important;
+  }
+
+}

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>群组</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: RGB(241,241,241);">
+  <ion-list>
+    <ion-item *ngFor="let item of workGroupList" (click)="toWorkGroupUser(item)">
+      <ion-avatar item-start>
+        <img src="./assets/imgs/work/home/facts_1.png">
+      </ion-avatar>
+      <div style="float: left;">
+        <h2>{{item.GROU002}}</h2>
+        <p>{{item.GROU002==0?'讨论组':'群'}}</p>
+      </div>
+      <div style="float: right;">
+        <ion-icon style="font-size:28px;
+        margin-left: 8px;
+        position: relative;
+        top: 6px;
+        color: #888;" name="arrow-forward"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

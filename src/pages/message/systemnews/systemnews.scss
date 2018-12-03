@@ -1,0 +1,68 @@
+page-systemnews {
+
+  .box {
+    width:100%;
+    height: 130px;
+    padding-top: 10px;
+    overflow: hidden;
+    border-bottom:1px solid #eee;
+  }
+  .left {
+    width:14%;
+    height:100%;
+    float:left;
+  }
+  .left-img{
+    width:29px;
+    height:29px;
+    //background-image:url("./../../../assets/imgs/sysion.png");
+    //background-repeat: no-repeat;
+    //background-size: auto;
+  }
+  .right {
+    width:86%;
+    height:100%;
+    float:right;
+  }
+
+  .right_one_line .one-left {
+    font-size:14px;
+    font-family:PingFangHK-Regular;
+    font-weight:400;
+    color:#2B2A2A;
+  }
+  .right_one_line .one-right{
+    font-size:14px;
+    font-family:PingFangHK-Regular;
+    font-weight:400;
+    color:#6A6A6A;
+    float: right;
+  }
+
+  .right_two_line{
+    font-size:12px;
+    font-family:PingFangHK-Regular;
+    font-weight:400;
+    color:rgba(160,160,160,1);
+    line-height:18px;
+    letter-spacing:1px;
+  }
+  .right_three_box {
+    width:100%;
+    height:52px;
+    margin-top:16px;
+    background:RGB(245,245,245);
+    padding:8px;
+  }
+  .right_three_box > p {
+    color:#666666;
+    font-size: 12px;
+    line-height: 19px;
+  }
+
+  .box_hd {
+    margin: auto;
+    color: #a7a7a7;
+    text-align: center;
+  }
+}

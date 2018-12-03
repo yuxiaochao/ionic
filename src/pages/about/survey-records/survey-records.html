@@ -1,0 +1,42 @@
+<!--
+  Generated template for the SurveyRecordsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>问卷调查</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="test_list">
+    <ul>
+      <li tappable *ngFor="let item of items">
+        <div class="test_item1 clearfix">
+          <div class="pic">
+            <img width="103" height="77" src="{{item.QUES020 | coverPath}}"/>
+          </div>
+          <div class="con">
+            <h2 class="name">{{item.QUES003}}</h2>
+            <p>机构简称: {{item.ORGA006}}</p>
+            <p>责任人: {{item.USER005}}</p>
+            <p>调查时间: {{item.QGTA005}}</p>
+
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="加载更多数据...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+</ion-content>

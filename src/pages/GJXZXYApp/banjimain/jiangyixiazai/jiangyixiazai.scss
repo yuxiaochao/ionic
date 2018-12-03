@@ -1,0 +1,48 @@
+page-jiangyixiazai {
+
+  .box {
+    width:100%;
+    border-top: 10px solid #f2f6f9;
+  }
+
+  .renwu{
+    width:100%;
+    padding:15px;
+    border-bottom: 1px dashed #d2cece;
+    overflow: hidden;
+    position:relative;
+  }
+  .renleft{
+    width: 33%;
+    height: 73px;
+    border:1px solid #ccc;
+    float:left;
+  }
+
+  .renright{
+    width:63%;
+    //height:110px;
+    //border:1px solid #ccc;
+    float:right;
+  }
+
+  .oneline >span.onename{
+    font-size:15px;
+    background:none;
+    color:#373737;
+  }
+  .yulan{
+    width:49px;
+    height:25px;
+    background:#18b4ed;
+    color:#fff;
+    position:absolute;
+    border-radius:7px;
+    bottom:20%;
+    right:5%;
+    text-align: center;
+    line-height: 25px;
+  }
+
+
+}

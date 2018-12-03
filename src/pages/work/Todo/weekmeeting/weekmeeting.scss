@@ -1,0 +1,60 @@
+page-weekmeeting {
+
+  .scroll-content{
+    padding:0px !important;
+  }
+
+
+  ul li>ul li img{
+    width: 50px;
+    height: 50px;
+    border-radius:5px 5px;
+  }
+
+
+  .fir_ul>li{
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #cfcfcf;
+
+  }
+  ul>.imgw{
+    float: left;
+    width: 17%;
+    margin: 10px 0px;
+    margin-left: 5%;
+    margin-top: 18px;
+
+  }
+  ul>.conw{
+    margin: 10px 0px;
+    float: left;
+    width: 75%;
+    margin-left: 3%;
+  }
+  .conw span{
+    float: left;
+    width: 100%;
+    margin-top: 3px;
+    font-size: 1rem;
+  }
+  .conw_1{
+    font-size: 1.4rem !important;
+    width: 58% !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .conw_2{
+    position: absolute;
+    width: 50px !important;
+    height: 20px;
+    color:#cfcfcf;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #cfcfcf;
+    margin-left: 20px;
+  }
+
+}

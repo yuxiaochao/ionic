@@ -1,0 +1,21 @@
+<!--<ion-header>-->
+
+  <!--<ion-navbar>-->
+    <!--<ion-title>调查统计结果</ion-title>-->
+  <!--</ion-navbar>-->
+
+<!--</ion-header>-->
+
+<ion-content>
+  <ion-card *ngFor="let item of result">
+    <ion-card-content *ngFor="let item_1 of item let i = index">
+      <p >{{item_1.keyMap | surveyStatistics:3}}</p>
+      <p style=" width: 11%;float: left;margin-top: -4px;">{{item_1.keyMap | surveyStatistics:2}}</p>
+      <div style="width: 89%;float: right;">
+        <div class="zhccjd" *ngIf="i!=0&&i!=1">
+          <div class="zfccjd02" [style.width]="item_1.keyMap | surveyStatistics:1"></div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

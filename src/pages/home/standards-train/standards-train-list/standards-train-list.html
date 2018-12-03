@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar class="searchbar-ios-dark"
+                   [(ngModel)]="myInput"
+                   animated = 'true'
+                   (ionFocus)="ionFocus()"
+                   (ionInput)="ionInput($event)"
+                   (ionBlur)="ionBlur()"
+                   cancelButtonText="取消"
+                   showCancelButton="true"
+                   (ionCancel)="ionCancel()"
+                   (ionClear)="ionClear()"
+                   placeholder='请输入达标训练名称'>
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content scrollDownOnLoad="true">
+  <ion-card *ngIf="unRecord">
+    <ion-card-header text-center>
+      暂无相关记录！
+    </ion-card-header>
+  </ion-card>
+  <div class="test_list">
+    <ul>
+      <li tappable *ngFor="let item of items" (click)="intoExamDetail(item)">
+        <div class="test_item1 clearfix">
+          <div class="pic">
+            <img width="103" height="77" src="{{item.est010 | coverPath}}"/>
+          </div>
+          <div class="con">
+            <p class="name">{{item.est004}}</p>
+            <p>责任人：{{item.est017str}}</p>
+            <p>截止时间：{{item.est006 | amDateFormat:'YYYY-MM-DD HH:mm'}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="加载更多数据...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

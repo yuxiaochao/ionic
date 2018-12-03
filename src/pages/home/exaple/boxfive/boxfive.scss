@@ -1,0 +1,147 @@
+page-boxfive {
+
+  //如果有用以下标签的，复制样式代码可取消默认样式；
+  html, body, div, span, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  abbr, address, cite, code,
+  del, dfn, em, img, ins, kbd, q, samp,
+  small, strong, sub, sup, var,
+  b, i,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section, summary,
+  time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:none;
+    outline:0;
+    font-size:100%;
+    background:transparent;
+    // 默认字体大小14px,最小12px；
+  }
+
+  ul,ol,li {
+    list-style-type: none
+  }
+
+  input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun","宋体";
+  }
+
+
+
+  .quan {
+    border: 1px solid #18b4ed;
+    color: green;
+    width: 26px;
+    height: 18px;
+    /* padding: 0px; */
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    border-radius: 20px;
+    display: inline-block;
+    position: absolute;
+    /* left: 10px; */
+    top: 16px;
+    right: 10px;
+  }
+
+  .box-main {
+    width:100%;
+    height:120px;
+    border:1px solid transparent;
+    overflow:hidden;
+    border-bottom:1px solid #ccc;
+  }
+
+  .box-main > div {
+    float:left;
+    display:inline-block;
+  }
+
+  //主体左边图片
+  .box-left {
+    margin:20px;
+    width:30%;
+    height:82px;
+  }
+
+  .box-left > img {
+    width:100%;
+    height:100%;
+  }
+
+  //主体右边文字
+  .box-right {
+    margin-top:20px;
+    width:50%;
+  }
+
+  .box-right  p {
+    font-size:12px;
+    color:#999;
+    line-height:20px;        //行间距
+  }
+
+  .box-right  p.name {
+    font-size: 14px;
+    position:relative;
+    color: #333;
+    line-height: 18px;
+    //overflow: hidden;        //超出一行文本显示。。
+    //text-overflow:ellipsis;
+    //white-space: nowrap;
+
+    display: -webkit-box;    //超出两行文本隐藏
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .name{
+    position:relative;
+  }
+
+  .box-right > p i {
+    color: #18b4ed !important;
+  }
+
+  //主体右边进度条
+  .reset {
+    font-size:12px;
+    color:#999;
+    height:20px;
+    line-height:20px;
+    position:relative;
+  }
+
+  .reset .zhccjd {
+    width: 60%;
+    height: 10px;
+    background-color: #fff;
+    border:1px solid #eee;
+    display: block;
+    float: right;
+    position:absolute;
+    top: 5px;
+    left: 45%;
+  }
+
+  .reset .zfccjd02 {
+    height: 10px;
+    background-color: #18b4ed;
+  }
+
+  .reset .sp {
+    position:absolute;
+    top: -5px;
+    margin-left: 36%;
+    color:green;
+  }
+
+}

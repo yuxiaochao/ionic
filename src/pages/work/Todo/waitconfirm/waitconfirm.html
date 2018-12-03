@@ -1,0 +1,120 @@
+<!--
+  Generated template for the WaitconfirmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>待我确认</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-segment [(ngModel)]="pet">
+    <ion-segment-button value="puppies">
+      未确认
+    </ion-segment-button>
+    <ion-segment-button value="kittens">
+      已确认
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <div [ngSwitch]="pet">
+
+    <ion-list *ngSwitchCase="'puppies'">
+      <nav>
+      <ul class="fir_ul" *ngFor="let factsReport of nofactsReportList">
+        <li (click)="factconfirm(factsReport,0)">
+          <ul >
+            <li class="imgw" >
+              <img src="././assets/imgs/work/home/top1.png ">
+            </li>
+            <li class="conw">
+              <span class="conw_1">{{factsReport.DOFA002}}</span>
+              <span style="margin-top:6px">{{factsReport.TJNAME}}上报的 | {{factsReport.DATETIME}}</span>
+            </li>
+          </ul>
+        </li>
+        <!--<li>-->
+          <!--<ul>-->
+            <!--<li class="imgw">-->
+              <!--<img src="././assets/imgs/work/home/top1.png ">-->
+            <!--</li>-->
+            <!--<li class="conw">-->
+              <!--<span class="conw_1">2018年上半年干部纪实表</span>-->
+              <!--<span>安鹏上报的 | 2018-09-27 16:00</span>-->
+            <!--</li>-->
+          <!--</ul>-->
+
+        <!--</li>-->
+      </ul>
+
+        <ion-card *ngIf="nofactsReportList.length==0">
+          <ion-card-content>
+            暂无数据！
+          </ion-card-content>
+        </ion-card>
+      </nav>
+    </ion-list>
+
+  </div>
+
+
+  <div [ngSwitch]="pet">
+
+    <ion-list *ngSwitchCase="'kittens'">
+      <nav>
+        <ul class="fir_ul" *ngFor="let factsReport of factsReportList">
+          <li (click)="factconfirm(factsReport,1)" >
+            <ul  >
+              <li class="conw" >
+                <span class="conw_1">{{factsReport.DOFA002}}</span>
+                <span>{{factsReport.TJNAME}}上报的 | {{factsReport.DATETIME}}</span>
+                <span>{{factsReport.QDNAME}}确认的 | {{factsReport.ENDTIME}}</span>
+              </li>
+            </ul>
+          </li>
+
+          <!--<li>-->
+            <!--<ul>-->
+
+              <!--<li class="conw" (click)="factconfirm()">-->
+                <!--<span class="conw_1">2018年上半年干部纪实表</span>-->
+                <!--<span>安鹏上报的 | 2018-09-27 16:00</span>-->
+                <!--<span>杨颖确认的 | 2018-09-27 16:01</span>-->
+              <!--</li>-->
+            <!--</ul>-->
+
+          <!--</li>-->
+        </ul>
+
+        <ion-card *ngIf="factsReportList.length==0">
+          <ion-card-content>
+            暂无数据！
+          </ion-card-content>
+        </ion-card>
+      </nav>
+    </ion-list>
+
+  </div>
+
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+

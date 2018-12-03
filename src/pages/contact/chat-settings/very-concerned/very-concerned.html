@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>特别关心好友设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item style="width: 110%;margin: 0% -5%;">
+      <ion-label>特别关心</ion-label>
+      <ion-toggle [(ngModel)]="mushrooms.isCheck" checked="false"></ion-toggle>
+    </ion-item>
+    <ion-label style="color: #888;font-size: x-small;">开启后，好友将收藏到[特别关心]列表中，
+      <br>好友消息、空间动态和小视频通知将有特别提醒。</ion-label>
+  </ion-list>
+</ion-content>

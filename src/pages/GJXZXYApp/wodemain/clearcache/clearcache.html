@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ClearcachePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>软件设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color:#f2f6f9;">
+  <div>
+    <div  class="xinxi">
+      <div class="one">
+        <p class="ziliao">账号与安全</p>
+        <div class="zl-r">
+          <ion-icon class="right" name="arrow-forward"></ion-icon>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="two">
+        <p class="ziliao">查看黑名单</p>
+        <div class="zl-r">
+          <ion-icon class="right" name="arrow-forward"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="xinxi"style="height: 60px;">
+      <div class="one" (click)="clearClick()">
+        <p class="ziliao">清除缓存</p>
+        <div class="zl-r">
+          <ion-icon class="right" name="arrow-forward"></ion-icon>
+        </div>
+      </div>
+
+      <div id="clear">
+        <div id="tankuang">
+          <div><p style="margin:0 40px;">你确定要清除所有缓存吗？</p></div>
+          <div class="btn" (click)="stopClick()">确定</div>
+          <div class="btn" (click)="stopClick()">取消</div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</ion-content>

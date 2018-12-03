@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ContactGroupPublicPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+     <ion-title>
+       群公告
+     </ion-title>
+    <ion-buttons end style="width: 50%;" >
+      <button  ion-button small (click)="addpublic()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="selectable" overflow-scroll="true"padding>
+
+
+ <!-- <div (mousedown)="downTime()" (mouseup)="upTime()">拍照</div>-->
+  <ion-item *ngFor="let item of items">
+    <div (click)="changePublic(item)" class="publicItem">
+        <h2>{{item.NOT003}}</h2>
+        <p>{{item.USER005}}  {{item.NOT006}} 发布</p>
+        <span>{{item.NOT004}}</span>
+    </div>
+    <!--<button  ion-button block  (click)="deletePublic(item) ">删除</button>
+    <button  ion-button block  (click)="firstPublic(item) ">置顶</button>
+    <button  ion-button block  (click)="aboutPublic(item) ">详情</button>-->
+  </ion-item>
+
+
+ <!-- <ion-card *ngFor="let item of items">
+        <div (click)="changePublic(item)" class="publicItem">
+            <ion-card-header>
+                <H2>{{item.NOT003}} </H2>
+                <p>{{item.USER005}} {{item.NOT006}} 发布</p>
+            </ion-card-header>
+            <ion-card-content>
+                  {{item.NOT004}}
+            </ion-card-content>
+        </div>
+     <button  ion-button block  (click)="deletePublic(item) ">删除</button>
+    <button  ion-button block  (click)="firstPublic(item) ">置顶</button>
+    <button  ion-button block  (click)="aboutPublic(item) ">详情</button>
+   </ion-card>-->
+
+
+
+</ion-content>
